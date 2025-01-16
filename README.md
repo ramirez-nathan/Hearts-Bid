@@ -3,4 +3,5 @@
 
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Mathew Winkles](https://github.com/mathyu03),
+            [Michael Carlin](https://github.com/mrcarlin2003),
             
