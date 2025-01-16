@@ -4,4 +4,6 @@
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Mathew Winkles](https://github.com/mathyu03),
             [Michael Carlin](https://github.com/mrcarlin2003),
+            [Devin Shaw](https://github.com/devinrshaw),
+            [Niko Udria](https://github.com/nikohno)
             
