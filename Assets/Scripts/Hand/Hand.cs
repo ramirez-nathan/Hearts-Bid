@@ -3,7 +3,7 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
 
-    // Array of cards as shown in UML
+    /*// Array of cards as shown in UML
     protected Card[] cards;
 
     // Abstract method required by UML
@@ -35,5 +35,5 @@ public class Hand : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }
