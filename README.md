@@ -7,4 +7,4 @@ Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Devin Shaw](https://github.com/devinrshaw),
             [Niko Udria](https://github.com/nikohno)
             
-![royalFlushersUML drawio](https://github.com/user-attachments/assets/9f1ce353-8d6b-4f47-9caf-b06126271286)
+![royalFlushersUML drawio (1)](https://github.com/user-attachments/assets/618c4c98-1135-4f75-922c-5c01b0e01db3)
