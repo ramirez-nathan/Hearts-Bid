@@ -8,8 +8,11 @@ public class Player : Entity
 
     Rigidbody2D playerRB;
     public struct PlayerActions {
-        public InputAction move;
-        public InputAction throwCard;
+        public InputAction move; // WASD
+        public InputAction throwCard; // left click
+        public InputAction playAllHands; // right click
+        public InputAction unloadHand; // E
+        public InputAction dodge; // space
     }
     PlayerActions playerControls;
     private PlayerInput playerInput;
@@ -23,6 +26,10 @@ public class Player : Entity
     private void OnEnable()
     {
         playerControls.move = playerInput.actions["Move"];
+        playerControls.throwCard = playerInput.actions["ThrowCard"];
+        playerControls.playAllHands = playerInput.actions["PlayAllHands"];
+        playerControls.unloadHand = playerInput.actions["UnloadHand"];
+        playerControls.dodge = playerInput.actions["Dodge"];
     }
     private void OnDisable()
     {

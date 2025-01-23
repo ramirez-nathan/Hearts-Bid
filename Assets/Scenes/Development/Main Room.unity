@@ -562,6 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de55f0b5962bea438a2eef8b06f6ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveInput: {x: 0, y: 0}
 --- !u!114 &2050850842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +588,67 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b1c1bd0-f7bc-4daf-bccf-dd56ec87e16c
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c070e0ca-8ffe-4f7e-9f7c-95476e27c8d5
+    m_ActionName: 'Player/ThrowCard[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: febd6b96-76c6-4a02-b9b7-83f952d6b24f
+    m_ActionName: 'Player/PlayAllHands[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 73c3017b-9523-4d48-a933-9fc3faf03131
+    m_ActionName: 'Player/UnloadHand[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bff8083c-0d60-42cb-b943-386336237146
+    m_ActionName: 'Player/Dodge[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c9f24899-5171-4132-b181-2914c6bcd1c7
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa681f1c-3ed4-4d2b-b50c-6413aded87e4
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 137ee5c5-e43c-4c1a-bd68-583f8b4d419a
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 21034a2b-8813-4845-b7dd-6f8c1d5143ed
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 52e3b58f-712e-48bc-8271-53edea41e2b6
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8fd396d3-650c-4310-8c36-6c56e9f10448
+    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5eeee31-c05f-4d78-9e8f-970bb937842c
+    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8da1b68-f3fd-4083-8584-401fb1d713b2
+    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 225a1b60-cf47-44f8-ad45-5ef6a011c75f
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9337b84b-75b5-4f6a-84c8-8e078cea9ad6
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
