@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DecorativeLightsAnimationSheet_0: 2076914139218738252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

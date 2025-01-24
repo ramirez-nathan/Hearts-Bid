@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NarrowcastingScreenAnimationSheet_0: -513109643751310517
+      NarrowcastingScreenAnimationSheet_1: 728672798872739919
+      NarrowcastingScreenAnimationSheet_10: -8596305194588378977
+      NarrowcastingScreenAnimationSheet_11: 8003353040670498473
+      NarrowcastingScreenAnimationSheet_2: -7354178023797963184
+      NarrowcastingScreenAnimationSheet_3: -4414361396325082342
+      NarrowcastingScreenAnimationSheet_4: -5800305044258434344
+      NarrowcastingScreenAnimationSheet_5: -4850687678372091682
+      NarrowcastingScreenAnimationSheet_6: 4846893377203083257
+      NarrowcastingScreenAnimationSheet_7: -694292904187044607
+      NarrowcastingScreenAnimationSheet_8: -436062776493829374
+      NarrowcastingScreenAnimationSheet_9: -2423455135926002353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

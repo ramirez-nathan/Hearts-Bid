@@ -1109,7 +1109,47 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SlotMachinesAnimationSheet_0_0: -3822113436978151693
+      SlotMachinesAnimationSheet_0_1: 2677360358163406434
+      SlotMachinesAnimationSheet_0_10: -4987794654354629704
+      SlotMachinesAnimationSheet_0_11: 2496951886960050052
+      SlotMachinesAnimationSheet_0_12: 216140269006221258
+      SlotMachinesAnimationSheet_0_13: 8676602708992407605
+      SlotMachinesAnimationSheet_0_14: -513954815238315726
+      SlotMachinesAnimationSheet_0_15: 4152894416970223641
+      SlotMachinesAnimationSheet_0_16: -241500930012210648
+      SlotMachinesAnimationSheet_0_17: -3969568384010094039
+      SlotMachinesAnimationSheet_0_18: 5468698641521225170
+      SlotMachinesAnimationSheet_0_19: -2212964392936711968
+      SlotMachinesAnimationSheet_0_2: -2229449329787729714
+      SlotMachinesAnimationSheet_0_20: -8753078227468172991
+      SlotMachinesAnimationSheet_0_21: -6858609035292318979
+      SlotMachinesAnimationSheet_0_22: 1338417989806946020
+      SlotMachinesAnimationSheet_0_23: 5194248026676849906
+      SlotMachinesAnimationSheet_0_24: -8324679769174177745
+      SlotMachinesAnimationSheet_0_25: 2779399375560055524
+      SlotMachinesAnimationSheet_0_26: 5903102428627541715
+      SlotMachinesAnimationSheet_0_27: 4719600402311114911
+      SlotMachinesAnimationSheet_0_28: -3321333697550008028
+      SlotMachinesAnimationSheet_0_29: 6612770005142439819
+      SlotMachinesAnimationSheet_0_3: -7624818351873275921
+      SlotMachinesAnimationSheet_0_30: -6211758953291748739
+      SlotMachinesAnimationSheet_0_31: -6760116130866400786
+      SlotMachinesAnimationSheet_0_32: 5800281552825909310
+      SlotMachinesAnimationSheet_0_33: 6267198122749995047
+      SlotMachinesAnimationSheet_0_34: -140147025958374641
+      SlotMachinesAnimationSheet_0_35: -5266847290211993742
+      SlotMachinesAnimationSheet_0_36: 8746319500327162895
+      SlotMachinesAnimationSheet_0_37: 3501816267020899008
+      SlotMachinesAnimationSheet_0_38: -8375719222767000796
+      SlotMachinesAnimationSheet_0_39: 905325264479340282
+      SlotMachinesAnimationSheet_0_4: -8111144040722278756
+      SlotMachinesAnimationSheet_0_5: -5230110128137931116
+      SlotMachinesAnimationSheet_0_6: -3527274876221234511
+      SlotMachinesAnimationSheet_0_7: -6295790602649154924
+      SlotMachinesAnimationSheet_0_8: -2853210224927366436
+      SlotMachinesAnimationSheet_0_9: 4381923624250812614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -534,7 +534,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EntranceDoorAnimationSheet_0: -2433117190829953529
+      EntranceDoorAnimationSheet_1: 2122290895142006011
+      EntranceDoorAnimationSheet_10: 7042080576921782542
+      EntranceDoorAnimationSheet_11: 5721644818841737396
+      EntranceDoorAnimationSheet_12: -5652393996406906347
+      EntranceDoorAnimationSheet_13: 4496419455151805732
+      EntranceDoorAnimationSheet_14: -3646825377710987469
+      EntranceDoorAnimationSheet_15: -341719381440357133
+      EntranceDoorAnimationSheet_16: 6806674973994760415
+      EntranceDoorAnimationSheet_2: 5306159694524420144
+      EntranceDoorAnimationSheet_3: -3714180862227438207
+      EntranceDoorAnimationSheet_4: 4609239954971354462
+      EntranceDoorAnimationSheet_5: -1027535662664534316
+      EntranceDoorAnimationSheet_6: -8462898486583523545
+      EntranceDoorAnimationSheet_7: 479192445159829612
+      EntranceDoorAnimationSheet_8: -5436473734344735292
+      EntranceDoorAnimationSheet_9: 7600205083774463925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
