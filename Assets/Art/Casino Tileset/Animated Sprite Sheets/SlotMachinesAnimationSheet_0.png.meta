@@ -1,0 +1,1117 @@
+fileFormatVersion: 2
+guid: 9b2757da1f3ba3241b27bfc16015f8f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3822113436978151693
+    second: SlotMachinesAnimationSheet_0_0
+  - first:
+      213: 2677360358163406434
+    second: SlotMachinesAnimationSheet_0_1
+  - first:
+      213: -2229449329787729714
+    second: SlotMachinesAnimationSheet_0_2
+  - first:
+      213: -7624818351873275921
+    second: SlotMachinesAnimationSheet_0_3
+  - first:
+      213: -8111144040722278756
+    second: SlotMachinesAnimationSheet_0_4
+  - first:
+      213: -5230110128137931116
+    second: SlotMachinesAnimationSheet_0_5
+  - first:
+      213: -3527274876221234511
+    second: SlotMachinesAnimationSheet_0_6
+  - first:
+      213: -6295790602649154924
+    second: SlotMachinesAnimationSheet_0_7
+  - first:
+      213: -2853210224927366436
+    second: SlotMachinesAnimationSheet_0_8
+  - first:
+      213: 4381923624250812614
+    second: SlotMachinesAnimationSheet_0_9
+  - first:
+      213: -4987794654354629704
+    second: SlotMachinesAnimationSheet_0_10
+  - first:
+      213: 2496951886960050052
+    second: SlotMachinesAnimationSheet_0_11
+  - first:
+      213: 216140269006221258
+    second: SlotMachinesAnimationSheet_0_12
+  - first:
+      213: 8676602708992407605
+    second: SlotMachinesAnimationSheet_0_13
+  - first:
+      213: -513954815238315726
+    second: SlotMachinesAnimationSheet_0_14
+  - first:
+      213: 4152894416970223641
+    second: SlotMachinesAnimationSheet_0_15
+  - first:
+      213: -241500930012210648
+    second: SlotMachinesAnimationSheet_0_16
+  - first:
+      213: -3969568384010094039
+    second: SlotMachinesAnimationSheet_0_17
+  - first:
+      213: 5468698641521225170
+    second: SlotMachinesAnimationSheet_0_18
+  - first:
+      213: -2212964392936711968
+    second: SlotMachinesAnimationSheet_0_19
+  - first:
+      213: -8753078227468172991
+    second: SlotMachinesAnimationSheet_0_20
+  - first:
+      213: -6858609035292318979
+    second: SlotMachinesAnimationSheet_0_21
+  - first:
+      213: 1338417989806946020
+    second: SlotMachinesAnimationSheet_0_22
+  - first:
+      213: 5194248026676849906
+    second: SlotMachinesAnimationSheet_0_23
+  - first:
+      213: -8324679769174177745
+    second: SlotMachinesAnimationSheet_0_24
+  - first:
+      213: 2779399375560055524
+    second: SlotMachinesAnimationSheet_0_25
+  - first:
+      213: 5903102428627541715
+    second: SlotMachinesAnimationSheet_0_26
+  - first:
+      213: 4719600402311114911
+    second: SlotMachinesAnimationSheet_0_27
+  - first:
+      213: -3321333697550008028
+    second: SlotMachinesAnimationSheet_0_28
+  - first:
+      213: 6612770005142439819
+    second: SlotMachinesAnimationSheet_0_29
+  - first:
+      213: -6211758953291748739
+    second: SlotMachinesAnimationSheet_0_30
+  - first:
+      213: -6760116130866400786
+    second: SlotMachinesAnimationSheet_0_31
+  - first:
+      213: 5800281552825909310
+    second: SlotMachinesAnimationSheet_0_32
+  - first:
+      213: 6267198122749995047
+    second: SlotMachinesAnimationSheet_0_33
+  - first:
+      213: -140147025958374641
+    second: SlotMachinesAnimationSheet_0_34
+  - first:
+      213: -5266847290211993742
+    second: SlotMachinesAnimationSheet_0_35
+  - first:
+      213: 8746319500327162895
+    second: SlotMachinesAnimationSheet_0_36
+  - first:
+      213: 3501816267020899008
+    second: SlotMachinesAnimationSheet_0_37
+  - first:
+      213: -8375719222767000796
+    second: SlotMachinesAnimationSheet_0_38
+  - first:
+      213: 905325264479340282
+    second: SlotMachinesAnimationSheet_0_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe7ba9541025fac0800000000000000
+      internalID: -3822113436978151693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26eda0c7f05e72520800000000000000
+      internalID: 2677360358163406434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8054d85a76f01e0800000000000000
+      internalID: -2229449329787729714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7c6b36b143f2690800000000000000
+      internalID: -7624818351873275921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_4
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96d8ba387d6f6f80800000000000000
+      internalID: -8111144040722278756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4967a2c7c8aea67b0800000000000000
+      internalID: -5230110128137931116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_6
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b26ca9303a9c0fc0800000000000000
+      internalID: -3527274876221234511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_7
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 212
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49acadcadcbd0a8a0800000000000000
+      internalID: -6295790602649154924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd221b9da6c5768d0800000000000000
+      internalID: -2853210224927366436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8ac50e158bfcc30800000000000000
+      internalID: 4381923624250812614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb9996303bc7cab0800000000000000
+      internalID: -4987794654354629704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fbe730384f6a220800000000000000
+      internalID: 2496951886960050052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_12
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfe5c3fd62eff200800000000000000
+      internalID: 216140269006221258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5383fa6713c796870800000000000000
+      internalID: 8676602708992407605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2316e1f81d01ed8f0800000000000000
+      internalID: -513954815238315726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_15
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 164
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9109631287b02a930800000000000000
+      internalID: 4152894416970223641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a12b50f2406acf0800000000000000
+      internalID: -241500930012210648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92af47f169249e8c0800000000000000
+      internalID: -3969568384010094039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_18
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dda887a078b4eb40800000000000000
+      internalID: 5468698641521225170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_19
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e85b620c98f941e0800000000000000
+      internalID: -2212964392936711968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141cd885ab1d68680800000000000000
+      internalID: -8753078227468172991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_21
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2ed1ebb6351d0a0800000000000000
+      internalID: -6858609035292318979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_22
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e67f6b0214039210800000000000000
+      internalID: 1338417989806946020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_23
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 116
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fce8595f0da51840800000000000000
+      internalID: 5194248026676849906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f280e712bdbc87c80800000000000000
+      internalID: -8324679769174177745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_25
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea13359109629620800000000000000
+      internalID: 2779399375560055524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_26
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de171302680ce150800000000000000
+      internalID: 5903102428627541715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_27
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f907b857f836f7140800000000000000
+      internalID: 4719600402311114911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_28
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4214ff8699048e1d0800000000000000
+      internalID: -3321333697550008028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_29
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b878fd1a84745cb50800000000000000
+      internalID: 6612770005142439819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_30
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a61bea4266bc9a0800000000000000
+      internalID: -6211758953291748739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_31
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 68
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1f153123e3f22a0800000000000000
+      internalID: -6760116130866400786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e308071575dbe7050800000000000000
+      internalID: 5800281552825909310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_33
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7282283dc7f89f650800000000000000
+      internalID: 6267198122749995047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_34
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f037c6db5091e0ef0800000000000000
+      internalID: -140147025958374641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_35
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2777fa46b4668e6b0800000000000000
+      internalID: -5266847290211993742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_36
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04921dde3b216970800000000000000
+      internalID: 8746319500327162895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_37
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c217786753f89030800000000000000
+      internalID: 3501816267020899008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_38
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423ef8c4eb773cb80800000000000000
+      internalID: -8375719222767000796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotMachinesAnimationSheet_0_39
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 20
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af64a7b088c509c00800000000000000
+      internalID: 905325264479340282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
