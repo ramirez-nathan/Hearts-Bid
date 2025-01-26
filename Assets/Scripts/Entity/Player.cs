@@ -31,11 +31,12 @@ public class Player : Entity
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
 
-
-    }
+        playerControls.dodge.started += Dodge;
+        
+    }   
     private void OnDisable()
     {
-        
+        playerControls.dodge.started -= Dodge;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,5 +55,8 @@ public class Player : Entity
     }
 
 
-    
+    void Dodge(InputAction.CallbackContext context)
+    {
+        Debug.Log("Dodged");
+    }
 }
