@@ -14,9 +14,20 @@ public class Player : Entity
         public InputAction unloadHand; // E
         public InputAction dodge; // space
     }
+
     PlayerActions playerControls;
     private PlayerInput playerInput;
     public Vector2 moveInput;
+
+    //tracks whether or not we are dodging for update loops 
+    public struct DodgeState
+    {
+        public bool isDodging;
+        public int dodgeFramesRemaining;
+    }
+
+    private DodgeState dodgeState;
+
 
     private void Awake()
     {
@@ -46,17 +57,44 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
+        //added to handle the diagnol speedup problem 
+        Vector2 normalizedInput = moveInput.normalized;
+        
         moveInput = playerControls.move.ReadValue<Vector2>();
     }
 
     void FixedUpdate()
     {
-        playerRB.linearVelocity = moveInput * moveSpeed;
+        if (dodgeState.isDodging)
+        {
+            Debug.Log("Dodged in fixed update");
+            playerRB.linearVelocity = (moveInput * moveSpeed) * 3;
+            if (dodgeState.dodgeFramesRemaining > 0)
+            {
+                dodgeState.dodgeFramesRemaining--;
+            }
+
+            if (dodgeState.dodgeFramesRemaining == 0)
+            {
+                dodgeState.isDodging = false;
+            }
+            
+        }
+        else {
+            playerRB.linearVelocity = moveInput * moveSpeed;
+        }
+        
     }
 
 
     void Dodge(InputAction.CallbackContext context)
     {
-        Debug.Log("Dodged");
+        if (!dodgeState.isDodging) //cant dodge while dodging
+        {
+            //could use a tuple of bool and # frames to increase speed for? 
+            dodgeState.isDodging = true;
+            dodgeState.dodgeFramesRemaining = 10;
+            Debug.Log("Dodged");
+        }
     }
 }
