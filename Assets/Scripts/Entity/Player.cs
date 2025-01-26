@@ -30,6 +30,8 @@ public class Player : Entity
         playerControls.playAllHands = playerInput.actions["PlayAllHands"];
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
+
+
     }
     private void OnDisable()
     {
@@ -50,4 +52,7 @@ public class Player : Entity
     {
         playerRB.linearVelocity = moveInput * moveSpeed;
     }
+
+
+    
 }
