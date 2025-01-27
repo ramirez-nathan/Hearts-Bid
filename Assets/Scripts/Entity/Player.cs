@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -5,28 +6,37 @@ using static UnityEngine.InputSystem.InputAction;
 public class Player : Entity
 {
     [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform target;
+
+
+    
+    // this holds a lot of necessary logic for throwing projectiles
+    private float throwRate = 1.0f;
+    private float projectileMoveSpeed = 5.0f;
+    [SerializeField] private float throwTimer = 1.0f;
+    public bool onThrowCooldown = false;
 
     Rigidbody2D playerRB;
-    public struct PlayerActions {
+    private PlayerInput playerInput;
+    public Vector2 moveInput;
+    public struct PlayerActions 
+    {
         public InputAction move; // WASD
         public InputAction throwCard; // left click
         public InputAction playAllHands; // right click
         public InputAction unloadHand; // E
         public InputAction dodge; // space
-    }
 
-    PlayerActions playerControls;
-    private PlayerInput playerInput;
-    public Vector2 moveInput;
-
+    } PlayerActions playerControls;
+    
     //tracks whether or not we are dodging for update loops 
     public struct DodgeState
     {
         public bool isDodging;
         public int dodgeFramesRemaining;
-    }
 
-    private DodgeState dodgeState;
+    } private DodgeState dodgeState;
 
 
     private void Awake()
@@ -43,24 +53,24 @@ public class Player : Entity
         playerControls.dodge = playerInput.actions["Dodge"];
 
         playerControls.dodge.started += Dodge;
-        
+        playerControls.throwCard.started += ThrowCard;
+
+
     }   
     private void OnDisable()
     {
         playerControls.dodge.started -= Dodge;
+        playerControls.throwCard.started -= ThrowCard;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
+    
+    
     void Update()
     {
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
-        
         moveInput = playerControls.move.ReadValue<Vector2>();
+
+        UpdateCoolDowns();
     }
 
     void FixedUpdate()
@@ -85,7 +95,25 @@ public class Player : Entity
         }
         
     }
+    // this should handle all cooldowns neatly
+    void UpdateCoolDowns()
+    {
+        if (onThrowCooldown) throwTimer -= Time.deltaTime;
+        if (throwTimer <= 0)
+        {
+            onThrowCooldown = false;
+            throwTimer = throwRate; // reset to 
+        }
+    }
+    void ThrowCard(InputAction.CallbackContext context)
+    {
+        if (!onThrowCooldown)
+        {
+            Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Projectile>();
+            projectile.InitializeProjectile(target, projectileMoveSpeed);
 
+        } 
+    }
 
     void Dodge(InputAction.CallbackContext context)
     {
