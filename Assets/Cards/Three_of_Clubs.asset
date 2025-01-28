@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Suit: 4
   Rank: 3
+  Sprite: {fileID: 7603477602957537499, guid: a683c10bd7d61a944b7ca7740e5d6198, type: 3}

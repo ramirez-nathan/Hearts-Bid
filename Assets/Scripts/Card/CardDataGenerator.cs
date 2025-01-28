@@ -23,6 +23,20 @@ public class CardDataGenerator : MonoBehaviour
                 newCard.Suit = suit;
                 newCard.Rank = rank;
 
+                // Find sprite for card
+                string spriteName = $"{GetRankShortName(rank)}-{GetSuitShortName(suit)}";
+                string spritePath = $"Assets/Art/cards/cards/light/{spriteName}.png";
+
+                Sprite cardSprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+                if (cardSprite != null)
+                {
+                    newCard.Sprite = cardSprite;
+                }
+                else
+                {
+                    Debug.LogWarning($"Sprite not found: {spritePath}");
+                }
+
                 // Set a unique name for the asset
                 string assetName = $"{rank}_of_{suit}.asset";
                 string assetPath = $"Assets/Cards/{assetName}";
@@ -33,5 +47,31 @@ public class CardDataGenerator : MonoBehaviour
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+    }
+
+    // Helper method to get sprite name for Rank
+    private static string GetRankShortName(Rank rank)
+    {
+        switch (rank)
+        {
+            case Rank.Ace: return "A";
+            case Rank.Jack: return "J";
+            case Rank.Queen: return "Q";
+            case Rank.King: return "K";
+            default: return ((int)rank).ToString(); // For numbered ranks (2-10)
+        }
+    }
+
+    // Helper method to get sprite name for Suit
+    private static string GetSuitShortName(Suit suit)
+    {
+        switch (suit)
+        {
+            case Suit.Hearts: return "H";
+            case Suit.Diamonds: return "D";
+            case Suit.Spades: return "P";
+            case Suit.Clubs: return "C";
+            default: return string.Empty; // Shouldn't happen
+        }
     }
 }
