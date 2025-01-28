@@ -57,7 +57,7 @@ public class Enemy : Entity
             float distanceToObstacle = Vector2.Distance(transform.position, obstacle.transform.position);
             
 
-            if (distanceToObstacle <= avoidRange)
+            if (distanceToObstacle <= avoidRange && IsObstacleInVision(obstacle, direction))
             {
                 nearObstacle = true;
                 // Avoid this obstacle by adding a direction away from it
@@ -115,24 +115,25 @@ public class Enemy : Entity
     }
 
 
-    // Check if an obstacle is within the enemy's vision cone
-    private float visionAngle = 35f;
-    private float visionRange = 10f;
-    bool IsObstacleInVision(GameObject obstacle)
-    {
-        Vector2 directionToObstacle = (obstacle.transform.position - transform.position).normalized;
-        float angleToObstacle = Vector2.Angle(transform.up, directionToObstacle); // Assuming the forward direction is 'up' of the enemy
+   
 
-        if (angleToObstacle <= visionAngle / 2 && Vector2.Distance(transform.position, obstacle.transform.position) <= visionRange)
+    private float visionRange = 3.0f; // Vision range in units
+
+    bool IsObstacleInVision(GameObject obstacle, Vector2 direction)
+    {
+        // Direction from the enemy to the obstacle
+        Vector2 directionToObstacle = (obstacle.transform.position - transform.position).normalized;
+
+        // Calculate the angle between the enemy's facing direction and the direction to the obstacle
+        float angleToObstacle = Vector2.Angle(direction, directionToObstacle);
+
+        // Check if the obstacle is not behind the enemy (angle <= 90 degrees)
+        if (angleToObstacle <= 90f && Vector2.Distance(transform.position, obstacle.transform.position) <= visionRange)
         {
-            // Check for line of sight using raycast
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToObstacle, visionRange);
-            if (hit.collider != null && hit.collider.gameObject == obstacle)
-            {
-                return true; // Obstacle is within vision and line of sight
-            }
+            return true; // The obstacle is not behind and is within the vision range
         }
-        return false; // Obstacle is outside the vision cone or blocked
+
+        return false; // The obstacle is behind or out of range
     }
 
 }
