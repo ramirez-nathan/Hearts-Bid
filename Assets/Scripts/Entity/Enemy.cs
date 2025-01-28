@@ -5,8 +5,10 @@ public class Enemy : Entity
 
     //copied from intial player script 
     private float moveSpeed = 2.0f;
-    private float avoidRange = 2.5f;
-    
+    private float avoidRange = 2.0f;
+    bool nearObstacle;
+    float avoidStrength = 15.0f; //how hard to avoid obstacles
+
 
 
     Rigidbody2D enemyRb;
@@ -15,7 +17,7 @@ public class Enemy : Entity
     Transform obstacle;
     Vector2 moveDir;
     Vector2 avoidDir;
-    bool nearObstacle;
+
     
 
     GameObject[] obstacles; // Array to hold all obstacle objects
@@ -43,11 +45,18 @@ public class Enemy : Entity
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyRb.rotation = angle;
 
+        nearObstacle = false;
+
+
+        
+
         //new part to be reviewed
         foreach (GameObject obstacle in obstacles)
         {
 
             float distanceToObstacle = Vector2.Distance(transform.position, obstacle.transform.position);
+            
+
             if (distanceToObstacle <= avoidRange)
             {
                 nearObstacle = true;
@@ -59,33 +68,34 @@ public class Enemy : Entity
                 Vector2 perpendicularDirectionB = new Vector2(directionToObstacle.y, -directionToObstacle.x);
 
                 //create new directions to assess shortest 
-                Vector3 blendedA = (moveDir + perpendicularDirectionA).normalized;
-                Vector3 blendedB = (moveDir + perpendicularDirectionB).normalized;
+                Vector2 blendedA = (moveDir + perpendicularDirectionA).normalized;
+                Vector2 blendedB = (moveDir + perpendicularDirectionB).normalized;
 
                 // Calculate distances to the player for each option
-                float distanceA = Vector3.Distance(transform.position + blendedA, playerTarget.position);
-                float distanceB = Vector3.Distance(transform.position + blendedB, playerTarget.position);
+                float distanceA = Vector2.Distance(new Vector2(transform.position.x + blendedA.x,transform.position.y + blendedA.y), playerTarget.position);
+                float distanceB = Vector2.Distance(new Vector2(transform.position.x + blendedB.x, transform.position.y + blendedB.y), playerTarget.position);
 
                 // Choose the direction that minimizes the distance to the player
-                avoidDir += (distanceA < distanceB) ? perpendicularDirectionA : perpendicularDirectionB;
+                avoidDir += (distanceA <= distanceB) ? perpendicularDirectionA : perpendicularDirectionB;
             }
 
             
-            else
+            else if (!nearObstacle) //only reset in loop if you arent near something
             {
                avoidDir = Vector2.zero; //reset the direction for this
                 
             }
             //TODO this cannot handle multiple obstacles in scene
-
+            
         }
-        
 
+        
         // Combine player direction with avoidance direction
         if (avoidDir != Vector2.zero)
         {
-            moveDir = (moveDir + avoidDir).normalized;
+            moveDir = (moveDir * (1f/avoidStrength) + avoidDir * avoidStrength).normalized;
         }
+        
 
     }
 
@@ -103,4 +113,30 @@ public class Enemy : Entity
             enemyRb.linearVelocity = Vector2.zero;
         }
     }
+
+
+    // Check if an obstacle is within the enemy's vision cone
+    private float visionAngle = 35f;
+    private float visionRange = 10f;
+    bool IsObstacleInVision(GameObject obstacle)
+    {
+        Vector2 directionToObstacle = (obstacle.transform.position - transform.position).normalized;
+        float angleToObstacle = Vector2.Angle(transform.up, directionToObstacle); // Assuming the forward direction is 'up' of the enemy
+
+        if (angleToObstacle <= visionAngle / 2 && Vector2.Distance(transform.position, obstacle.transform.position) <= visionRange)
+        {
+            // Check for line of sight using raycast
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToObstacle, visionRange);
+            if (hit.collider != null && hit.collider.gameObject == obstacle)
+            {
+                return true; // Obstacle is within vision and line of sight
+            }
+        }
+        return false; // Obstacle is outside the vision cone or blocked
+    }
+
 }
+
+
+
+
