@@ -32,5 +32,6 @@ public enum Rank
     Jack,
     Queen,
     King,
-    Ace
+    Ace,
+    Joker = 100
 }
