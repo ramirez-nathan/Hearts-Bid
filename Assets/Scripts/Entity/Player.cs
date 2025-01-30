@@ -41,6 +41,7 @@ public class Player : Entity
 
     private void Awake()
     {
+        target = GameObject.Find("Enemy").transform;
         playerInput = GetComponent<PlayerInput>();
         playerRB = GetComponent<Rigidbody2D>();
     }
@@ -111,7 +112,6 @@ public class Player : Entity
         {
             Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Projectile>();
             projectile.InitializeProjectile(target, projectileMoveSpeed);
-
         } 
     }
 

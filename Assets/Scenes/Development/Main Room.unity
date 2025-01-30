@@ -3102,16 +3102,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 19, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -18, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -7796,19 +7786,19 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 684
     m_Data: {fileID: 11400000, guid: 9eeca4870123f284da719adbde195c05, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: a0935dc6568d0814687751f231f09ce3, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 36
     m_Data: {fileID: 11400000, guid: a44cc6e4d5f6a4e498867b2730c94b32, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 684
     m_Data: {fileID: -260929862623342813, guid: 0f163c9c44ded7d4293dab562adcfa73, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -335709296, guid: 0f163c9c44ded7d4293dab562adcfa73, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 36
     m_Data: {fileID: 1772371647, guid: 0f163c9c44ded7d4293dab562adcfa73, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 721
+  - m_RefCount: 720
     m_Data:
       e00: 1
       e01: 0
@@ -7827,7 +7817,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 721
+  - m_RefCount: 720
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 6.4533e-41, g: 6.4533e-41, b: 6.4533e-41, a: 6.4533e-41}
@@ -7987,7 +7977,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10295,6 +10285,7 @@ GameObject:
   - component: {fileID: 1109834651}
   - component: {fileID: 1109834654}
   - component: {fileID: 1109834653}
+  - component: {fileID: 1109834655}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -10347,7 +10338,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4433962, g: 0.18128651, b: 0.08993414, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10366,7 +10357,7 @@ Transform:
   m_GameObject: {fileID: 1109834650}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -0.9, z: 0}
+  m_LocalPosition: {x: 5.5, y: -0.9, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10445,6 +10436,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1109834655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109834650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050850835
 GameObject:
   m_ObjectHideFlags: 0
@@ -10511,7 +10514,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.6948557, b: 0.8490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10530,7 +10533,7 @@ Transform:
   m_GameObject: {fileID: 2050850835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.57, y: -1.14, z: 0}
+  m_LocalPosition: {x: -3.57, y: -1.14, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10624,6 +10627,8 @@ MonoBehaviour:
   moveSpeed: 5
   projectilePrefab: {fileID: 7224208335421330690, guid: d8905ebae64e90648908a6d2e1e6d13b, type: 3}
   target: {fileID: 1109834652}
+  throwTimer: 1
+  onThrowCooldown: 0
   moveInput: {x: 0, y: 0}
 --- !u!114 &2050850842
 MonoBehaviour:
