@@ -1,22 +1,23 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    [SerializeField] int handSize = 5;
 
-    /*// Array of cards as shown in UML
-    protected Card[] cards;
+    public List<Card> cards;
 
-    // Abstract method required by UML
-    public abstract Card[] GetHand()
+    private void Awake()
     {
-        return cards;
+        cards = new(handSize);
     }
 
-    // Protected constructor if needed
-    protected Hand()
+    /*
+    // Abstract method required by UML
+    public virtual Card[] GetHand()
     {
-        // Initialize the cards array
-        cards = new Card[0];
+        return cards;
     }
 
     // Optional: Common functionality for all hands
@@ -24,16 +25,5 @@ public class Hand : MonoBehaviour
     {
         return index >= 0 && index < cards.Length;
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
+    */
 }
