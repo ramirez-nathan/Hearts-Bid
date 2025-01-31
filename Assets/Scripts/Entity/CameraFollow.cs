@@ -8,6 +8,6 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = playerToFollow.transform.position + new Vector3(0, 0, -10); // need a z offset so camera isn't "in" player
+        transform.position = playerToFollow.transform.position + new Vector3(0, 0, -20); // need a z offset so camera isn't "in" player
     }
 }
