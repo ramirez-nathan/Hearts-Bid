@@ -1,16 +1,15 @@
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class Enemy : Entity
 {
-
+    
     //copied from intial player script 
-    private float moveSpeed = 2.0f;
-    private float avoidRange = 2.0f;
-    bool nearObstacle;
-    float avoidStrength = 15.0f; //how hard to avoid obstacles
-
-
-
+    [SerializeField] private float moveSpeed = 2.0f;
+    [SerializeField] private float avoidRange = 2.0f;
+    [SerializeField] bool nearObstacle;
+    [SerializeField] float avoidStrength = 15.0f; //how hard to avoid obstacless
+    
     Rigidbody2D enemyRb;
 
     Transform playerTarget;

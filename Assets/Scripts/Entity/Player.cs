@@ -78,7 +78,7 @@ public class Player : Entity
     {
         if (dodgeState.isDodging)
         {
-            Debug.Log("Dodged in fixed update");
+            //Debug.Log("Dodged in fixed update");
             playerRB.linearVelocity = (moveInput * moveSpeed) * 3;
             if (dodgeState.dodgeFramesRemaining > 0)
             {
@@ -110,7 +110,13 @@ public class Player : Entity
     {
         if (!onThrowCooldown)
         {
-            Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<Projectile>();
+            Vector3 moveDir = (target.position - transform.position).normalized;
+            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
+
+            // applying 90-degree rotation
+            Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
+
+            Projectile projectile = Instantiate(projectilePrefab, transform.position, spawnRotation).GetComponent<Projectile>();
             projectile.InitializeProjectile(target, projectileMoveSpeed);
         } 
     }
