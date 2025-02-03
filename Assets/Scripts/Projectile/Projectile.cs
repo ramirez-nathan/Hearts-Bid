@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.Find("testEnemy").transform;
     }
 
     
@@ -21,6 +20,11 @@ public class Projectile : MonoBehaviour
         
         
     }
+    public Vector3 GetProjectileMoveDirection()
+    {
+        return projectileMoveDirection;
+    }
+
     public void InitializeProjectile(Transform target, float moveSpeed)
     {
         this.target = target;
@@ -46,8 +50,5 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public Vector3 GetProjectileMoveDirection()
-    {
-        return projectileMoveDirection;
-    }
+    
 }

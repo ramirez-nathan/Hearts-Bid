@@ -41,7 +41,9 @@ public class Player : Entity
 
     private void Awake()
     {
-        target = GameObject.Find("Enemy").transform;
+        // this will be changed to whatever enemy is hovered over via mouse cursor
+        target = GameObject.Find("testEnemy").transform; 
+
         playerInput = GetComponent<PlayerInput>();
         playerRB = GetComponent<Rigidbody2D>();
     }
