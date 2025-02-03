@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.Find("Enemy").transform;
+        target = GameObject.Find("testEnemy").transform;
     }
 
     
@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Collided with layer: " + collision.gameObject.layer);
             Debug.Log("Destroyed Card");
-            Destroy(this.gameObject); 
+            Destroy(this.gameObject); // destroy card
         }
     }
 

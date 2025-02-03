@@ -131,30 +131,14 @@ GameObject:
   - component: {fileID: 2474023}
   - component: {fileID: 2474022}
   - component: {fileID: 2474021}
-  - component: {fileID: 2474020}
+  - component: {fileID: 2474025}
   m_Layer: 6
   m_Name: Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2474020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2474019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  avoidRange: 0.8
-  nearObstacle: 0
-  avoidStrength: 15
 --- !u!61 &2474021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,7 +193,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2474019}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -298,6 +282,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2474025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3294694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8199,6 +8195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToFollow: {fileID: 2050850835}
+  smoothSpeed: 5
+  offset: {x: 0, y: 0, z: -20}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,30 +8340,14 @@ GameObject:
   - component: {fileID: 677707160}
   - component: {fileID: 677707159}
   - component: {fileID: 677707158}
-  - component: {fileID: 677707157}
+  - component: {fileID: 677707162}
   m_Layer: 6
   m_Name: Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &677707157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677707156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  avoidRange: 0.8
-  nearObstacle: 0
-  avoidStrength: 15
 --- !u!61 &677707158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8420,7 +8402,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677707156}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8509,6 +8491,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677707162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677707156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &880923839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,7 +10592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1003905603
 Grid:
   m_ObjectHideFlags: 0
@@ -10645,7 +10639,7 @@ GameObject:
   - component: {fileID: 1109834655}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10774,7 +10768,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109834650}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10802,13 +10796,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109834650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
+  m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  avoidRange: 0.8
-  nearObstacle: 0
-  avoidStrength: 15
 --- !u!1 &1340771152
 GameObject:
   m_ObjectHideFlags: 0
@@ -10821,30 +10811,14 @@ GameObject:
   - component: {fileID: 1340771156}
   - component: {fileID: 1340771155}
   - component: {fileID: 1340771154}
-  - component: {fileID: 1340771153}
+  - component: {fileID: 1340771158}
   m_Layer: 6
   m_Name: Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1340771153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340771152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 0.8
-  nearObstacle: 0
-  avoidStrength: 15
 --- !u!61 &1340771154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10899,7 +10873,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340771152}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10988,6 +10962,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340771158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340771152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389232206
 GameObject:
   m_ObjectHideFlags: 0
@@ -11000,30 +10986,14 @@ GameObject:
   - component: {fileID: 1389232210}
   - component: {fileID: 1389232209}
   - component: {fileID: 1389232208}
-  - component: {fileID: 1389232207}
+  - component: {fileID: 1389232212}
   m_Layer: 6
   m_Name: Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1389232207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389232206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9237a76161ab498d82955e2a0a522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1.7
-  avoidRange: 0.8
-  nearObstacle: 0
-  avoidStrength: 15
+  m_IsActive: 1
 --- !u!61 &1389232208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11078,7 +11048,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389232206}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -11167,6 +11137,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389232212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389232206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050850835
 GameObject:
   m_ObjectHideFlags: 0
