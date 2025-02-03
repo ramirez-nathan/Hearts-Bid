@@ -5,6 +5,14 @@ public class Entity : MonoBehaviour
     // Attributes
     protected int health;            // Representing the health attribute.
     protected Hand entityHand;       // Representing the entityHand attribute.
+    
+    protected Rigidbody2D entityRb;  // Shared rigidbody across entities
+
+
+    private void Awake()
+    {
+        entityRb = GetComponent<Rigidbody2D>();
+    }
 
     // Method to take damage
     public void TakeHit(int damage)

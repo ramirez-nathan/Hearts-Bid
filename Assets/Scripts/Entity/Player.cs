@@ -5,8 +5,6 @@ using static UnityEngine.InputSystem.InputAction;
 public class Player : Entity
 {
     [SerializeField] float moveSpeed = 5.0f;
-
-    Rigidbody2D playerRB;
     public struct PlayerActions {
         public InputAction move; // WASD
         public InputAction throwCard; // left click
@@ -32,7 +30,7 @@ public class Player : Entity
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerRB = GetComponent<Rigidbody2D>();
+        entityRb = GetComponent<Rigidbody2D>();
     }
     private void OnEnable()
     {
@@ -68,7 +66,7 @@ public class Player : Entity
         if (dodgeState.isDodging)
         {
             Debug.Log("Dodged in fixed update");
-            playerRB.linearVelocity = (moveInput * moveSpeed) * 3;
+            entityRb.linearVelocity = (moveInput * moveSpeed) * 3;
             if (dodgeState.dodgeFramesRemaining > 0)
             {
                 dodgeState.dodgeFramesRemaining--;
@@ -81,7 +79,7 @@ public class Player : Entity
             
         }
         else {
-            playerRB.linearVelocity = moveInput * moveSpeed;
+            entityRb.linearVelocity = moveInput * moveSpeed;
         }
         
     }
