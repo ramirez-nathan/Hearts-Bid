@@ -13,14 +13,14 @@ public class testEnemy : Entity
     protected Vector2 avoidDir;
 
     GameObject[] obstacles;
-    GameObject[] enemies;
+    //GameObject[] enemies;
 
    
     void Start()
     {
         playerTarget = GameObject.Find("Player").transform;
         obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
+        //enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     void Update()
