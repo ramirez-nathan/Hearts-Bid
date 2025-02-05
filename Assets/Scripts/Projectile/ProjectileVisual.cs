@@ -23,6 +23,5 @@ public class ProjectileVisual : MonoBehaviour
         {
             projectileVisual.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(projectileMoveDir.y, projectileMoveDir.x) * Mathf.Rad2Deg + 90);
         }
-        Debug.Log("ProjectileMoveDirection: " + projectileMoveDir);
     }
 }
