@@ -20,7 +20,7 @@ public class testEnemy : Entity
     {
         playerTarget = GameObject.Find("Player").transform;
         obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        //enemies = GameObject.FindGameObjectsWithTag("enemy");
+        //enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     void Update()

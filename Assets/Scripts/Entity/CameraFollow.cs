@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] GameObject playerToFollow;
     [SerializeField] private float smoothSpeed = 5f; // the higher the smoothSpeed, the faster the camera catches up
-    [SerializeField] private Vector3 offset = new Vector3(0, 0, -20); // need a z offset so camera isn't "in" player
+    [SerializeField] private Vector3 offset = new Vector3(0, 0, -30); // need a z offset so camera isn't "in" player
 
     void Start()
     {
