@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector3 projectileMoveDirection;
+    private SpriteRenderer spriteRenderer; 
 
     void Start()
     {
@@ -26,6 +27,19 @@ public class Projectile : MonoBehaviour
         this.target = target;
         this.moveSpeed = moveSpeed;
         this.cardData = card;
+        if (cardData == null)
+        {
+            Debug.LogError("cardData is NULL! Make sure a valid Card object is passed.");
+            return;
+        }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning("SpriteRenderer was missing! Adding one.");
+            spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        }
+        spriteRenderer.sprite = cardData.Sprite; 
         Debug.Log($"Projectile launched with {cardData.name}");
     }
 
