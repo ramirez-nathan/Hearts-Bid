@@ -101,7 +101,7 @@ public class Player : Entity
         else {
             playerRB.linearVelocity = moveInput * moveSpeed;
         }
-        
+
     }
     // this should handle all cooldowns neatly
     void UpdateCoolDowns()
@@ -127,6 +127,8 @@ public class Player : Entity
             dodgeState.isDodging = true;
             dodgeState.dodgeFramesRemaining = 10;
             Debug.Log("Dodged");
+
+            FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect (Michael)
         }
     }
 }
