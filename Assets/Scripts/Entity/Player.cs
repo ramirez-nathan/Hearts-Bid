@@ -5,12 +5,12 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class Player : Entity
 {
-    [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] public float moveSpeed = 5.0f;
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform target;
+    private Transform target = null;
+    private EnemyTrackingAddOn enemyTracking;
 
 
-    
     // this holds a lot of necessary logic for throwing projectiles
     private float throwRate = 1.0f;
     private float projectileMoveSpeed = 5.0f;
@@ -35,15 +35,18 @@ public class Player : Entity
     {
         public bool isDodging;
         public int dodgeFramesRemaining;
+        public int dodgeCooldown;
 
     } private DodgeState dodgeState;
 
 
     private void Awake()
     {
-        target = GameObject.Find("Enemy").transform;
+        
         playerInput = GetComponent<PlayerInput>();
         playerRB = GetComponent<Rigidbody2D>();
+        enemyTracking = new EnemyTrackingAddOn();
+       
     }
     private void OnEnable()
     {
@@ -67,15 +70,31 @@ public class Player : Entity
     
     void Update()
     {
+        enemyTracking.UpdateTracking();
+        target = enemyTracking.GetClosestEnemy();
+
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
 
-        UpdateCoolDowns();
+       //UpdateCoolDowns();
     }
 
     void FixedUpdate()
     {
+       UpdateCoolDowns();
+
+    }
+    // this should handle all cooldowns neatly, add dodging to it? 
+    void UpdateCoolDowns()
+    {
+        if (onThrowCooldown) throwTimer -= Time.deltaTime;
+        if (throwTimer <= 0)
+        {
+            onThrowCooldown = false;
+            throwTimer = throwRate; // reset to 
+        }
+
         if (dodgeState.isDodging)
         {
             //Debug.Log("Dodged in fixed update");
@@ -89,21 +108,11 @@ public class Player : Entity
             {
                 dodgeState.isDodging = false;
             }
-            
+
         }
-        else {
-            playerRB.linearVelocity = moveInput * moveSpeed;
-        }
-        
-    }
-    // this should handle all cooldowns neatly
-    void UpdateCoolDowns()
-    {
-        if (onThrowCooldown) throwTimer -= Time.deltaTime;
-        if (throwTimer <= 0)
+        else
         {
-            onThrowCooldown = false;
-            throwTimer = throwRate; // reset to 
+            playerRB.linearVelocity = moveInput * moveSpeed;
         }
     }
     void ThrowCard(InputAction.CallbackContext context)
