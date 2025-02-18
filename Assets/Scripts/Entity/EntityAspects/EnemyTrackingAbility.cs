@@ -8,7 +8,7 @@ public class EnemyTrackingAbility : Ability
     private Outline lastOutline = null;
 
     // Set cooldown to control how often tracking can be updated
-    protected override float Cooldown => 0.1f;  // You can adjust this to your preferred cooldown time
+    protected override float Cooldown => 0f;  // You can adjust this to your preferred cooldown time
 
     // Coroutine reference for stopping the tracking when the ability is deactivated
     private Coroutine trackingCoroutine;
@@ -56,7 +56,9 @@ public class EnemyTrackingAbility : Ability
 
     private void FindClosestEnemyToMouse()
     {
-        Vector3 mousePosition = Input.mousePosition;
+        // Convert mouse position to world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f; // Set the z to 0 to avoid affecting the comparison
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         Transform newClosestEnemy = null;
@@ -98,4 +100,5 @@ public class EnemyTrackingAbility : Ability
             closestEnemy = newClosestEnemy;
         }
     }
+
 }

@@ -1,3 +1,4 @@
+/*
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,15 +6,14 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class Player : Entity
 {
-    [SerializeField] public float moveSpeed = 5.0f;
-    [SerializeField] private GameObject projectilePrefab;
-    private Transform target = null;
-    private EnemyTrackingAddOn enemyTracking;
+    [SerializeField] float moveSpeed = 5.0f;
+    //[SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform target;
+    [SerializeField] private PlayerHand playerHand;
 
 
     // this holds a lot of necessary logic for throwing projectiles
     private float throwRate = 1.0f;
-    private float projectileMoveSpeed = 5.0f;
     [SerializeField] private float throwTimer = 1.0f;
     public bool onThrowCooldown = false;
 
@@ -42,7 +42,11 @@ public class Player : Entity
 
     private void Awake()
     {
-        
+        playerHand = GetComponent<PlayerHand>();   
+        // this will be changed to whatever enemy is hovered over via mouse cursor
+        target = GameObject.Find("Enemy").transform; 
+        playerHand.target = target; 
+
         playerInput = GetComponent<PlayerInput>();
         playerRB = GetComponent<Rigidbody2D>();
         enemyTracking = new EnemyTrackingAddOn();
@@ -76,8 +80,12 @@ public class Player : Entity
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
-
-       //UpdateCoolDowns();
+        // PRESS "L" KEY TO CHECK CURRENT HAND
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            playerHand.LogHandContents();
+        }
+        UpdateCoolDowns();
     }
 
     void FixedUpdate()
@@ -114,20 +122,22 @@ public class Player : Entity
         {
             playerRB.linearVelocity = moveInput * moveSpeed;
         }
+
+    }
+    // this should handle all cooldowns neatly
+    void UpdateCoolDowns()
+    {
+        if (onThrowCooldown) throwTimer -= Time.deltaTime;
+        if (throwTimer <= 0)
+        {
+            onThrowCooldown = false;
+            throwTimer = throwRate; // reset to 
+        }
     }
     void ThrowCard(InputAction.CallbackContext context)
     {
-        if (!onThrowCooldown)
-        {
-            Vector3 moveDir = (target.position - transform.position).normalized;
-            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-
-            // applying 90-degree rotation
-            Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
-
-            Projectile projectile = Instantiate(projectilePrefab, transform.position, spawnRotation).GetComponent<Projectile>();
-            projectile.InitializeProjectile(target, projectileMoveSpeed);
-        } 
+        Debug.Log("Pressed left click to throw");
+        playerHand.ThrowSelectedCard();
     }
 
     void Dodge(InputAction.CallbackContext context)
@@ -138,6 +148,9 @@ public class Player : Entity
             dodgeState.isDodging = true;
             dodgeState.dodgeFramesRemaining = 10;
             Debug.Log("Dodged");
+
+            FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect (Michael)
         }
     }
 }
+*/

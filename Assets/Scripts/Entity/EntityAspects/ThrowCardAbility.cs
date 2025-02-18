@@ -6,6 +6,9 @@ public class ThrowCardAbility : Ability
     [SerializeField] public Transform target;  // The target the card is thrown at
     [SerializeField] private float projectileMoveSpeed;  // Speed of the thrown card
 
+
+    public Card cardToThrow; //which card to throw from the deck 
+
     // Implement the cooldown time specific to the ThrowCard ability
     protected override float Cooldown => 1f;  // 1 second cooldown, for example
 
@@ -21,7 +24,7 @@ public class ThrowCardAbility : Ability
 
         // Instantiate the projectile and initialize it
         Projectile projectile = Instantiate(projectilePrefab, transform.position, spawnRotation).GetComponent<Projectile>();
-        projectile.InitializeProjectile(target, projectileMoveSpeed);
+        projectile.InitializeProjectile(target, projectileMoveSpeed, cardToThrow);
     }
 }
 

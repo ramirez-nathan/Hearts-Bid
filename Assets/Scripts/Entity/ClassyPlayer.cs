@@ -5,6 +5,7 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class ClassyPlayer : Entity
 {
+    //playtesting for player speed 
     [SerializeField] public float moveSpeed = 5.0f;
 
     //physics and movements
@@ -17,6 +18,9 @@ public class ClassyPlayer : Entity
     private DodgeAbility dodgeAbility;  
     private ThrowCardAbility throwCardAbility;
     private EnemyTrackingAbility enemyTrackingAbility;
+
+    //for throwing logic 
+    [SerializeField] private PlayerHand playerHand;
 
 
     public struct PlayerActions
@@ -43,6 +47,9 @@ public class ClassyPlayer : Entity
         dodgeAbility = GetComponent<DodgeAbility>();
         throwCardAbility = GetComponent<ThrowCardAbility>();
         enemyTrackingAbility = GetComponent<EnemyTrackingAbility>();
+
+        //get player hand component 
+        playerHand = GetComponent<PlayerHand>();
 
     }
     private void OnEnable()
@@ -100,6 +107,7 @@ public class ClassyPlayer : Entity
     {
         // Get the closest enemy to the player using the EnemyTrackingAddOn
         //if not null
+        throwCardAbility.cardToThrow = playerHand.FeedSelectedCard();
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         throwCardAbility.TryActivate();
     }

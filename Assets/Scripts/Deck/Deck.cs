@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class Deck
+public class Deck : MonoBehaviour
 {
     public List<Card> AllCards => cardsInDeck.Concat(cardsInDiscard).ToList();
     public bool DeckEmpty => cardsInDeck.Count == 0;
@@ -13,7 +13,7 @@ public class Deck
     public readonly Queue<Card> cardsInDeck = new();
     public readonly List<Card> cardsInDiscard = new();
 
-    readonly string cardDataPath = "Assets/Cards";
+    readonly string cardDataPath = "Cards";
 
     public void Initialize()
     {
@@ -24,10 +24,12 @@ public class Deck
     protected void GatherCards()
     {
         List<Card> cards = Resources.LoadAll<Card>(cardDataPath).ToList();
+        Debug.Log(cards.Count);
         foreach (var card in cards)
         {
             cardsInDeck.Enqueue(card);
         }
+        Debug.Log($"deck size is {cardsInDeck.Count}");
     }
 
     // MADE REFERENCING KNUTH SHUFFLE ALGORITHM
@@ -68,8 +70,9 @@ public class Deck
             return null;
         }
     }
-
-    public void Discard(Card card)
+    // we dont have a discard ability now, but maybe we can
+    // repurpose this method to represent cards that have been thrown/cached onto an enemy?
+    public void Discard(Card card) 
     {
         if (card == null) throw new ArgumentNullException();
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class testEnemy : Entity
+public class Enemy : Entity
 {
     [SerializeField] protected float moveSpeed = 3.0f;
     [SerializeField] protected float avoidRange = 3.0f;
