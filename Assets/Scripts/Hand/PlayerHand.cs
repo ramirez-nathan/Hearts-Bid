@@ -43,28 +43,25 @@ public class PlayerHand : Hand
         }
     }
 
-    public void ThrowSelectedCard()
+    public Card FeedSelectedCard()
     {
+        
         if (GetCardCount() == 0 || selectedCardIndex >= GetCardCount())
         {
             Debug.Log("Hand is empty, not throwing");
-            return;
+            return null;
         }
+        
+
 
         Card selectedCard = GetCard(selectedCardIndex);
         if (selectedCard != null)
         {
-            Vector3 moveDir = (target.position - transform.position).normalized;
-            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-            Quaternion spawnRotation = Quaternion.Euler(0, 0, angle + 90);
-
-            Projectile projectile = Instantiate(projectilePrefab, transform.position, spawnRotation).GetComponent<Projectile>();
-            projectile.InitializeProjectile(target, projectileMoveSpeed, selectedCard);
-
-            Debug.Log($"Threw {selectedCard.name}");
-
             RemoveCard(selectedCardIndex);
             DrawCard(); // Draw a new card after throwing
+            return selectedCard;
         }
+
+        return null;
     }
 }
