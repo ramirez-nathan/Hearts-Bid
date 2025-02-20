@@ -41,6 +41,8 @@ public class Projectile : MonoBehaviour
         }
         spriteRenderer.sprite = cardData.Sprite; 
         Debug.Log($"Projectile launched with {cardData.name}");
+
+        FindObjectOfType<AudioManager>().Play("Throw"); // play throw sound effect
     }
 
     void FixedUpdate()

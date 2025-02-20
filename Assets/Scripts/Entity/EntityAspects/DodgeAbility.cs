@@ -33,6 +33,8 @@ public class DodgeAbility : Ability
 
         // Set a timer to reset the speed after 'duration' seconds
         player.StartCoroutine(ResetSpeedAfterDuration());
+
+        FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect
     }
 
     private IEnumerator ResetSpeedAfterDuration()

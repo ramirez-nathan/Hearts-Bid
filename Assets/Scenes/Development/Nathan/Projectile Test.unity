@@ -7880,10 +7880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 3
-  spacingRange: 5
-  avoidStrength: 1000
 --- !u!61 &565634424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8059,10 +8055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 3
-  spacingRange: 5
-  avoidStrength: 1000
 --- !u!61 &927943404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8282,10 +8274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 3
-  spacingRange: 5
-  avoidStrength: 1000
 --- !u!61 &1167446122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11855,10 +11843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 3
-  spacingRange: 5
-  avoidStrength: 1000
 --- !u!61 &1312608251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12493,37 +12477,37 @@ MonoBehaviour:
   sounds:
   - name: Dodge
     clip: {fileID: 8300000, guid: b05ca2fff46afc84bbae586d900ca0fe, type: 3}
-    volume: 0.7
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: f897ff119942d5c48a3843ef3b8c8763, type: 3}
-    volume: 0.01
-    pitch: 1.254
+    volume: 0.2
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Throw
     clip: {fileID: 8300000, guid: d495c78903ae1eb40ad9a044eb5a881b, type: 3}
-    volume: 1
+    volume: 0.9
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Enemy Damaged
     clip: {fileID: 8300000, guid: 1e3c9bb2f5d888c47ba99fce34c551ee, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Shuffle
     clip: {fileID: 8300000, guid: ccf5091d3e8da0646b25b79b8b1be36d, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Enemy Dead
     clip: {fileID: 8300000, guid: a4b6da8ed19868449984fbe4a58fef6f, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -13166,10 +13150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  avoidRange: 3
-  spacingRange: 5
-  avoidStrength: 1000
 --- !u!61 &2082298009
 BoxCollider2D:
   m_ObjectHideFlags: 0
