@@ -44,6 +44,8 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Destroyed Card");
             Destroy(this.gameObject); // destroy card
+
+            FindObjectOfType<AudioManager>().Play("Enemy Damaged"); // play enemy damaged sound effect
         }
     }
 

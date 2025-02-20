@@ -117,6 +117,8 @@ public class Player : Entity
     {
         Debug.Log("Pressed left click to throw");
         playerHand.ThrowSelectedCard();
+
+        FindObjectOfType<AudioManager>().Play("Throw"); // play throw card sound effect
     }
 
     void Dodge(InputAction.CallbackContext context)
@@ -128,7 +130,7 @@ public class Player : Entity
             dodgeState.dodgeFramesRemaining = 10;
             Debug.Log("Dodged");
 
-            FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect (Michael)
+            FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect
         }
     }
 }

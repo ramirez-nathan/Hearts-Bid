@@ -12503,6 +12503,30 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Throw
+    clip: {fileID: 8300000, guid: d495c78903ae1eb40ad9a044eb5a881b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy Damaged
+    clip: {fileID: 8300000, guid: 1e3c9bb2f5d888c47ba99fce34c551ee, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shuffle
+    clip: {fileID: 8300000, guid: ccf5091d3e8da0646b25b79b8b1be36d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy Dead
+    clip: {fileID: 8300000, guid: a4b6da8ed19868449984fbe4a58fef6f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1648628911
 Transform:
   m_ObjectHideFlags: 0
