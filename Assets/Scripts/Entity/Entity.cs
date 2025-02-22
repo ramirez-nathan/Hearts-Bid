@@ -4,7 +4,7 @@ public class Entity : MonoBehaviour
 {
     // Attributes
     protected int health;            // Representing the health attribute.
-    protected Hand entityHand;       // Representing the entityHand attribute.
+    protected HandType entityHand;       // Representing the entityHand attribute.
 
     // Method to take damage
     public void TakeHit(int damage)

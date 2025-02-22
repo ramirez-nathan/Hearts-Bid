@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class PlayerHand : Hand
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    readonly Deck deck = new();
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        deck.Initialize();
     }
 }
