@@ -7497,7 +7497,7 @@ GameObject:
   - component: {fileID: 326216639}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7657,6 +7657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947435fc496de0640bb7ef182273001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cards: []
   deck: {fileID: 979420401}
   handSize: 5
   projectilePrefab: {fileID: 7224208335421330690, guid: d8905ebae64e90648908a6d2e1e6d13b, type: 3}
@@ -7880,6 +7881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  avoidRange: 3
+  spacingRange: 5
+  avoidStrength: 1000
 --- !u!61 &565634424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8055,6 +8060,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  avoidRange: 3
+  spacingRange: 5
+  avoidStrength: 1000
 --- !u!61 &927943404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8274,6 +8283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  avoidRange: 3
+  spacingRange: 5
+  avoidStrength: 1000
 --- !u!61 &1167446122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11843,6 +11856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  avoidRange: 3
+  spacingRange: 5
+  avoidStrength: 1000
 --- !u!61 &1312608251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12483,7 +12500,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: f897ff119942d5c48a3843ef3b8c8763, type: 3}
-    volume: 0.2
+    volume: 0.068
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -13150,6 +13167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a7e9e089993ad419b81e7aca6ae7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  avoidRange: 3
+  spacingRange: 5
+  avoidStrength: 1000
 --- !u!61 &2082298009
 BoxCollider2D:
   m_ObjectHideFlags: 0

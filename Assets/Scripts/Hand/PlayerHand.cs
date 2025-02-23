@@ -3,6 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerHand : Hand
 {
+    readonly Deck deck = new();
+
+    private void Awake()
+    {
+        deck.Initialize();
+    }
+
     private int selectedCardIndex = 0;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] public Transform target;

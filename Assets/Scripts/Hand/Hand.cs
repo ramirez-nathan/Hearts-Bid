@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
-    protected List<Card> cards = new List<Card>();
+    public List<Card> cards = new List<Card>();
     [SerializeField] protected Deck deck;
     [SerializeField] protected int handSize = 5;
 
