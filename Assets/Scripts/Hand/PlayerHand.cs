@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerHand : Hand
 {
-    readonly Deck deck = new();
 
     private void Awake()
     {
