@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DodgeAbility : Ability
 {
-    private ClassyPlayer player;  // Reference to the Player
+    private Player player;  // Reference to the Player
     public float speedMultiplier = 15.0f;
     public float duration = 10f;
 
@@ -12,7 +12,7 @@ public class DodgeAbility : Ability
 
     private void Awake()
     {
-        player = GetComponent<ClassyPlayer>();  // Check if this is correctly finding the player component
+        player = GetComponent<Player>();  // Check if this is correctly finding the player component
         if (player == null)
         {
             Debug.LogError("Player component not found on the GameObject.");
@@ -20,7 +20,7 @@ public class DodgeAbility : Ability
     }
 
     // Set the player reference during initialization
-    public void Initialize(ClassyPlayer player)
+    public void Initialize(Player player)
     {
         this.player = player;
     }

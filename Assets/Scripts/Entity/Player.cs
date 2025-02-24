@@ -1,26 +1,29 @@
-/*
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 public class Player : Entity
 {
-    [SerializeField] float moveSpeed = 5.0f;
-    //[SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform target;
-    [SerializeField] private PlayerHand playerHand;
+    //playtesting for player speed 
+    [SerializeField] public float moveSpeed = 5.0f;
 
-
-    // this holds a lot of necessary logic for throwing projectiles
-    private float throwRate = 1.0f;
-    [SerializeField] private float throwTimer = 1.0f;
-    public bool onThrowCooldown = false;
-
+    //physics and movements
     Rigidbody2D playerRB;
     private PlayerInput playerInput;
     public Vector2 moveInput;
-    public struct PlayerActions 
+
+
+    //ability classes 
+    private DodgeAbility dodgeAbility;  
+    private ThrowCardAbility throwCardAbility;
+    private EnemyTrackingAbility enemyTrackingAbility;
+
+    //for throwing logic 
+    [SerializeField] private PlayerHand playerHand;
+
+
+    public struct PlayerActions
     {
         public InputAction move; // WASD
         public InputAction throwCard; // left click
@@ -28,29 +31,26 @@ public class Player : Entity
         public InputAction unloadHand; // E
         public InputAction dodge; // space
 
-    } PlayerActions playerControls;
-    
-    //tracks whether or not we are dodging for update loops 
-    public struct DodgeState
-    {
-        public bool isDodging;
-        public int dodgeFramesRemaining;
-        public int dodgeCooldown;
+    }
+    PlayerActions playerControls;
 
-    } private DodgeState dodgeState;
+
 
 
     private void Awake()
     {
-        playerHand = GetComponent<PlayerHand>();   
-        // this will be changed to whatever enemy is hovered over via mouse cursor
-        target = GameObject.Find("Enemy").transform; 
-        playerHand.target = target; 
-
+        Application.targetFrameRate = 60;
         playerInput = GetComponent<PlayerInput>();
         playerRB = GetComponent<Rigidbody2D>();
-        enemyTracking = new EnemyTrackingAddOn();
-       
+
+        // Get the DodgeAbility component
+        dodgeAbility = GetComponent<DodgeAbility>();
+        throwCardAbility = GetComponent<ThrowCardAbility>();
+        enemyTrackingAbility = GetComponent<EnemyTrackingAbility>();
+
+        //get player hand component 
+        playerHand = GetComponent<PlayerHand>();
+
     }
     private void OnEnable()
     {
@@ -62,20 +62,22 @@ public class Player : Entity
 
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
+        enemyTrackingAbility.TryActivate();
 
 
-    }   
+    }
     private void OnDisable()
     {
         playerControls.dodge.started -= Dodge;
         playerControls.throwCard.started -= ThrowCard;
+        enemyTrackingAbility.Deactivate();
+
+
     }
-    
-    
+
+
     void Update()
     {
-        enemyTracking.UpdateTracking();
-        target = enemyTracking.GetClosestEnemy();
 
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
@@ -85,74 +87,34 @@ public class Player : Entity
         {
             playerHand.LogHandContents();
         }
-        UpdateCoolDowns();
+
     }
 
     void FixedUpdate()
     {
-       UpdateCoolDowns();
+
+        playerRB.linearVelocity = new Vector2(moveInput.x, moveInput.y) * moveSpeed; // Apply movement to Rigidbody
 
     }
-    // this should handle all cooldowns neatly, add dodging to it? 
-    void UpdateCoolDowns()
+
+
+    // This method is called when the dodge input (spacebar) is pressed
+    private void Dodge(InputAction.CallbackContext context)
     {
-        if (onThrowCooldown) throwTimer -= Time.deltaTime;
-        if (throwTimer <= 0)
-        {
-            onThrowCooldown = false;
-            throwTimer = throwRate; // reset to 
-        }
-
-        if (dodgeState.isDodging)
-        {
-            //Debug.Log("Dodged in fixed update");
-            playerRB.linearVelocity = (moveInput * moveSpeed) * 3;
-            if (dodgeState.dodgeFramesRemaining > 0)
-            {
-                dodgeState.dodgeFramesRemaining--;
-            }
-
-            if (dodgeState.dodgeFramesRemaining == 0)
-            {
-                dodgeState.isDodging = false;
-            }
-
-        }
-        else
-        {
-            playerRB.linearVelocity = moveInput * moveSpeed;
-        }
+        dodgeAbility.TryActivate();  // Call the TryActivate method from the Dodge class
 
     }
-    // this should handle all cooldowns neatly
-    void UpdateCoolDowns()
-    {
-        if (onThrowCooldown) throwTimer -= Time.deltaTime;
-        if (throwTimer <= 0)
-        {
-            onThrowCooldown = false;
-            throwTimer = throwRate; // reset to 
-        }
-    }
-    void ThrowCard(InputAction.CallbackContext context)
-    {
-        Debug.Log("Pressed left click to throw");
-        playerHand.ThrowSelectedCard();
 
-        FindObjectOfType<AudioManager>().Play("Throw"); // play throw card sound effect
-    }
 
-    void Dodge(InputAction.CallbackContext context)
+    // This method is called when the throw card input (for example, a mouse button press) is triggered
+    private void ThrowCard(InputAction.CallbackContext context)
     {
-        if (!dodgeState.isDodging) //cant dodge while dodging
-        {
-            //could use a tuple of bool and # frames to increase speed for? 
-            dodgeState.isDodging = true;
-            dodgeState.dodgeFramesRemaining = 10;
-            Debug.Log("Dodged");
-
-            FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect
-        }
+        // Get the closest enemy to the player using the EnemyTrackingAddOn
+        //if not null
+        throwCardAbility.cardToThrow = playerHand.FeedSelectedCard();
+        throwCardAbility.target = enemyTrackingAbility.closestEnemy;
+        throwCardAbility.TryActivate();
     }
 }
-*/
+    
+   
