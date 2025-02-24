@@ -1,3 +1,4 @@
+using Scripts.Hand;
 using UnityEngine;
 
 public class Entity : MonoBehaviour

@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Scripts.Card;
+using Scripts.Hand;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,3 +1,4 @@
+using Scripts.Card;
 using UnityEngine;
 
 public class ThrowCardAbility : Ability

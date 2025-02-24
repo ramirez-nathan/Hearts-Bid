@@ -1,81 +1,83 @@
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
-using UnityEngine;
-
-public class Deck : MonoBehaviour
+namespace Scripts.Deck
 {
-    public List<Card> AllCards => cardsInDeck.Concat(cardsInDiscard).ToList();
-    public bool DeckEmpty => cardsInDeck.Count == 0;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using UnityEngine;
+    using Scripts.Card;
 
-    public readonly Queue<Card> cardsInDeck = new();
-    public readonly List<Card> cardsInDiscard = new();
-
-    readonly string cardDataPath = "Cards";
-
-    public void Initialize()
+    public class Deck : MonoBehaviour
     {
-        GatherCards();
-        ShuffleCards();
-    }
+        public List<Card> AllCards => cardsInDeck.Concat(cardsInDiscard).ToList();
+        public bool DeckEmpty => cardsInDeck.Count == 0;
 
-    protected void GatherCards()
-    {
-        List<Card> cards = Resources.LoadAll<Card>(cardDataPath).ToList();
-        Debug.Log(cards.Count);
-        foreach (var card in cards)
+        public readonly Queue<Card> cardsInDeck = new();
+        public readonly List<Card> cardsInDiscard = new();
+
+        readonly string cardDataPath = "Cards";
+
+        public void Initialize()
         {
-            cardsInDeck.Enqueue(card);
-        }
-        Debug.Log($"deck size is {cardsInDeck.Count}");
-    }
-
-    // MADE REFERENCING KNUTH SHUFFLE ALGORITHM
-    // https://rosettacode.org/wiki/Knuth_shuffle
-    public void ShuffleCards()
-    {
-        List<Card> shuffledCards = AllCards.ToList();
-
-        // Create a shuffled list of cards
-        for (int i = AllCards.Count - 1; i > 0; i--)
-        {
-            int j = UnityEngine.Random.Range(0, i + 1);
-
-            // swap cards
-            (shuffledCards[j], shuffledCards[i]) = (shuffledCards[i], shuffledCards[j]);
+            GatherCards();
+            ShuffleCards();
         }
 
-        // Queue the cards into deck
-        cardsInDeck.Clear();
-        foreach (var card in shuffledCards)
+        protected void GatherCards()
         {
-            cardsInDeck.Enqueue(card);
+            List<Card> cards = Resources.LoadAll<Card>(cardDataPath).ToList();
+            Debug.Log(cards.Count);
+            foreach (var card in cards)
+            {
+                cardsInDeck.Enqueue(card);
+            }
+            Debug.Log($"deck size is {cardsInDeck.Count}");
         }
 
-        // Clear the discard (it was shuffled back in)
-        cardsInDiscard.Clear();
-    }
-
-    public Card Draw(out bool success)
-    {
-        success = cardsInDeck.Count > 0;
-        if (success)
+        // MADE REFERENCING KNUTH SHUFFLE ALGORITHM
+        // https://rosettacode.org/wiki/Knuth_shuffle
+        public void ShuffleCards()
         {
-            return cardsInDeck.Dequeue();
-        }
-        else
-        {
-            return null;
-        }
-    }
-    // we dont have a discard ability now, but maybe we can
-    // repurpose this method to represent cards that have been thrown/cached onto an enemy?
-    public void Discard(Card card) 
-    {
-        if (card == null) throw new ArgumentNullException();
+            List<Card> shuffledCards = AllCards.ToList();
 
-        cardsInDiscard.Add(card);
+            // Create a shuffled list of cards
+            for (int i = AllCards.Count - 1; i > 0; i--)
+            {
+                int j = UnityEngine.Random.Range(0, i + 1);
+
+                // swap cards
+                (shuffledCards[j], shuffledCards[i]) = (shuffledCards[i], shuffledCards[j]);
+            }
+
+            // Queue the cards into deck
+            cardsInDeck.Clear();
+            foreach (var card in shuffledCards)
+            {
+                cardsInDeck.Enqueue(card);
+            }
+
+            // Clear the discard (it was shuffled back in)
+            cardsInDiscard.Clear();
+        }
+
+        public Card Draw(out bool success)
+        {
+            success = cardsInDeck.Count > 0;
+            if (success)
+            {
+                return cardsInDeck.Dequeue();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        // we dont have a discard ability now, but maybe we can
+        // repurpose this method to represent cards that have been thrown/cached onto an enemy?
+        public void Discard(Card card)
+        {
+            if (card == null) throw new ArgumentNullException();
+
+            cardsInDiscard.Add(card);
+        }
     }
 }
