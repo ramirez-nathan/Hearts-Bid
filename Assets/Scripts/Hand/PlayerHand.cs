@@ -8,7 +8,6 @@ namespace Scripts.Hand
 
     public class PlayerHand : Hand
     {
-        readonly Deck deck = new();
 
         private void Awake()
         {
@@ -24,7 +23,6 @@ namespace Scripts.Hand
 
         private void Start()
         {
-            deck.Initialize();
             DrawStartingHand();
         }
 
