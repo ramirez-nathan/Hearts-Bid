@@ -3,75 +3,78 @@ using UnityEditor;
 using System.IO;
 using System;
 
-public class CardDataGenerator : MonoBehaviour
+namespace Scripts.Card
 {
-    [MenuItem("Tools/Generate Cards")]
-    public static void GenerateCards()
+    public class CardDataGenerator : MonoBehaviour
     {
-        foreach (Suit suit in Enum.GetValues(typeof(Suit)))
+        [MenuItem("Tools/Generate Cards")]
+        public static void GenerateCards()
         {
-            foreach (Rank rank in Enum.GetValues(typeof(Rank)))
+            foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
-                // Skip blank cards
-                if (suit == Suit.None || rank == Rank.None)
+                foreach (Rank rank in Enum.GetValues(typeof(Rank)))
                 {
-                    continue;
+                    // Skip blank cards
+                    if (suit == Suit.None || rank == Rank.None)
+                    {
+                        continue;
+                    }
+
+                    // Create card
+                    Card newCard = ScriptableObject.CreateInstance<Card>();
+                    newCard.Suit = suit;
+                    newCard.Rank = rank;
+
+                    // Find sprite for card
+                    string spriteName = $"{GetRankShortName(rank)}-{GetSuitShortName(suit)}";
+                    string spritePath = $"Assets/Art/cards/cards/light/{spriteName}.png";
+
+                    Sprite cardSprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+                    if (cardSprite != null)
+                    {
+                        newCard.Sprite = cardSprite;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Sprite not found: {spritePath}");
+                    }
+
+                    // Set a unique name for the asset
+                    string assetName = $"{rank}_of_{suit}.asset";
+                    string assetPath = $"Assets/Cards/{assetName}";
+
+                    AssetDatabase.CreateAsset(newCard, assetPath);
                 }
+            }
 
-                // Create card
-                Card newCard = ScriptableObject.CreateInstance<Card>();
-                newCard.Suit = suit;
-                newCard.Rank = rank;
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
 
-                // Find sprite for card
-                string spriteName = $"{GetRankShortName(rank)}-{GetSuitShortName(suit)}";
-                string spritePath = $"Assets/Art/cards/cards/light/{spriteName}.png";
-
-                Sprite cardSprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
-                if (cardSprite != null)
-                {
-                    newCard.Sprite = cardSprite;
-                }
-                else
-                {
-                    Debug.LogWarning($"Sprite not found: {spritePath}");
-                }
-
-                // Set a unique name for the asset
-                string assetName = $"{rank}_of_{suit}.asset";
-                string assetPath = $"Assets/Cards/{assetName}";
-
-                AssetDatabase.CreateAsset(newCard, assetPath);
+        // Helper method to get sprite name for Rank
+        private static string GetRankShortName(Rank rank)
+        {
+            switch (rank)
+            {
+                case Rank.Ace: return "A";
+                case Rank.Jack: return "J";
+                case Rank.Queen: return "Q";
+                case Rank.King: return "K";
+                default: return ((int)rank).ToString(); // For numbered ranks (2-10)
             }
         }
 
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-    }
-
-    // Helper method to get sprite name for Rank
-    private static string GetRankShortName(Rank rank)
-    {
-        switch (rank)
+        // Helper method to get sprite name for Suit
+        private static string GetSuitShortName(Suit suit)
         {
-            case Rank.Ace: return "A";
-            case Rank.Jack: return "J";
-            case Rank.Queen: return "Q";
-            case Rank.King: return "K";
-            default: return ((int)rank).ToString(); // For numbered ranks (2-10)
-        }
-    }
-
-    // Helper method to get sprite name for Suit
-    private static string GetSuitShortName(Suit suit)
-    {
-        switch (suit)
-        {
-            case Suit.Hearts: return "H";
-            case Suit.Diamonds: return "D";
-            case Suit.Spades: return "P";
-            case Suit.Clubs: return "C";
-            default: return string.Empty; // Shouldn't happen
+            switch (suit)
+            {
+                case Suit.Hearts: return "H";
+                case Suit.Diamonds: return "D";
+                case Suit.Spades: return "P";
+                case Suit.Clubs: return "C";
+                default: return string.Empty; // Shouldn't happen
+            }
         }
     }
 }

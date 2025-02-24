@@ -1,73 +1,80 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
-
-public class PlayerHand : Hand
+namespace Scripts.Hand
 {
+    using Scripts.Card;
+    using Scripts.Deck;
+    using Scripts.Hand;
+    using UnityEngine;
+    using UnityEngine.InputSystem;
 
-    private void Awake()
+    public class PlayerHand : Hand
     {
-        deck.Initialize();
-    }
+        readonly Deck deck = new();
 
-    private int selectedCardIndex = 0;
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] public Transform target;
-    [SerializeField] private float projectileMoveSpeed = 5.0f;
-   
-    
-
-    private void Start()
-    {
-        deck.Initialize();
-        DrawStartingHand();
-    }
-
-    private void Update()
-    {
-        HandleCardSelection();
-    }
-
-    private void DrawStartingHand()
-    {
-        Debug.Log($"we made it here, deck size is {deck.cardsInDeck.Count}");
-        for (int i = 0; i < handSize; i++)
+        private void Awake()
         {
-            DrawCard();
+            deck.Initialize();
         }
-    }
 
-    private void HandleCardSelection()
-    {
-        for (int i = 0; i < 5; i++)
+        private int selectedCardIndex = 0;
+        [SerializeField] private GameObject projectilePrefab;
+        [SerializeField] public Transform target;
+        [SerializeField] private float projectileMoveSpeed = 5.0f;
+
+
+
+        private void Start()
         {
-            // yes ik im using old input system here but will make an input action once this is functional >:(
-            if (Keyboard.current[Key.Digit1 + i].wasPressedThisFrame)
+            deck.Initialize();
+            DrawStartingHand();
+        }
+
+        private void Update()
+        {
+            HandleCardSelection();
+        }
+
+        private void DrawStartingHand()
+        {
+            Debug.Log($"we made it here, deck size is {deck.cardsInDeck.Count}");
+            for (int i = 0; i < handSize; i++)
             {
-                selectedCardIndex = i;
-                Debug.Log($"Selected Card: {GetCard(selectedCardIndex)?.name}");
+                DrawCard();
             }
         }
-    }
 
-    public Card FeedSelectedCard()
-    {
-        
-        if (GetCardCount() == 0 || selectedCardIndex >= GetCardCount())
+        private void HandleCardSelection()
         {
-            Debug.Log("Hand is empty, not throwing");
+            for (int i = 0; i < 5; i++)
+            {
+                // yes ik im using old input system here but will make an input action once this is functional >:(
+                if (Keyboard.current[Key.Digit1 + i].wasPressedThisFrame)
+                {
+                    selectedCardIndex = i;
+                    Debug.Log($"Selected Card: {GetCard(selectedCardIndex)?.name}");
+                }
+            }
+        }
+
+        public Card FeedSelectedCard()
+        {
+
+            if (GetCardCount() == 0 || selectedCardIndex >= GetCardCount())
+            {
+                Debug.Log("Hand is empty, not throwing");
+                return null;
+            }
+
+
+
+            Card selectedCard = GetCard(selectedCardIndex);
+            if (selectedCard != null)
+            {
+                RemoveCard(selectedCardIndex);
+                DrawCard(); // Draw a new card after throwing
+                return selectedCard;
+            }
+
             return null;
         }
-        
-
-
-        Card selectedCard = GetCard(selectedCardIndex);
-        if (selectedCard != null)
-        {
-            RemoveCard(selectedCardIndex);
-            DrawCard(); // Draw a new card after throwing
-            return selectedCard;
-        }
-
-        return null;
     }
 }

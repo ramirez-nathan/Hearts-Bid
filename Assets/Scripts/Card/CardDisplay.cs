@@ -1,23 +1,26 @@
 using NUnit.Framework;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class CardDisplay : MonoBehaviour
+namespace Scripts.Card
 {
-    SpriteRenderer spriteRenderer;
-
-    private void Awake()
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class CardDisplay : MonoBehaviour
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        SpriteRenderer spriteRenderer;
 
-    public void DisplayCard(Card card)
-    {
-        spriteRenderer.sprite = card.Sprite;
-    }
+        private void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
-    public void ClearDisplay()
-    {
-        spriteRenderer.sprite = null;
+        public void DisplayCard(Card card)
+        {
+            spriteRenderer.sprite = card.Sprite;
+        }
+
+        public void ClearDisplay()
+        {
+            spriteRenderer.sprite = null;
+        }
     }
 }
