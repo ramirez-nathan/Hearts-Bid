@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark_green_background_game_0: -1056024913175352729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
