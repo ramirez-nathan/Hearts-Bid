@@ -1,4 +1,5 @@
 using Scripts.Card;
+using Scripts.Hand;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -10,7 +11,9 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector3 projectileMoveDirection;
-    public SpriteRenderer spriteRenderer; 
+    public SpriteRenderer spriteRenderer;
+    private bool isCachedOnEnemy = false;
+    private bool returningToPlayer = false;
 
     void Start()
     {
@@ -48,25 +51,40 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 moveDirNormalized = (target.position - transform.position).normalized;
-        projectileMoveDirection = moveDirNormalized * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
-
+        if (target != null)
+        {
+            Vector3 moveDirNormalized = (target.position - transform.position).normalized;
+            projectileMoveDirection = moveDirNormalized * moveSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
+        }
+        else
+        {
+            target = FindFirstObjectByType<Player>().transform;
+            spriteRenderer.enabled = true;
+            returningToPlayer = true;
+        }
     }
 
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) // if its an enemy object
+        if (isCachedOnEnemy) return;
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") &&
+            collision.gameObject == target.gameObject) // if its an enemy object
         {
             Debug.Log("Destroyed Card");
+            collision.gameObject.GetComponent<EnemyHand>().AddCardToCache(this);
 
-            
 
-            FindFirstObjectByType<AudioManager>().Play("Enemy Damaged"); // play enemy damaged sound effect
-            Destroy(this.gameObject); // destroy card
+            FindFirstObjectByType<AudioManager>().Play("Enemy Damaged");
+            isCachedOnEnemy = true;
+            //Destroy(this.gameObject); // destroy card
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Player") &&
+                 returningToPlayer)
+        {
+            Destroy(this.gameObject);
         }
     }
-
-    
 }
