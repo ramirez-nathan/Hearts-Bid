@@ -71,6 +71,10 @@ namespace Scripts.Deck
                 return null;
             }
         }
+        public void ReturnToDeck(Card card)
+        {
+            cardsInDeck.Enqueue(card);
+        }
         // we dont have a discard ability now, but maybe we can
         // repurpose this method to represent cards that have been thrown/cached onto an enemy?
         public void Discard(Card card)

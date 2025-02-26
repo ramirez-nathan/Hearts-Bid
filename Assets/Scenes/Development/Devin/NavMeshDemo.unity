@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMeshEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7610,6 +7618,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMeshEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7799,9 +7815,6 @@ MonoBehaviour:
   cards: []
   deck: {fileID: 979420401}
   handSize: 5
-  projectilePrefab: {fileID: 7224208335421330690, guid: d8905ebae64e90648908a6d2e1e6d13b, type: 3}
-  target: {fileID: 0}
-  projectileMoveSpeed: 10
 --- !u!82 &326216637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7815,13 +7828,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.448
+  m_Volume: 0.044
   m_Pitch: 0.42
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 118
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7973,6 +7986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
+  detectionRadius: 5
   closestEnemy: {fileID: 0}
 --- !u!114 &326216642
 MonoBehaviour:
@@ -8044,6 +8058,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMeshEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8101,9 +8123,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6148985
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.88128024
+      objectReference: {fileID: 0}
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8162,6 +8200,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5392537
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38203096
+      objectReference: {fileID: 0}
     - target: {fileID: 6342797534343624153, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -8169,6 +8219,10 @@ PrefabInstance:
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8351,35 +8405,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.17621933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.74619263
+      objectReference: {fileID: 0}
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af284bce2397b9a41b5df5232569984b, type: 3}
---- !u!1 &1234692202 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
-  m_PrefabInstance: {fileID: 1469510584}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1234692210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234692202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703a5d577eb337b468f1a783ffb34c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards: []
-  deck: {fileID: 0}
-  handSize: 5
 --- !u!1001 &1284769925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8435,6 +8489,14 @@ PrefabInstance:
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11904,17 +11966,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.83971167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.83971167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9622642
+      objectReference: {fileID: 0}
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1234692210}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af284bce2397b9a41b5df5232569984b, type: 3}
 --- !u!1 &1483992905
 GameObject:
@@ -12407,13 +12482,13 @@ MonoBehaviour:
   sounds:
   - name: Dodge
     clip: {fileID: 8300000, guid: b05ca2fff46afc84bbae586d900ca0fe, type: 3}
-    volume: 0.7
+    volume: 0.01
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: f897ff119942d5c48a3843ef3b8c8763, type: 3}
-    volume: 0.01
+    volume: 0
     pitch: 1.254
     loop: 1
     source: {fileID: 0}
@@ -13096,6 +13171,14 @@ PrefabInstance:
     - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_Name
       value: NavMeshEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
