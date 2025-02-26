@@ -18,6 +18,7 @@ namespace Scripts.Hand
         }
         public void AddCardToCache(Projectile projectile)
         {
+            Debug.Log("Adding card to cache");
             // if somehow this is full
             // we gotta get our card back somehow
             if (!FullCache) 
@@ -25,6 +26,7 @@ namespace Scripts.Hand
                 cards.Add(projectile.cardData); 
             }
             UpdateCardDraw(false, projectile.spriteRenderer);
+            LogHandAndRank();
         }
         private void UpdateCardDraw(bool draw, SpriteRenderer sprite)
         {
@@ -43,8 +45,30 @@ namespace Scripts.Hand
         {
             if (FullCache)
             {
-                // play hand here
+                PlayHandOnEnemy();
             }
+        }
+        public void PlayHandOnEnemy()
+        {
+            HandRankerResult rankedHand = HandRanker.RankHand(cards);
+            int damage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
+            string handPlayed = HandRanker.RankHand(cards).BestHand.ToString();
+            Debug.Log($"You played {handPlayed} on Enemy");
+            ReturnCachedCards();
+            gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
+        }
+
+        public void ReturnCachedCards()
+        {
+            foreach (var card in cards)
+            {
+                deck.ReturnToDeck(card);
+            }
+            // do something here that calls a method to
+            // make the cards fly back to player 
+            cards.Clear();
+            // for now we will just delete
+           
         }
         public void LogHandAndRank()
         {
@@ -61,8 +85,10 @@ namespace Scripts.Hand
                 }
             }
             Debug.Log(handContents);
-            string handRank = "Current Hand Rank: ";
 
+            string handRank = "Current Best Hand Rank: ";
+            handRank += HandRanker.RankHand(cards).BestHand.ToString();
+            Debug.Log(handRank);
         }
     }
 }

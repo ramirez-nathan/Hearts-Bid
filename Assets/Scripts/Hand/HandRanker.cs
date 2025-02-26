@@ -41,7 +41,7 @@ namespace Scripts.Hand
 
             // select the best hand out of applicable
             result.BestHand = result.ApplicableHands.Max();
-
+            
             return result;
         }
 
