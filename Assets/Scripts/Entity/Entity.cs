@@ -35,5 +35,6 @@ public class Entity : MonoBehaviour
     {
         // Logic for death
         Debug.Log("Entity died.");
+        Destroy(this.gameObject);
     }
 }

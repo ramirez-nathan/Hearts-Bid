@@ -15,8 +15,8 @@ public class NavMeshEnemy : Entity
         
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
-        agent.updateUpAxis = false; 
-        
+        agent.updateUpAxis = false;
+        health = 20;
     }
 
     // Update is called once per frame

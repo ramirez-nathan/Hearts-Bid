@@ -63,7 +63,7 @@ public class Player : Entity
 
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
-        enemyTrackingAbility.TryActivate();
+        //enemyTrackingAbility.TryActivate();
 
 
     }
@@ -71,7 +71,7 @@ public class Player : Entity
     {
         playerControls.dodge.started -= Dodge;
         playerControls.throwCard.started -= ThrowCard;
-        enemyTrackingAbility.Deactivate();
+        //enemyTrackingAbility.Deactivate();
 
 
     }
