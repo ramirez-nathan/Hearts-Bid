@@ -6,11 +6,11 @@ public class Projectile : MonoBehaviour
 {
     private Transform target;
     private float moveSpeed;
-    private Card cardData; // Store card information
+    public Card cardData; // Store card information
 
     private Rigidbody2D rb;
     private Vector3 projectileMoveDirection;
-    private SpriteRenderer spriteRenderer; 
+    public SpriteRenderer spriteRenderer; 
 
     void Start()
     {
@@ -60,9 +60,11 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) // if its an enemy object
         {
             Debug.Log("Destroyed Card");
-            Destroy(this.gameObject); // destroy card
 
-            FindObjectOfType<AudioManager>().Play("Enemy Damaged"); // play enemy damaged sound effect
+            
+
+            FindFirstObjectByType<AudioManager>().Play("Enemy Damaged"); // play enemy damaged sound effect
+            Destroy(this.gameObject); // destroy card
         }
     }
 

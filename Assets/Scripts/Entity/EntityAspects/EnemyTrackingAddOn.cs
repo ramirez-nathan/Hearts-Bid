@@ -30,8 +30,9 @@ public class EnemyTrackingAddOn
             }
         }
 
-        if (newClosestEnemy != closestEnemy)
+        if (newClosestEnemy != closestEnemy) // call enemy function loghandandrank()
         {
+            Debug.Log("New enemy highlighted");
             // Remove outline from the previous closest enemy
             if (lastOutline != null)
             {

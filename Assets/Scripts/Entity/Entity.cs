@@ -5,7 +5,6 @@ public class Entity : MonoBehaviour
 {
     // Attributes
     protected int health;            // Representing the health attribute.
-    protected Hand entityHand;       // Representing the entityHand attribute.
     
     protected Rigidbody2D entityRb;  // Shared rigidbody across entities
 

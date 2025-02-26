@@ -15,9 +15,6 @@ namespace Scripts.Hand
         }
 
         private int selectedCardIndex = 0;
-        [SerializeField] private GameObject projectilePrefab;
-        [SerializeField] public Transform target;
-        [SerializeField] private float projectileMoveSpeed = 5.0f;
 
 
 
