@@ -1,16 +1,25 @@
+using Codice.Client.Common.GameUI;
+
 namespace Scripts.Hand
 {
     using Codice.CM.Common;
     using Scripts.Card;
     using Scripts.Deck;
     using Scripts.Hand;
+    using System;
     using UnityEngine;
+    using UnityEngine.Events;
     using UnityEngine.InputSystem;
     
 
     public class EnemyHand : Hand
     {
+        [SerializeField] float returnDelay = 0.2f;
+
         public bool FullCache => cards.Count == handSize;
+        public readonly UnityEvent onFullCache = new();
+
+        float currentReturnDelay = 0f;
         
         private void Awake()
         {
@@ -23,11 +32,20 @@ namespace Scripts.Hand
             // we gotta get our card back somehow
             if (!FullCache) 
             {
-                cards.Add(projectile.cardData); 
+                cards.Add(projectile.cardData);
+                float copyDelay = currentReturnDelay;
+                onFullCache.AddListener(() => projectile.BeginReturnToPlayer(copyDelay));
+                currentReturnDelay += returnDelay;
+            }
+            else
+            {
+                projectile.BeginReturnToPlayer(0); // this only gets called when card collides with enemy initially
+                // so if cache was played I think this wouldnt get called
             }
             UpdateCardDraw(false, projectile.spriteRenderer);
             LogHandAndRank();
         }
+           
         private void UpdateCardDraw(bool draw, SpriteRenderer sprite)
         {
             if (draw == false)
@@ -46,6 +64,10 @@ namespace Scripts.Hand
             if (FullCache)
             {
                 PlayHandOnEnemy();
+
+                onFullCache.Invoke();
+                onFullCache.RemoveAllListeners();
+                currentReturnDelay = 0;
             }
         }
         public void PlayHandOnEnemy()
@@ -54,22 +76,11 @@ namespace Scripts.Hand
             int damage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
             string handPlayed = HandRanker.RankHand(cards).BestHand.ToString();
             Debug.Log($"You played {handPlayed} on Enemy");
-            ReturnCachedCards();
+            cards.Clear();
             gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
         }
 
-        public void ReturnCachedCards()
-        {
-            foreach (var card in cards)
-            {
-                deck.ReturnToDeck(card);
-            }
-            // do something here that calls a method to
-            // make the cards fly back to player 
-            cards.Clear();
-            // for now we will just delete
-           
-        }
+        
         public void LogHandAndRank()
         {
             string handContents = "Current Enemy Cache: ";

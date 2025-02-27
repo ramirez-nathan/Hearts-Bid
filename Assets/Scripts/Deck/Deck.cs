@@ -11,7 +11,7 @@ namespace Scripts.Deck
         public List<Card> AllCards => cardsInDeck.Concat(cardsInDiscard).ToList();
         public bool DeckEmpty => cardsInDeck.Count == 0;
 
-        public readonly Queue<Card> cardsInDeck = new();
+        [SerializeField] public readonly Queue<Card> cardsInDeck = new();
         public readonly List<Card> cardsInDiscard = new();
 
         readonly string cardDataPath = "Cards";
@@ -74,13 +74,13 @@ namespace Scripts.Deck
         public void ReturnToDeck(Card card)
         {
             cardsInDeck.Enqueue(card);
+            
         }
         // we dont have a discard ability now, but maybe we can
         // repurpose this method to represent cards that have been thrown/cached onto an enemy?
         public void Discard(Card card)
         {
             if (card == null) throw new ArgumentNullException();
-
             cardsInDiscard.Add(card);
         }
     }

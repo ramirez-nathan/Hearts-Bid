@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using Scripts.Deck;
 
 public class Player : Entity
 {
@@ -88,12 +89,15 @@ public class Player : Entity
         {
             playerHand.LogHandContents();
         }
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            Debug.Log($"Deck size is {FindAnyObjectByType<Deck>().cardsInDeck.Count}");
+        }
 
     }
 
     void FixedUpdate()
     {
-
         playerRB.linearVelocity = new Vector2(moveInput.x, moveInput.y) * moveSpeed; // Apply movement to Rigidbody
 
     }
@@ -112,7 +116,13 @@ public class Player : Entity
     {
         // Get the closest enemy to the player using the EnemyTrackingAddOn
         //if not null
+        throwCardAbility.SetPlayer(this);
         throwCardAbility.cardToThrow = playerHand.FeedSelectedCard();
+        if (throwCardAbility.cardToThrow == null)
+        {
+            Debug.LogWarning("No card to throw; hand is empty.");
+            return;
+        }
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         throwCardAbility.TryActivate();
     }

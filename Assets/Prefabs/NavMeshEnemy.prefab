@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da7344bae8c21a479cbbc8e3d219dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!50 &6342797534343624153
 Rigidbody2D:
   serializedVersion: 5
@@ -229,5 +230,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
-  deck: {fileID: 0}
+  deck: {fileID: 142648675004465033, guid: d84d05828f18a884ebce64f1d9f965c7, type: 3}
   handSize: 5

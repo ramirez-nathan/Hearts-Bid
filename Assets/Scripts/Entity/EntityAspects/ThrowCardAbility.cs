@@ -1,4 +1,5 @@
 using Scripts.Card;
+using Scripts.Deck;
 using UnityEngine;
 
 public class ThrowCardAbility : Ability
@@ -7,11 +8,11 @@ public class ThrowCardAbility : Ability
     [SerializeField] public Transform target;  // The target the card is thrown at
     [SerializeField] private float projectileMoveSpeed;  // Speed of the thrown card
 
-
+    private Player returnPlayer;
     public Card cardToThrow; //which card to throw from the deck 
 
     // Implement the cooldown time specific to the ThrowCard ability
-    protected override float Cooldown => 1f;  // 1 second cooldown, for example
+    protected override float Cooldown => 0.5f;  // 1 second cooldown, for example
 
 
     // The actual ability logic, similar to your ThrowCard method
@@ -25,7 +26,12 @@ public class ThrowCardAbility : Ability
 
         // Instantiate the projectile and initialize it
         Projectile projectile = Instantiate(projectilePrefab, transform.position, spawnRotation).GetComponent<Projectile>();
-        projectile.InitializeProjectile(target, projectileMoveSpeed, cardToThrow);
+        projectile.InitializeProjectile(target, projectileMoveSpeed, cardToThrow, FindFirstObjectByType<Deck>(), returnPlayer);
+    }
+
+    public void SetPlayer(Player player)
+    {
+        returnPlayer = player;
     }
 }
 

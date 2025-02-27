@@ -4,7 +4,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // Attributes
-    protected int health;            // Representing the health attribute.
+    [SerializeField] protected int health;            // Representing the health attribute.
     
     protected Rigidbody2D entityRb;  // Shared rigidbody across entities
 
