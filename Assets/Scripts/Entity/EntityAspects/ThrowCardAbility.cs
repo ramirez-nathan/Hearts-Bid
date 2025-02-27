@@ -10,7 +10,7 @@ public class ThrowCardAbility : Ability
     public Card cardToThrow; //which card to throw from the deck 
 
     // Implement the cooldown time specific to the ThrowCard ability
-    protected override float Cooldown => 1f;  // 1 second cooldown, for example
+    protected override float Cooldown => 0.5f;  // 1 second cooldown, for example
 
 
     // The actual ability logic, similar to your ThrowCard method

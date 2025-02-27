@@ -15,7 +15,7 @@ public class NavMeshEnemy : Entity
         
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
-        agent.updateUpAxis = false; 
+        agent.updateUpAxis = false; //this may be needed for looking towards player
         
     }
 

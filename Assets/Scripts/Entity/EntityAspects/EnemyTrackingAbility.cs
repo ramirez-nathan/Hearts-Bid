@@ -5,7 +5,7 @@ public class EnemyTrackingAbility : Ability
 {
     public string enemyTag = "Enemy";
     public Transform closestEnemy = null;
-    private Outline lastOutline = null;
+    
 
     // Set cooldown to control how often tracking can be updated
     protected override float Cooldown => 0f;  // You can adjust this to your preferred cooldown time
@@ -34,11 +34,6 @@ public class EnemyTrackingAbility : Ability
             trackingCoroutine = null;
         }
 
-        // Remove outline from last tracked enemy when ability is deactivated
-        if (lastOutline != null)
-        {
-            lastOutline.enabled = false;
-        }
     }
 
     // Coroutine for finding the closest enemy
@@ -76,26 +71,6 @@ public class EnemyTrackingAbility : Ability
 
         if (newClosestEnemy != closestEnemy)
         {
-            // Remove outline from the previous closest enemy
-            if (lastOutline != null)
-            {
-                lastOutline.enabled = false;
-            }
-
-            // Apply outline to the new closest enemy
-            if (newClosestEnemy != null)
-            {
-                Outline outline = newClosestEnemy.GetComponent<Outline>();
-
-                // If the enemy doesn't already have an Outline component, add one
-                if (outline == null)
-                {
-                    outline = newClosestEnemy.gameObject.AddComponent<Outline>();
-                }
-
-                outline.enabled = true;
-                lastOutline = outline;
-            }
 
             closestEnemy = newClosestEnemy;
         }
