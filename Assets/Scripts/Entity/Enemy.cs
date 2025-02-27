@@ -36,7 +36,7 @@ public class Enemy : Entity
         HandleObstacleAvoidance(direction);
         HandleEnemyAvoidance(direction);
 
-
+        
 
         if (avoidDir != Vector2.zero)
         {
