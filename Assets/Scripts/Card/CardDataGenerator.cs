@@ -41,7 +41,7 @@ namespace Scripts.Card
 
                     // Set a unique name for the asset
                     string assetName = $"{rank}_of_{suit}.asset";
-                    string assetPath = $"Assets/Cards/{assetName}";
+                    string assetPath = $"Assets/Resources/Cards/{assetName}";
 
                     AssetDatabase.CreateAsset(newCard, assetPath);
                 }
@@ -60,7 +60,8 @@ namespace Scripts.Card
                 case Rank.Jack: return "J";
                 case Rank.Queen: return "Q";
                 case Rank.King: return "K";
-                default: return ((int)rank).ToString(); // For numbered ranks (2-10)
+                case Rank.Joker: return "Joker";
+                default: return ((int)rank + 1).ToString(); // For numbered ranks (2-10)
             }
         }
 

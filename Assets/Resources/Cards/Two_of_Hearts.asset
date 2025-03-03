@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Two_of_Hearts
   m_EditorClassIdentifier: 
   Suit: 1
-  Rank: 2
+  Rank: 1
   Sprite: {fileID: -2958496227519471755, guid: b8ddef109f81555489fa3f304c8d73f0, type: 3}

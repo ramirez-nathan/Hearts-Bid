@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: King_of_Clubs
   m_EditorClassIdentifier: 
   Suit: 4
-  Rank: 13
+  Rank: 12
   Sprite: {fileID: -8139382773443767904, guid: 6d9c44841de77a74cb90a2d55b274642, type: 3}
