@@ -104,7 +104,7 @@ public class Projectile : MonoBehaviour
 
     public void ReturnToPlayer()
     {
-        MoveToTarget(moveSpeed * 1.5f);
+        MoveToTarget(moveSpeed * 3f);
     }
 
     public void ReturnCachedCards()
