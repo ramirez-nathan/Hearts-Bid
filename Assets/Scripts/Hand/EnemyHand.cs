@@ -36,6 +36,7 @@ namespace Scripts.Hand
                 float copyDelay = currentReturnDelay;
                 onFullCache.AddListener(() => projectile.BeginReturnToPlayer(copyDelay));
                 currentReturnDelay += returnDelay;
+                OnHandChanged.Invoke(this);
             }
             else
             {
@@ -68,6 +69,7 @@ namespace Scripts.Hand
                 onFullCache.Invoke();
                 onFullCache.RemoveAllListeners();
                 currentReturnDelay = 0;
+                OnHandChanged.Invoke(this);
             }
         }
         public void PlayHandOnEnemy()

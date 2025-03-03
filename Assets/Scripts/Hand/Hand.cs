@@ -4,12 +4,15 @@ namespace Scripts.Hand
     using UnityEngine;
     using Scripts.Card;
     using Scripts.Deck;
+    using UnityEngine.Events;
 
     public class Hand : MonoBehaviour
     {
         public List<Card> cards = new List<Card>();
         [SerializeField] protected Deck deck;
         [SerializeField] protected int handSize = 5;
+
+        public readonly UnityEvent<Hand> OnHandChanged = new();
 
         public virtual void DrawCard() // draws card from deck into hand
         {
@@ -20,6 +23,7 @@ namespace Scripts.Hand
                 {
                     Debug.Log("success, we are drawing");
                     cards.Add(drawnCard);
+                    OnHandChanged.Invoke(this);
                 }
             }
         }
@@ -29,6 +33,7 @@ namespace Scripts.Hand
             if (index >= 0 && index < cards.Count)
             {
                 cards.RemoveAt(index);
+                OnHandChanged.Invoke(this);
             }
         }
 
