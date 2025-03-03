@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Five_of_Clubs
   m_EditorClassIdentifier: 
   Suit: 4
-  Rank: 5
+  Rank: 4
   Sprite: {fileID: -3499533273295259077, guid: ac620ed4dacea5b4cbd259dc5f000b1c, type: 3}

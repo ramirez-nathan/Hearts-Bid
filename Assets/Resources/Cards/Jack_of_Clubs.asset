@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Jack_of_Clubs
   m_EditorClassIdentifier: 
   Suit: 4
-  Rank: 11
+  Rank: 10
   Sprite: {fileID: 4854393057843528309, guid: 8da4e903f83bef1409e409905c56c9b5, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Seven_of_Spades
   m_EditorClassIdentifier: 
   Suit: 3
-  Rank: 7
+  Rank: 6
   Sprite: {fileID: 2625965778442432995, guid: d863f96a24ae3644891db0f4a88caae0, type: 3}

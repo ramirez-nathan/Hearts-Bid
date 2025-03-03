@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Seven_of_Clubs
   m_EditorClassIdentifier: 
   Suit: 4
-  Rank: 7
+  Rank: 6
   Sprite: {fileID: -2466912293470856088, guid: 90de33d22bcfaae40bc77abfc79f548f, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Two_of_Diamonds
   m_EditorClassIdentifier: 
   Suit: 2
-  Rank: 2
+  Rank: 1
   Sprite: {fileID: 8894555529643721038, guid: 6a72c36de1f7e5849a20b1ce57aea6dd, type: 3}

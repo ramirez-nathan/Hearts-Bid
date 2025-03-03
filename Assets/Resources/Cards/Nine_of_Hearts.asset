@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nine_of_Hearts
   m_EditorClassIdentifier: 
   Suit: 1
-  Rank: 9
+  Rank: 8
   Sprite: {fileID: 3202820894714575357, guid: d2ecc1e648b2f6645861cbe0cd88a687, type: 3}
