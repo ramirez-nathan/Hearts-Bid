@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Six_of_Hearts
   m_EditorClassIdentifier: 
   Suit: 1
-  Rank: 6
+  Rank: 5
   Sprite: {fileID: -2744049558673101094, guid: 3401dcb54a5227a47988f43db7003620, type: 3}

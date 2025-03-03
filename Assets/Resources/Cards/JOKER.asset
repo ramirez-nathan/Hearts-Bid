@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed6992a28e2a40b4cb86b0d5a3f7544e, type: 3}
-  m_Name: Three_of_Clubs
+  m_Name: JOKER
   m_EditorClassIdentifier: 
-  Suit: 4
-  Rank: 2
-  Sprite: {fileID: 7603477602957537499, guid: a683c10bd7d61a944b7ca7740e5d6198, type: 3}
+  Suit: 0
+  Rank: 14
+  Sprite: {fileID: 4280040703630592857, guid: a8639c3f7530f834cbdb64dcd7416ec7, type: 3}

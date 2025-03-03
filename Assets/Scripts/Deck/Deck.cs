@@ -25,7 +25,6 @@ namespace Scripts.Deck
         protected void GatherCards()
         {
             List<Card> cards = Resources.LoadAll<Card>(cardDataPath).ToList();
-            Debug.Log(cards.Count);
             foreach (var card in cards)
             {
                 cardsInDeck.Enqueue(card);

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: King_of_Hearts
   m_EditorClassIdentifier: 
   Suit: 1
-  Rank: 13
+  Rank: 12
   Sprite: {fileID: 8347437170092432994, guid: 9e299c41de311d14a9ba323792fab8c2, type: 3}

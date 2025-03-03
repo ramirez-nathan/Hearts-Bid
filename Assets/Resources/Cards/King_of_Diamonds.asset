@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: King_of_Diamonds
   m_EditorClassIdentifier: 
   Suit: 2
-  Rank: 13
+  Rank: 12
   Sprite: {fileID: -3066021237427475144, guid: 37926f04e3c8a3a428e8534731944922, type: 3}

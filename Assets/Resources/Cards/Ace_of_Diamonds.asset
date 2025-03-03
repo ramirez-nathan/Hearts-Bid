@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ace_of_Diamonds
   m_EditorClassIdentifier: 
   Suit: 2
-  Rank: 14
+  Rank: 13
   Sprite: {fileID: -5006617346471261562, guid: 25058098ff3c19e45b435dad70d5d24f, type: 3}

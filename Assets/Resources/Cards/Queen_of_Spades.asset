@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Queen_of_Spades
   m_EditorClassIdentifier: 
   Suit: 3
-  Rank: 12
+  Rank: 11
   Sprite: {fileID: -5784302645660320880, guid: 65764a36bc5d39947a489ca3cfcff7aa, type: 3}
