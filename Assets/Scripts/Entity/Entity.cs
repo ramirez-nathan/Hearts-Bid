@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected int health;            // Representing the health attribute.
     
     protected Rigidbody2D entityRb;  // Shared rigidbody across entities
+    public HealthBar healthBar;
 
 
     private void Awake()
@@ -15,13 +16,15 @@ public class Entity : MonoBehaviour
     }
 
     // Method to take damage
-    public void TakeHit(int damage)
+    public virtual void TakeHit(int damage)
     {
         health -= damage;
         if (health <= 0)
         {
             Die();
+            return;
         }
+        healthBar.SetHealth(health);
     }
 
     // Virtual method for attack, can be overridden

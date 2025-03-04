@@ -36,8 +36,6 @@ public class Player : Entity
     }
     PlayerActions playerControls;
 
-
-    public HealthBar healthBar;
     public int maxHealth = 100;
 
     private void Start() // set up the player health bar
