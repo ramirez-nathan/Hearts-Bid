@@ -37,6 +37,23 @@ public class Player : Entity
     PlayerActions playerControls;
 
 
+    public HealthBar healthBar;
+    public int maxHealth = 100;
+
+    private void Start() // set up the player health bar
+    {
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            TakeHit(20); // should change depending on enemy's best hand
+            healthBar.SetHealth(health);
+        }
+    }
 
 
     private void Awake()
