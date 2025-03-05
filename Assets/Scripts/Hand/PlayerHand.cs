@@ -32,10 +32,10 @@ namespace Scripts.Hand
 
         private void DrawStartingHand()
         {
-            Debug.Log($"we made it here, deck size is {deck.cardsInDeck.Count}");
+            //Debug.Log($"we made it here, deck size is {deck.cardsInDeck.Count}");
             for (int i = 0; i < handSize; i++)
             {
-                DrawCard();
+                DrawCardToHand();
             }
         }
 
@@ -64,7 +64,7 @@ namespace Scripts.Hand
             if (selectedCard != null)
             {
                 RemoveCard(SelectedCardIndex);
-                DrawCard(); // Draw a new card after throwing
+                RefillHandSlot(selectedCardIndex); // Draw a new card after throwing
                 return selectedCard;
             }
 
