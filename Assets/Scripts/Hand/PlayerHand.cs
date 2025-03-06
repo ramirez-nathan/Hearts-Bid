@@ -10,6 +10,8 @@ namespace Scripts.Hand
     public class PlayerHand : Hand
     {
         //readonly Deck deck = new();
+        public bool sortByRank = false;
+        public bool sortBySuit = false;
 
         private void Awake()
         {
@@ -70,5 +72,65 @@ namespace Scripts.Hand
 
             return null;
         }
+        public void ToggleSortByRank(InputAction.CallbackContext context)
+        {
+            sortByRank = !sortByRank;
+            Debug.Log($"Sort by Rank: {sortByRank}");
+
+            UpdateSortingListeners();
+        }
+
+        public void ToggleSortBySuit(InputAction.CallbackContext context)
+        {
+            sortBySuit = !sortBySuit;
+            Debug.Log($"Sort by Suit: {sortBySuit}");
+
+            UpdateSortingListeners();
+        }
+
+        private void SortHandByRank(Hand hand)
+        {
+            cards.Sort((card1, card2) => card1.Rank.CompareTo(card2.Rank));
+        }
+
+        private void SortHandBySuit(Hand hand)
+        {
+            cards.Sort((card1, card2) => card1.Suit.CompareTo(card2.Suit));
+        }
+
+        private void SortHandBySuitThenRank(Hand hand)
+        {
+            cards.Sort((card1, card2) =>
+            {
+                int suitComparison = card1.Suit.CompareTo(card2.Suit);
+                return suitComparison != 0 ? suitComparison : card1.Rank.CompareTo(card2.Rank);
+            });
+        }
+        private void UpdateSortingListeners()
+        {
+            // Remove all sorting listeners first to prevent duplicates
+            OnHandChanged.RemoveListener(SortHandByRank);
+            OnHandChanged.RemoveListener(SortHandBySuit);
+            OnHandChanged.RemoveListener(SortHandBySuitThenRank);
+
+            // Apply sorting once immediately instead of invoking OnHandChanged recursively
+            if (sortBySuit && sortByRank)
+            {
+                SortHandBySuitThenRank(this);
+            }
+            else if (sortBySuit)
+            {
+                SortHandBySuit(this);
+            }
+            else if (sortByRank)
+            {
+                SortHandByRank(this);
+            }
+
+            // Invoke once to notify UI or any dependent systems
+            OnHandChanged.Invoke(this);
+        }
     }
+
+
 }

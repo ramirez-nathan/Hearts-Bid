@@ -34,7 +34,8 @@ public class Player : Entity
         public InputAction unloadHand; // E
         public InputAction dodge; // space
         public InputAction lockOn; // shift 
-
+        public InputAction sortByRank;
+        public InputAction sortBySuit;
     }
     PlayerActions playerControls;
 
@@ -85,9 +86,13 @@ public class Player : Entity
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
         playerControls.lockOn = playerInput.actions["LockOn"];
+        playerControls.sortByRank = playerInput.actions["SortByRank"];
+        playerControls.sortBySuit = playerInput.actions["SortBySuit"];
 
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
+        playerControls.sortByRank.started += playerHand.ToggleSortByRank;
+        playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;   
         //enemyTrackingAbility.TryActivate();
 
 
@@ -102,7 +107,8 @@ public class Player : Entity
     {
         playerControls.dodge.started -= Dodge;
         playerControls.throwCard.started -= ThrowCard;
-
+        playerControls.sortByRank.started -= playerHand.ToggleSortByRank;
+        playerControls.sortBySuit.started -= playerHand.ToggleSortBySuit;
         //new lock on 
         playerControls.lockOn.started -= LockOn;
 
@@ -117,6 +123,7 @@ public class Player : Entity
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
+        // --------------- DEBUGGING UTILITY INPUTS ---------------------------- //
         // PRESS "L" KEY TO CHECK CURRENT HAND
         if (Keyboard.current.lKey.wasPressedThisFrame)
         {
