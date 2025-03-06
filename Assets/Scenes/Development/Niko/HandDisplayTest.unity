@@ -8204,6 +8204,8 @@ MonoBehaviour:
   cards: []
   deck: {fileID: 979420401}
   handSize: 5
+  sortByRank: 0
+  sortBySuit: 0
 --- !u!82 &326216637
 AudioSource:
   m_ObjectHideFlags: 0

@@ -9,11 +9,11 @@ public class MenuNavigation : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("HandDisplayTest");
+        SceneManager.LoadScene("FullMap");
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("HandDisplayTest"); // load the game scene (File -> Build Profile -> Scene List)
+        SceneManager.LoadScene("FullMap"); // load the game scene (File -> Build Profile -> Scene List)
     }
     public void QuitGame()
     {
