@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 220b972674a84cf4990f5f44fe1c7021
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2433117190829953529
+    second: EntranceDoorAnimationSheet_0
+  - first:
+      213: 2122290895142006011
+    second: EntranceDoorAnimationSheet_1
+  - first:
+      213: 5306159694524420144
+    second: EntranceDoorAnimationSheet_2
+  - first:
+      213: -3714180862227438207
+    second: EntranceDoorAnimationSheet_3
+  - first:
+      213: 4609239954971354462
+    second: EntranceDoorAnimationSheet_4
+  - first:
+      213: -1027535662664534316
+    second: EntranceDoorAnimationSheet_5
+  - first:
+      213: -8462898486583523545
+    second: EntranceDoorAnimationSheet_6
+  - first:
+      213: 479192445159829612
+    second: EntranceDoorAnimationSheet_7
+  - first:
+      213: -5436473734344735292
+    second: EntranceDoorAnimationSheet_8
+  - first:
+      213: 7600205083774463925
+    second: EntranceDoorAnimationSheet_9
+  - first:
+      213: 7042080576921782542
+    second: EntranceDoorAnimationSheet_10
+  - first:
+      213: 5721644818841737396
+    second: EntranceDoorAnimationSheet_11
+  - first:
+      213: -5652393996406906347
+    second: EntranceDoorAnimationSheet_12
+  - first:
+      213: 4496419455151805732
+    second: EntranceDoorAnimationSheet_13
+  - first:
+      213: -3646825377710987469
+    second: EntranceDoorAnimationSheet_14
+  - first:
+      213: -341719381440357133
+    second: EntranceDoorAnimationSheet_15
+  - first:
+      213: 6806674973994760415
+    second: EntranceDoorAnimationSheet_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e2faf5ec4db3ed0800000000000000
+      internalID: -2433117190829953529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc2cf22354e37d10800000000000000
+      internalID: 2122290895142006011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0309f91012443a940800000000000000
+      internalID: 5306159694524420144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18521633f24947cc0800000000000000
+      internalID: -3714180862227438207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_4
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55ea98715f47ff30800000000000000
+      internalID: 4609239954971354462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6b5d842c57db1f0800000000000000
+      internalID: -1027535662664534316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7278ff03aaebd8a80800000000000000
+      internalID: -8462898486583523545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c607dc07dfe66a600800000000000000
+      internalID: 479192445159829612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_8
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c504a931f3cd84b0800000000000000
+      internalID: -5436473734344735292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_9
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfae7e814a597960800000000000000
+      internalID: 7600205083774463925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_10
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e09c91369fe7ab160800000000000000
+      internalID: 7042080576921782542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_11
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8140ee5ad576f40800000000000000
+      internalID: 5721644818841737396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_12
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512ad91ab99ae81b0800000000000000
+      internalID: -5652393996406906347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_13
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4259a71ebad766e30800000000000000
+      internalID: 4496419455151805732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_14
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33728a304afd36dc0800000000000000
+      internalID: -3646825377710987469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_15
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc91687808f14bf0800000000000000
+      internalID: -341719381440357133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntranceDoorAnimationSheet_16
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 0
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8bf7653da267e50800000000000000
+      internalID: 6806674973994760415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EntranceDoorAnimationSheet_0: -2433117190829953529
+      EntranceDoorAnimationSheet_1: 2122290895142006011
+      EntranceDoorAnimationSheet_10: 7042080576921782542
+      EntranceDoorAnimationSheet_11: 5721644818841737396
+      EntranceDoorAnimationSheet_12: -5652393996406906347
+      EntranceDoorAnimationSheet_13: 4496419455151805732
+      EntranceDoorAnimationSheet_14: -3646825377710987469
+      EntranceDoorAnimationSheet_15: -341719381440357133
+      EntranceDoorAnimationSheet_16: 6806674973994760415
+      EntranceDoorAnimationSheet_2: 5306159694524420144
+      EntranceDoorAnimationSheet_3: -3714180862227438207
+      EntranceDoorAnimationSheet_4: 4609239954971354462
+      EntranceDoorAnimationSheet_5: -1027535662664534316
+      EntranceDoorAnimationSheet_6: -8462898486583523545
+      EntranceDoorAnimationSheet_7: 479192445159829612
+      EntranceDoorAnimationSheet_8: -5436473734344735292
+      EntranceDoorAnimationSheet_9: 7600205083774463925
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

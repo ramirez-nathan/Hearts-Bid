@@ -1,19 +1,32 @@
+using Scripts.Hand;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
     // Attributes
-    protected int health;            // Representing the health attribute.
-    protected Hand entityHand;       // Representing the entityHand attribute.
+    [SerializeField] protected int health;            // Representing the health attribute.
+    
+    protected Rigidbody2D entityRb;  // Shared rigidbody across entities
+    public HealthBar healthBar;
+
+    //public GameOverScreen gameOverScreen;
+
+    private void Awake()
+    {
+        entityRb = GetComponent<Rigidbody2D>();
+    }
 
     // Method to take damage
-    public void TakeHit(int damage)
+    public virtual void TakeHit(int damage)
     {
         health -= damage;
         if (health <= 0)
         {
             Die();
+            //gameOverScreen.Setup(); // added
+            return;
         }
+        healthBar.SetHealth(health);
     }
 
     // Virtual method for attack, can be overridden
@@ -27,5 +40,6 @@ public class Entity : MonoBehaviour
     {
         // Logic for death
         Debug.Log("Entity died.");
+        Destroy(this.gameObject);
     }
 }
