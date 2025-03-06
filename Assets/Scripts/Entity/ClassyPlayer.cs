@@ -30,6 +30,7 @@ public class ClassyPlayer : Entity
         public InputAction playAllHands; // right click
         public InputAction unloadHand; // E
         public InputAction dodge; // space
+        public InputAction lockOn; // shift 
 
     }
     PlayerActions playerControls;
@@ -59,10 +60,16 @@ public class ClassyPlayer : Entity
         playerControls.playAllHands = playerInput.actions["PlayAllHands"];
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
+        playerControls.lockOn = playerInput.actions["LockOn"];
 
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
-        enemyTrackingAbility.TryActivate();
+
+
+        //new lock on 
+        playerControls.lockOn.started += LockOn; 
+
+
 
 
     }
@@ -70,7 +77,10 @@ public class ClassyPlayer : Entity
     {
         playerControls.dodge.started -= Dodge;
         playerControls.throwCard.started -= ThrowCard;
-        enemyTrackingAbility.Deactivate();
+
+        //new lock on 
+        playerControls.lockOn.started -= LockOn;
+
 
 
     }
@@ -82,7 +92,7 @@ public class ClassyPlayer : Entity
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
-
+        enemyTrackingAbility.Activate();
 
     }
 
@@ -110,6 +120,13 @@ public class ClassyPlayer : Entity
         throwCardAbility.cardToThrow = playerHand.FeedSelectedCard();
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         throwCardAbility.TryActivate();
+    }
+
+
+    private void LockOn(InputAction.CallbackContext context)
+    {
+        enemyTrackingAbility.switchLock();
+
     }
 }
     
