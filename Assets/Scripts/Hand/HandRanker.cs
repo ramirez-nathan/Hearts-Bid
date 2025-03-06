@@ -1,4 +1,4 @@
-namespace Scripts.Hand
+ namespace Scripts.Hand
 {
     using Scripts.Card;
     using System.Collections.Generic;

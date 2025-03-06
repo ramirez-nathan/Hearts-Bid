@@ -45,12 +45,25 @@ namespace Scripts.Hand
         {
             for (int i = 0; i < 5; i++)
             {
-                // yes ik im using old input system here but will make an input action once this is functional >:(
                 if (Keyboard.current[Key.Digit1 + i].wasPressedThisFrame)
                 {
                     SelectedCardIndex = i;
                     OnCardSelected.Invoke(SelectedCardIndex);
                 }
+            }
+
+            // scroll wheel selection
+            float scrollValue = Mouse.current.scroll.ReadValue().y;
+            if (scrollValue > 0) // Scroll up
+            {
+                SelectedCardIndex = (SelectedCardIndex + 1) % GetCardCount();
+                OnCardSelected.Invoke(SelectedCardIndex);
+            }
+            else if (scrollValue < 0) // Scroll down
+            {
+                SelectedCardIndex = (SelectedCardIndex - 1 + GetCardCount()) % GetCardCount();
+
+                OnCardSelected.Invoke(SelectedCardIndex);
             }
         }
 
@@ -66,11 +79,39 @@ namespace Scripts.Hand
             if (selectedCard != null)
             {
                 RemoveCard(SelectedCardIndex);
-                RefillHandSlot(selectedCardIndex); // Draw a new card after throwing
+                RefillHandSlot(selectedCardIndex); // draw a new card after throwing
                 return selectedCard;
             }
 
             return null;
+        }
+        public virtual void DrawCardToHand() // draws card from deck into hand
+        {
+            if (cards.Count < 5)
+            {
+                Card drawnCard = deck.Draw(out bool success);
+                if (success)
+                {
+                    //Debug.Log("success, we are drawing");
+                    cards.Add(drawnCard);
+                    ApplyCurrentSorting();
+                    OnHandChanged.Invoke(this);
+                }
+            }
+        }
+        public virtual void RefillHandSlot(int index)
+        {
+            if (cards.Count < 5)
+            {
+                Card drawnCard = deck.Draw(out bool success);
+                if (success)
+                {
+                    //Debug.Log("success, we are drawing");
+                    cards.Insert(index, drawnCard);
+                    ApplyCurrentSorting();
+                    OnHandChanged.Invoke(this);
+                }
+            }
         }
         public void ToggleSortByRank(InputAction.CallbackContext context)
         {
@@ -108,12 +149,30 @@ namespace Scripts.Hand
         }
         private void UpdateSortingListeners()
         {
-            // Remove all sorting listeners first to prevent duplicates
+            // remove all sorting listeners first to prevent duplicates
             OnHandChanged.RemoveListener(SortHandByRank);
             OnHandChanged.RemoveListener(SortHandBySuit);
             OnHandChanged.RemoveListener(SortHandBySuitThenRank);
 
-            // Apply sorting once immediately instead of invoking OnHandChanged recursively
+            // apply sorting once immediately instead of invoking OnHandChanged recursively
+            if (sortBySuit && sortByRank)
+            {
+                OnHandChanged.AddListener(SortHandBySuitThenRank);
+            }
+            else if (sortBySuit)
+            {
+                OnHandChanged.AddListener(SortHandBySuit);
+            }
+            else if (sortByRank)
+            {
+                OnHandChanged.AddListener(SortHandByRank);
+            }
+
+            OnHandChanged.Invoke(this);
+        }
+        // Helper function to sort before displaying cards, specifically after refilling a slot
+        private void ApplyCurrentSorting() 
+        {
             if (sortBySuit && sortByRank)
             {
                 SortHandBySuitThenRank(this);
@@ -126,9 +185,6 @@ namespace Scripts.Hand
             {
                 SortHandByRank(this);
             }
-
-            // Invoke once to notify UI or any dependent systems
-            OnHandChanged.Invoke(this);
         }
     }
 

@@ -14,32 +14,7 @@ namespace Scripts.Hand
 
         public readonly UnityEvent<Hand> OnHandChanged = new();
 
-        public virtual void DrawCardToHand() // draws card from deck into hand
-        {
-            if (cards.Count < 5)
-            {
-                Card drawnCard = deck.Draw(out bool success);
-                if (success)
-                {
-                    //Debug.Log("success, we are drawing");
-                    cards.Add(drawnCard);
-                    OnHandChanged.Invoke(this);
-                }
-            }
-        }
-        public virtual void RefillHandSlot(int index)
-        {
-            if (cards.Count < 5)
-            {
-                Card drawnCard = deck.Draw(out bool success);
-                if (success)
-                {
-                    //Debug.Log("success, we are drawing");
-                    cards.Insert(index, drawnCard);
-                    OnHandChanged.Invoke(this);
-                }
-            }
-        }
+        
 
         public virtual void RemoveCard(int index) // removes card at index
         {
