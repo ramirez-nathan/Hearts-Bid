@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Development/Nathan/Menu.unity
     guid: 87d53be1754b92d44b0ab741abdaf350
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Development/Nathan/Projectile Test.unity
     guid: a244293f0f746c349b0817973a307b0b
+  - enabled: 1
+    path: Assets/Scenes/Development/Niko/HandDisplayTest.unity
+    guid: 0a27a5a3dc4f5854da095214483a443a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 969b7521c814d4143a4a97e73b4d2d0f, type: 3}
   m_UseUCBPForAssetBundles: 0
