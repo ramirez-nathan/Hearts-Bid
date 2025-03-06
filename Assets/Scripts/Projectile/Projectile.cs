@@ -83,10 +83,10 @@ public class Projectile : MonoBehaviour
 
     IEnumerator ReturnToPlayer(float delay)
     {
-        yield return new WaitForSeconds(delay);
         target = returnPlayer.transform;
         spriteRenderer.enabled = true;
         returningToPlayer = true;
+        yield return new WaitForSeconds(delay);
         currentBehavoir = ReturnToPlayer;
     }
 

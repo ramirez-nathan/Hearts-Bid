@@ -131,8 +131,12 @@ public class Player : Entity
     {
         // Get the closest enemy to the player using the EnemyTrackingAddOn
         //if not null
+        if (throwCardAbility.isOnCooldown) {
+            Debug.Log("Can't throw card, on cooldown!");
+            return; 
+        }
         throwCardAbility.SetPlayer(this);
-        throwCardAbility.cardToThrow = playerHand.FeedSelectedCard();
+        throwCardAbility.cardToThrow = playerHand.FeedSelectedCard(); // THIS is bad, we are removing card from index here, before we even know if we are on cooldown
         if (throwCardAbility.cardToThrow == null)
         {
             Debug.LogWarning("No card to throw; hand is empty.");

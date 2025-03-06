@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    private bool isOnCooldown = false;  // To track if ability is on cooldown
+    public bool isOnCooldown = false;  // To track if ability is on cooldown
 
     // Abstract property to get the cooldown time for each specific ability
     protected abstract float Cooldown { get; }
