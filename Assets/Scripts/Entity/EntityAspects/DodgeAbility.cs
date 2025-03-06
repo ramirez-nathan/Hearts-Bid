@@ -8,7 +8,7 @@ public class DodgeAbility : Ability
     public float duration = 10f;
 
     // Override the abstract Cooldown property
-    protected override float Cooldown => 1.5f; // Set the cooldown for the dodge ability
+    [SerializeField] protected override float Cooldown => 1.5f; // Set the cooldown for the dodge ability
 
     private void Awake()
     {

@@ -32,6 +32,7 @@ public class Player : Entity
         public InputAction playAllHands; // right click
         public InputAction unloadHand; // E
         public InputAction dodge; // space
+        public InputAction lockOn; // shift 
 
     }
     PlayerActions playerControls;
@@ -76,10 +77,17 @@ public class Player : Entity
         playerControls.playAllHands = playerInput.actions["PlayAllHands"];
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
+        playerControls.lockOn = playerInput.actions["LockOn"];
 
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
         //enemyTrackingAbility.TryActivate();
+
+
+        //new lock on 
+        playerControls.lockOn.started += LockOn; 
+
+
 
 
     }
@@ -87,7 +95,10 @@ public class Player : Entity
     {
         playerControls.dodge.started -= Dodge;
         playerControls.throwCard.started -= ThrowCard;
-        //enemyTrackingAbility.Deactivate();
+
+        //new lock on 
+        playerControls.lockOn.started -= LockOn;
+
 
 
     }
@@ -109,6 +120,8 @@ public class Player : Entity
             Debug.Log($"Deck size is {FindAnyObjectByType<Deck>().cardsInDeck.Count}");
         }
 
+        enemyTrackingAbility.Activate();
+
     }
 
     void FixedUpdate()
@@ -124,6 +137,8 @@ public class Player : Entity
         dodgeAbility.TryActivate();  // Call the TryActivate method from the Dodge class
 
     }
+
+    
 
 
     // This method is called when the throw card input (for example, a mouse button press) is triggered
@@ -145,6 +160,12 @@ public class Player : Entity
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         throwCardAbility.TryActivate();
     }
+    private void LockOn(InputAction.CallbackContext context)
+    {
+        enemyTrackingAbility.switchLock();
+
+    }
 }
+    
     
    

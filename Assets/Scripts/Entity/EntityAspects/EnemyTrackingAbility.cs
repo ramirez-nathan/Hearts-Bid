@@ -3,68 +3,60 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyTrackingAbility : Ability
+//public class EnemyTrackingAbility : Ability
+
+//could change this to just EnemyTracking since it no longer derives the ability abstract class
+public class EnemyTrackingAbility : MonoBehaviour
 {
     public string enemyTag = "Enemy";
     public float detectionRadius = 5f;
 
     public Transform closestEnemy = null;
-    private Outline lastOutline = null;
-    // Set cooldown to control how often tracking can be updated
-    protected override float Cooldown => 0f;  // You can adjust this to your preferred cooldown time
+    private bool lockedOn = false;
+    
 
-    protected override void Activate() { }
-    private void Update()
+
+    public void Activate()
     {
-        FindClosestEnemyToMouse();
-    }
-
-    private void FindClosestEnemyToMouse()
-    {
-        // Convert mouse position to world space
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f; // Set the z to 0 to avoid affecting the comparison
-
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        Transform newClosestEnemy = null;
-        float minDistance = Mathf.Infinity;
-
-        foreach (GameObject enemy in enemies)
+        if (!lockedOn)
         {
-            float distance = Vector3.Distance(mousePosition, enemy.transform.position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                newClosestEnemy = enemy.transform;
-            }
-        }
+            // Convert mouse position to world space
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0f; // Set the z to 0 to avoid affecting the comparison
 
-        if (newClosestEnemy != closestEnemy)
-        {
-            // Remove outline from the previous closest enemy
-            if (lastOutline != null)
-            {
-                lastOutline.enabled = false;
-            }
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+            Transform newClosestEnemy = null;
+            float minDistance = Mathf.Infinity; //this can be edited 
 
-            // Apply outline to the new closest enemy
-            if (newClosestEnemy != null)
+            foreach (GameObject enemy in enemies)
             {
-                Outline outline = newClosestEnemy.GetComponent<Outline>();
-
-                // If the enemy doesn't already have an Outline component, add one
-                if (outline == null)
+                float distance = Vector3.Distance(mousePosition, enemy.transform.position);
+                if (distance < minDistance)
                 {
-                    outline = newClosestEnemy.gameObject.AddComponent<Outline>();
+                    minDistance = distance;
+                    newClosestEnemy = enemy.transform;
                 }
-
-                outline.enabled = true;
-                lastOutline = outline;
             }
 
-            closestEnemy = newClosestEnemy;
-            closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
+            if (newClosestEnemy != closestEnemy)
+            {
+                closestEnemy = newClosestEnemy;
+                closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
+            }
         }
     }
+
+
+    public void switchLock()
+    {
+        if (!lockedOn) { lockedOn = true; }
+        else { lockedOn = false; }
+
+    }
+
+
+
+
+
 
 }
