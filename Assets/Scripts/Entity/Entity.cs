@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour
     protected Rigidbody2D entityRb;  // Shared rigidbody across entities
     public HealthBar healthBar;
 
-    public GameOverScreen gameOverScreen;
+    //public GameOverScreen gameOverScreen;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Entity : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            gameOverScreen.Setup(); // added
+            //gameOverScreen.Setup(); // added
             return;
         }
         healthBar.SetHealth(health);

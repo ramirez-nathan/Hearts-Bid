@@ -24,7 +24,7 @@ public class Player : Entity
     //for throwing logic 
     [SerializeField] private PlayerHand playerHand;
 
-    //public GameOverScreen gameOverScreen;
+    public GameOverScreen gameOverScreen;
 
     public struct PlayerActions
     {
@@ -52,11 +52,11 @@ public class Player : Entity
             TakeHit(20); // should change depending on enemy's best hand
             healthBar.SetHealth(health);
 
-            //if (health <= 0) // the player died
-            //{
-            //    Debug.Log("GAME OVER!!!");
-            //    gameOverScreen.Setup();
-            //}
+            if (health <= 0) // the player died
+            {
+                Debug.Log("GAME OVER!!!");
+                gameOverScreen.Setup();
+            }
         }
     }
 
