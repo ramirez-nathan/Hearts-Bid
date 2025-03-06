@@ -24,7 +24,11 @@ public class NavMeshEnemy : Entity
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(playerTarget.position);
+        if (playerTarget != null)
+        {
+           agent.SetDestination(playerTarget.position);
+        }
+       
        
     }
 
