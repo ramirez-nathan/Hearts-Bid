@@ -37,6 +37,11 @@ public class EnemySpawner : AbstractSpawner
 
     }
 
+    public int getRound()
+    {
+        return round;
+    }
+
 
 
 }

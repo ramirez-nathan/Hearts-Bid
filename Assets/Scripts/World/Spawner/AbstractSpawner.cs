@@ -24,9 +24,11 @@ public abstract class AbstractSpawner : MonoBehaviour
 
     bool isOnCooldown = false;
 
-    private int round = 0;
+    protected int round = 0;
 
     protected Transform[] spawnAreas;
+
+
 
 
 
@@ -64,12 +66,14 @@ public abstract class AbstractSpawner : MonoBehaviour
         spawnsAlive = new List<GameObject>(GameObject.FindGameObjectsWithTag(spawneeTag));
 
 
-        if (spawnsAlive.Count == 0)
+        if (spawnsAlive.Count == 0 && round != 0)
         {
             round++;
             numSpawned = 0;
             maxSpawn += round * 5;
         }
+
+        if (round == 0) { round++;} //handles round incrementation 
 
     }
 

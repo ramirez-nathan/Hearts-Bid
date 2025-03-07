@@ -101,6 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnRate: 2.5
-  _maxSpawn: 10
-  spawnTypes:
+  _spawnTypes:
   - {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
