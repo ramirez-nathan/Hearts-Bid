@@ -24649,7 +24649,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 540785503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe07229c27f8c84b9f5bc38710ab226, type: 3}
+  m_Script: {fileID: 11500000, guid: acde5c3e9908480438433017d236bbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &571385974
@@ -24701,6 +24701,102 @@ Transform:
   - {fileID: 1833336729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &595232171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595232172}
+  - component: {fileID: 595232174}
+  - component: {fileID: 595232173}
+  - component: {fileID: 595232175}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &595232172
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595232171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1116561454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.045906, y: 419}
+  m_SizeDelta: {x: 540.73, y: 119.0515}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &595232173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595232171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 160
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'round
+
+'
+--- !u!222 &595232174
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595232171}
+  m_CullTransparentMesh: 1
+--- !u!114 &595232175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595232171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8dea92a74003443b7f9575c45035e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerPrefab: {fileID: 540785503}
+  scoreText: {fileID: 595232173}
 --- !u!1 &674094401
 GameObject:
   m_ObjectHideFlags: 0
@@ -25514,6 +25610,7 @@ RectTransform:
   - {fileID: 743801086}
   - {fileID: 236082797}
   - {fileID: 801436742}
+  - {fileID: 595232172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -72624,7 +72721,7 @@ MonoBehaviour:
   sounds:
   - name: Dodge
     clip: {fileID: 8300000, guid: b05ca2fff46afc84bbae586d900ca0fe, type: 3}
-    volume: 0.128
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -75418,8 +75515,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: _spawnTypes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
     - target: {fileID: 5240328362834915295, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: m_Name
       value: spawnerBrain
