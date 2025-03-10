@@ -96,8 +96,8 @@
             // get list of unique ranks in set of cards
             var uniqueRanks = GetUniqueRanks(result);
 
-            // try to find a consequtive set of 5 cards
-            for (int i = 0; i < uniqueRanks.Count - 5; i++)
+            // try to find a consecutive set of 5 cards
+            for (int i = 0; i < uniqueRanks.Count - 4; i++)
             {
                 if (IsConsecutive(uniqueRanks, i))
                 {
@@ -115,14 +115,14 @@
 
         private static bool IsConsecutive(List<Rank> uniqueRanks, int i)
         {
-            // going to check next 4 cards
-            for (int j = 1; j < 5; j++)
+            // check that all 5 cards are consecutive
+            for (int j = 0; j < 4; j++)
             {
                 // out of bounds
                 if (i + j >= uniqueRanks.Count()) return false;
 
-                // number and next number not consecutive
-                if ((int)uniqueRanks[i] != (int)uniqueRanks[i + j])
+                // next rank and next rank in uniqueRanks LIST not consecutive
+                if ((int)uniqueRanks[i + j] + 1 != (int)uniqueRanks[i + j + 1])
                 {
                     return false;
                 }

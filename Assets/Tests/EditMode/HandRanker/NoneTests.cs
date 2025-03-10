@@ -4,9 +4,9 @@ using Scripts.Hand;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandRankerTests
+namespace HandRankerTests
 {
-    [TestFixture]
+    [TestFixture, Category("HandRankerTests")]
     public class NoneTests
     {
         [Test]
