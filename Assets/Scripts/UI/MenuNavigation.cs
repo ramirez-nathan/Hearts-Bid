@@ -3,21 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class MenuNavigation : MonoBehaviour
 {
+    // virtual methods for easier mocking
+    protected virtual void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    protected virtual void QuitApplication()
+    {
+        Application.Quit();
+    }
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        LoadScene("Menu");
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("FullMap");
+        LoadScene("FullMap");
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("FullMap"); // load the game scene (File -> Build Profile -> Scene List)
+        LoadScene("FullMap");
     }
     public void QuitGame()
     {
         Debug.Log("QUIT!");
-        Application.Quit();
+        QuitApplication();
     }
 }
