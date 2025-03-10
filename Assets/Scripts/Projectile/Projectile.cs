@@ -141,13 +141,22 @@ public class Projectile : MonoBehaviour
 
             FindFirstObjectByType<AudioManager>().Play("Enemy Damaged");
             isCachedOnEnemy = true;
-            //Destroy(this.gameObject); // destroy card
+         
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Player") &&
                  returningToPlayer)
         {
             isCachedOnEnemy = false;
             Debug.Log("Card hit player");
+            ReturnCachedCards();
+            Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && returningToPlayer)
+        {
+            Debug.Log("Card detected player inside them (OnTriggerStay2D)");
             ReturnCachedCards();
             Destroy(this.gameObject);
         }

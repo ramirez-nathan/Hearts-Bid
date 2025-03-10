@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Development/Niko/FullMap.unity
     guid: 18201c18979604f40bf394f932304d34
+  - enabled: 1
+    path: Assets/Scenes/Development/Devin/FullMap 1.unity
+    guid: f2f86a93a83001f439e08a916400882c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 969b7521c814d4143a4a97e73b4d2d0f, type: 3}
   m_UseUCBPForAssetBundles: 0

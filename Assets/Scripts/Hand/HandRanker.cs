@@ -42,6 +42,7 @@
             // select the best hand out of applicable
             result.BestHand = result.ApplicableHands.Max();
             
+            result.TotalPlayedChips = SumPlayedChips(result);
             return result;
         }
 
@@ -158,6 +159,19 @@
             return result.RankOccurrences.Where(kvp =>
             kvp.Key != Rank.None &&
             kvp.Value >= count).Any();
+        }
+
+        private static int SumPlayedChips(HandRankerResult result)
+        {
+            int sum = 0;
+            foreach (var kvp in result.RankOccurrences)
+            {
+                for (int i = 0; i < kvp.Value; i++)
+                {
+                    sum += RankToChips[kvp.Key];
+                }
+            }
+            return sum;
         }
 
         public static Dictionary<Rank, int> RankToChips = new()
