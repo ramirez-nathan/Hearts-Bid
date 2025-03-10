@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     private Vector3 projectileMoveDirection;
     public SpriteRenderer spriteRenderer;
     private bool isCachedOnEnemy = false;
-    private bool returningToPlayer = false;
+    [SerializeField] private bool returningToPlayer = false;
 
     private void Awake()
     {
@@ -73,7 +73,7 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        currentBehavoir?.Invoke();
+        currentBehavoir?.Invoke(); // if currbehavior exists, update
     }
 
     public void BeginReturnToPlayer(float delay)
@@ -83,9 +83,9 @@ public class Projectile : MonoBehaviour
 
     IEnumerator ReturnToPlayer(float delay)
     {
-        target = returnPlayer.transform;
-        spriteRenderer.enabled = true;
-        returningToPlayer = true;
+        target = returnPlayer.transform; // tracks player
+        spriteRenderer.enabled = true; // re-draws card
+        returningToPlayer = true; // to track current behavior for collisions
         yield return new WaitForSeconds(delay);
         currentBehavoir = ReturnToPlayer;
     }
@@ -97,9 +97,26 @@ public class Projectile : MonoBehaviour
 
     private void MoveToTarget(float speed)
     {
-        Vector3 moveDirNormalized = (target.position - transform.position).normalized;
-        projectileMoveDirection = moveDirNormalized * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
+        if (target != null) 
+        {
+            Vector3 moveDirNormalized = (target.position - transform.position).normalized;
+            projectileMoveDirection = moveDirNormalized * speed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
+        }
+        else
+        {
+            if (returnPlayer.transform)
+            {
+                target = returnPlayer.transform;
+                returningToPlayer = true;
+                currentBehavoir = ReturnToPlayer;
+            }
+            else
+            {
+                ReturnCachedCards();
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     public void ReturnToPlayer()
@@ -110,9 +127,6 @@ public class Projectile : MonoBehaviour
     public void ReturnCachedCards()
     { 
         returnDeck.ReturnToDeck(cardData);
-        // do something here that calls a method to
-        // make the cards fly back to player 
-        // for now we will just delete
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

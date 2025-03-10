@@ -25,7 +25,7 @@ namespace Scripts.Hand
         {
             
         }
-        public void AddCardToCache(Projectile projectile)
+        public void AddCardToCache(Projectile projectile) //called on card collision with enemy
         {
             Debug.Log("Adding card to cache");
             // if somehow this is full

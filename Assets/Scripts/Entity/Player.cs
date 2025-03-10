@@ -93,7 +93,6 @@ public class Player : Entity
         playerControls.throwCard.started += ThrowCard;
         playerControls.sortByRank.started += playerHand.ToggleSortByRank;
         playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;   
-        //enemyTrackingAbility.TryActivate();
 
 
         //new lock on 
@@ -172,6 +171,7 @@ public class Player : Entity
             return;
         }
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
+        if (throwCardAbility.target == null) { return; }
         throwCardAbility.TryActivate();
     }
     private void LockOn(InputAction.CallbackContext context)
