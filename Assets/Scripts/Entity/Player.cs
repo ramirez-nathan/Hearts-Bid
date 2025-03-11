@@ -49,7 +49,7 @@ public class Player : Entity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && !dodgeAbility.isDodging)
         {
             TakeHit(20); // should change depending on enemy's best hand
             healthBar.SetHealth(health);

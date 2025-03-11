@@ -5,6 +5,7 @@ public class DodgeAbility : Ability
 {
     private Player player;  // Reference to the Player
     public float speedMultiplier;
+    public bool isDodging = false;
     public float duration;
 
     // Override the abstract Cooldown property
@@ -39,7 +40,11 @@ public class DodgeAbility : Ability
 
     private IEnumerator ResetSpeedAfterDuration()
     {
+        player.gameObject.GetComponent<Animator>().Play("Dash");
+        isDodging = true;
         yield return new WaitForSeconds(duration);
+        isDodging = false;
+        player.gameObject.GetComponent<Animator>().Play("WalkDown");
         player.moveSpeed /= speedMultiplier;  // Reset player speed after the dodge duration
         Debug.Log("Dodge ended and speed reset.");
     }

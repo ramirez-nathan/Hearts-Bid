@@ -170,6 +170,8 @@ namespace Scripts.Hand
             }
 
             OnHandChanged.Invoke(this);
+            OnHandChanged.Invoke(this);
+            // I did it twice bc handdisplay is the 1st function in list of invoke
         }
         // Helper function to sort before displaying cards, specifically after refilling a slot
         private void ApplyCurrentSorting() 

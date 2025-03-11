@@ -16,9 +16,9 @@ public class MenuNavigation : MonoBehaviour
     {
         LoadScene("Menu");
     }
-    public void RestartGame()
+    public void RestartGame() // restarts current scene
     {
-        LoadScene("FullMap");
+        LoadScene(SceneManager.GetActiveScene().name);
     }
     public void PlayGame()
     {
