@@ -425,6 +425,8 @@ MonoBehaviour:
   deck: {fileID: 142648675004465033, guid: d84d05828f18a884ebce64f1d9f965c7, type: 3}
   handSize: 5
   returnDelay: 0.05
+  canvas: {fileID: 528346328477272761}
+  handNameDisplay: {fileID: 1181809447530360499, guid: ee3254859c553f74d89025b0aea64d70, type: 3}
 --- !u!1001 &486331297276856230
 PrefabInstance:
   m_ObjectHideFlags: 0
