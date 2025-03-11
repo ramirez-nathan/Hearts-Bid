@@ -142,7 +142,7 @@ public class Projectile : MonoBehaviour
 
             FindFirstObjectByType<AudioManager>().Play("Enemy Damaged");
             isCachedOnEnemy = true;
-         
+            
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Player") &&
                  returningToPlayer)

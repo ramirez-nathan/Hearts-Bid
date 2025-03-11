@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 24789e5692b212c47a2f5516a76345b3, type: 2}
-    - target: {fileID: 977408379649191399, guid: af284bce2397b9a41b5df5232569984b, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.54
