@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4681725927380603732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 709193346031340156, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 24789e5692b212c47a2f5516a76345b3, type: 2}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362845680685018550, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3964163313198948942, guid: b672bdafe64095e4b865e6eaea68a92d, type: 3}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708539109914873651, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980384389716827144, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980384389716827144, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+      propertyPath: m_Name
+      value: DiceEnemy Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af284bce2397b9a41b5df5232569984b, type: 3}
