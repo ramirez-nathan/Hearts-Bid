@@ -19,20 +19,16 @@ public class EnemyHandDisplay : HandDisplay
 
     private void Update()
     {
-        
         if (enemyTracker != null)
         {
             EnemyHand enemyHand = enemyTracker.closestEnemy.GetComponent<EnemyHand>();
             DisplayEnemyHand(enemyHand);
         }
-        
     }
 
     public void DisplayEnemyHand(EnemyHand enemyHand)
     {
         if (enemyHand == null) return;
-
-        Debug.Log("EHD: displaying " + enemyHand.gameObject.name);
 
         // show the cards
         DisplayHand(enemyHand);
