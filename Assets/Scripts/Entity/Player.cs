@@ -133,8 +133,10 @@ public class Player : Entity
             Debug.Log($"Deck size is {FindAnyObjectByType<Deck>().cardsInDeck.Count}");
         }
 
+    }
+    private void LateUpdate()
+    {
         enemyTrackingAbility.Activate();
-
     }
 
     void FixedUpdate()

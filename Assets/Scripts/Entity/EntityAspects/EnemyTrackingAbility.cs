@@ -13,7 +13,7 @@ public class EnemyTrackingAbility : MonoBehaviour
 
     public Transform closestEnemy = null;
     private bool lockedOn = false;
-    
+    private bool started = false;
 
 
     public void Activate()
@@ -47,7 +47,7 @@ public class EnemyTrackingAbility : MonoBehaviour
                     }
                 }
 
-                if (newClosestEnemy != closestEnemy)
+                if (newClosestEnemy != closestEnemy && newClosestEnemy != null)
                 {
                     closestEnemy = newClosestEnemy;
                     //closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();

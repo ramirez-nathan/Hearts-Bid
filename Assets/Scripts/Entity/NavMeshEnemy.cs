@@ -1,3 +1,4 @@
+using Scripts.Hand;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,13 +9,17 @@ public class NavMeshEnemy : Entity
     protected NavMeshAgent agent;
     protected Transform playerTarget;
     [SerializeField] int maxHealth = 10;
-
+    [SerializeField] GameObject canvas;
     public override void Die()
     {
         base.Die();
+        canvas.transform.SetParent(null, true);
+        canvas.GetComponent<Canvas>().enabled = true;
+        canvas.GetComponentInChildren<HandDisplay>().gameObject.SetActive(false);
+        canvas.GetComponentInChildren<HealthBar>().gameObject.SetActive(false);
+        Destroy(canvas, 3);
 
         //TODO: play animations here
-        
     }
 
     public override void TakeHit(int damage)

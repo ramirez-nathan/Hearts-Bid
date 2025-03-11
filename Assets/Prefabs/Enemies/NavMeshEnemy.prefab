@@ -395,6 +395,7 @@ MonoBehaviour:
   health: 0
   healthBar: {fileID: 9136059353564438736}
   maxHealth: 150
+  canvas: {fileID: 6971470040723813978}
 --- !u!114 &-4228562372721340684
 MonoBehaviour:
   m_ObjectHideFlags: 0

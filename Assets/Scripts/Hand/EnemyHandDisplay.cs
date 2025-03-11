@@ -19,7 +19,7 @@ public class EnemyHandDisplay : HandDisplay
 
     private void Update()
     {
-        if (enemyTracker != null)
+        if (enemyTracker.closestEnemy != null)
         {
             EnemyHand enemyHand = enemyTracker.closestEnemy.GetComponent<EnemyHand>();
             DisplayEnemyHand(enemyHand);
