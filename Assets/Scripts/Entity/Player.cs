@@ -56,7 +56,7 @@ public class Player : Entity
 
             if (health <= 0) // the player died
             {
-                Debug.Log("GAME OVER!!!");
+                Debug.Log("GAME OVER!");
                 gameOverScreen.Setup();
             }
         }
