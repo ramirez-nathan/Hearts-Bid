@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PlayAllHands",
+                    "name": "CallAllHands",
                     "type": "Button",
                     "id": "febd6b96-76c6-4a02-b9b7-83f952d6b24f",
                     "expectedControlType": "",
@@ -192,11 +192,11 @@
                 {
                     "name": "",
                     "id": "9b1d42f3-b554-4807-b8cb-d78dfd0baa33",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayAllHands",
+                    "action": "CallAllHands",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

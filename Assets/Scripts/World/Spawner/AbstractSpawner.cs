@@ -55,8 +55,6 @@ public abstract class AbstractSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
         if (!isOnCooldown && (numSpawned < maxSpawn))
         {
             numSpawned++;
@@ -67,7 +65,7 @@ public abstract class AbstractSpawner : MonoBehaviour
         spawnsAlive = new List<GameObject>(GameObject.FindGameObjectsWithTag(spawneeTag));
 
 
-        if (spawnsAlive.Count == 0 && round != 0)
+        if (spawnsAlive.Count == 0 && round != 0 && numSpawned >= maxSpawn)
         {
             round++;
             numSpawned = 0;

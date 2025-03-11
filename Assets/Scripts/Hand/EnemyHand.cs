@@ -20,10 +20,28 @@ namespace Scripts.Hand
         public readonly UnityEvent onFullCache = new();
 
         float currentReturnDelay = 0f;
-        
+        private void OnEnable()
+        {
+            GlobalAbilitySystem.GlobalAbilityBehavior += HandleGlobalAbility;
+        }
+
+        private void OnDisable()
+        {
+            GlobalAbilitySystem.GlobalAbilityBehavior -= HandleGlobalAbility;
+        }
         private void Awake()
         {
             
+        }
+
+        private void HandleGlobalAbility(GlobalAbilityType ability)
+        {
+            // Check if the triggered ability is the one this enemy should respond to.
+            if (ability == GlobalAbilityType.CallAllHands)
+            {
+                PlayHandOnEnemy();
+                //GlobalAbility.GlobalAbilityBehavior -= HandleGlobalAbility;
+            }
         }
         public void AddCardToCache(Projectile projectile) //called on card collision with enemy
         {
@@ -66,20 +84,32 @@ namespace Scripts.Hand
             {
                 PlayHandOnEnemy();
 
+                
+            }
+        }
+
+
+        public void PlayHandOnEnemy()
+        {
+            if (cards.Count > 0)
+            {
+                HandRankerResult rankedHand = HandRanker.RankHand(cards);
+                int baseDamage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
+                int totalChips = rankedHand.TotalPlayedChips;
+                int damage = baseDamage * totalChips; // Multiply total chips by the hand's base damage value
+
+                string handPlayed = rankedHand.BestHand.ToString();
+                Debug.Log($"You played {handPlayed} on Enemy. Total Chips: {totalChips}, Base Damage: {baseDamage}, Final Damage: {damage}");
+
+                cards.Clear();
+                gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
+
+
                 onFullCache.Invoke();
                 onFullCache.RemoveAllListeners();
                 currentReturnDelay = 0;
                 OnHandChanged.Invoke(this);
             }
-        }
-        public void PlayHandOnEnemy()
-        {
-            HandRankerResult rankedHand = HandRanker.RankHand(cards);
-            int damage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
-            string handPlayed = HandRanker.RankHand(cards).BestHand.ToString();
-            Debug.Log($"You played {handPlayed} on Enemy");
-            cards.Clear();
-            gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
         }
 
         

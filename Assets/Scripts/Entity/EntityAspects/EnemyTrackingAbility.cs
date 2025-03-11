@@ -50,7 +50,7 @@ public class EnemyTrackingAbility : MonoBehaviour
                 if (newClosestEnemy != closestEnemy)
                 {
                     closestEnemy = newClosestEnemy;
-                    closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
+                    //closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
                 }
             }
         }

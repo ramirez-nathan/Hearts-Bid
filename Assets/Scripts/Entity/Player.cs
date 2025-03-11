@@ -30,7 +30,7 @@ public class Player : Entity
     {
         public InputAction move; // WASD
         public InputAction throwCard; // left click
-        public InputAction playAllHands; // right click
+        public InputAction callAllHands; // right click
         public InputAction unloadHand; // E
         public InputAction dodge; // space
         public InputAction lockOn; // shift 
@@ -82,7 +82,7 @@ public class Player : Entity
     {
         playerControls.move = playerInput.actions["Move"];
         playerControls.throwCard = playerInput.actions["ThrowCard"];
-        playerControls.playAllHands = playerInput.actions["PlayAllHands"];
+        playerControls.callAllHands = playerInput.actions["CallAllHands"];
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
         playerControls.lockOn = playerInput.actions["LockOn"];
@@ -92,9 +92,9 @@ public class Player : Entity
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
         playerControls.sortByRank.started += playerHand.ToggleSortByRank;
-        playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;   
+        playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;
 
-
+        playerControls.callAllHands.started += CallAllHands;
         //new lock on 
         playerControls.lockOn.started += LockOn; 
 
@@ -111,7 +111,7 @@ public class Player : Entity
         //new lock on 
         playerControls.lockOn.started -= LockOn;
 
-
+        playerControls.callAllHands.started -= CallAllHands;
 
     }
 
@@ -178,6 +178,12 @@ public class Player : Entity
     {
         enemyTrackingAbility.switchLock();
 
+    }
+
+    private void CallAllHands(InputAction.CallbackContext context)
+    {
+        // Trigger the ability event, notifying all subscribers.
+        GlobalAbilitySystem.TriggerAbility(GlobalAbilityType.CallAllHands);
     }
 }
     

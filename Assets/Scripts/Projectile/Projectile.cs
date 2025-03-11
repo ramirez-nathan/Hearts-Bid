@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
             spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
         }
         spriteRenderer.sprite = cardData.Sprite; 
-        Debug.Log($"Projectile launched with {cardData.name}");
+        //Debug.Log($"Projectile launched with {cardData.name}");
 
         FindFirstObjectByType<AudioManager>().Play("Throw"); // play throw sound effect
 
@@ -135,8 +135,9 @@ public class Projectile : MonoBehaviour
             collision.gameObject == target.gameObject) // if its an enemy object
         {
             if (isCachedOnEnemy) return;
-            Debug.Log("Destroyed Card");
-            collision.gameObject.GetComponent<EnemyHand>().AddCardToCache(this);
+            int chipDmg = HandRanker.RankToChips[cardData.Rank];
+            collision.gameObject.GetComponent<Entity>().TakeHit(chipDmg); // chip dmg for value of card
+            collision.gameObject.GetComponent<EnemyHand>().AddCardToCache(this); // cache card to enemy hand
 
 
             FindFirstObjectByType<AudioManager>().Play("Enemy Damaged");
@@ -147,7 +148,6 @@ public class Projectile : MonoBehaviour
                  returningToPlayer)
         {
             isCachedOnEnemy = false;
-            Debug.Log("Card hit player");
             ReturnCachedCards();
             Destroy(this.gameObject);
         }
@@ -156,7 +156,6 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && returningToPlayer)
         {
-            Debug.Log("Card detected player inside them (OnTriggerStay2D)");
             ReturnCachedCards();
             Destroy(this.gameObject);
         }

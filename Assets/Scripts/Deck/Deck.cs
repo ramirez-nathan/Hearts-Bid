@@ -72,10 +72,10 @@ namespace Scripts.Deck
         }
         public void ReturnToDeck(Card card)
         {
-            Debug.Log($"{card.Rank} {card.Suit}");
-            Debug.Log("Before return to deck: " + cardsInDeck.Count);
+            //Debug.Log($"{card.Rank} {card.Suit}");
+            //Debug.Log("Before return to deck: " + cardsInDeck.Count);
             cardsInDeck.Enqueue(card);
-            Debug.Log("After return to deck: " + cardsInDeck.Count);
+            //Debug.Log("After return to deck: " + cardsInDeck.Count);
             
         }
         // we dont have a discard ability now, but maybe we can
