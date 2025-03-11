@@ -15,6 +15,8 @@ namespace Scripts.Hand
     public class EnemyHand : Hand
     {
         [SerializeField] float returnDelay = 0.2f;
+        [SerializeField] Canvas canvas;
+        [SerializeField] GameObject handNameDisplay;
 
         public bool FullCache => cards.Count == handSize;
         public readonly UnityEvent onFullCache = new();
@@ -83,11 +85,8 @@ namespace Scripts.Hand
             if (FullCache)
             {
                 PlayHandOnEnemy();
-
-                
             }
         }
-
 
         public void PlayHandOnEnemy()
         {
@@ -101,9 +100,10 @@ namespace Scripts.Hand
                 string handPlayed = rankedHand.BestHand.ToString();
                 Debug.Log($"You played {handPlayed} on Enemy. Total Chips: {totalChips}, Base Damage: {baseDamage}, Final Damage: {damage}");
 
+
+                DisplayHandString(rankedHand.BestHand);
                 cards.Clear();
                 gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
-
 
                 onFullCache.Invoke();
                 onFullCache.RemoveAllListeners();
@@ -112,7 +112,12 @@ namespace Scripts.Hand
             }
         }
 
-        
+        private void DisplayHandString(HandType hand)
+        {
+            HandNameDisplay display = Instantiate(handNameDisplay, canvas.transform).GetComponent<HandNameDisplay>();
+            display.DisplayHand(hand);
+        }
+
         public void LogHandAndRank()
         {
             string handContents = "Current Enemy Cache: ";

@@ -211,7 +211,27 @@
         { HandType.HighCard, 1 },
         { HandType.None, 0 }
     };
+
+        public static Dictionary<HandType, string> HandTypeToString = new()
+        {
+            { HandType.FlushFive, "Flush Five" },
+            { HandType.FlushHouse, "Flush House" },
+            { HandType.FiveOfKind, "Five of a Kind" },
+            { HandType.RoyalFlush, "Royal Flush" },
+            { HandType.StraightFlush, "Straight Flush" },
+            { HandType.FourOfKind, "Four of a Kind" },
+            { HandType.FullHouse, "Full House" },
+            { HandType.Flush, "Flush" },
+            { HandType.Straight, "Straight" },
+            { HandType.ThreeOfKind, "Three of a Kind" },
+            { HandType.TwoPair, "Two Pair" },
+            { HandType.Pair, "Pair" },
+            { HandType.HighCard, "High Card" },
+            { HandType.None, "None" }
+        };
     }
+
+    
 
     public enum HandType
     {
