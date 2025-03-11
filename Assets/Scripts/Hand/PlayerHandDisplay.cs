@@ -26,7 +26,7 @@ namespace Scripts.Hand
 
         private void DisplaySelected(int index)
         {
-            if (GetCardOrNull(index) != null)
+            if (GetCardOrNull(hand, index) != null)
             {
                 selectedDisplay?.ResetDisplayPosition();
                 selectedDisplay = cardDisplays[index];
