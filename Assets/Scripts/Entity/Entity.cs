@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour
 
     //public GameOverScreen gameOverScreen;
 
-    private void Awake()
+    protected void Awake()
     {
         entityRb = GetComponent<Rigidbody2D>();
     }

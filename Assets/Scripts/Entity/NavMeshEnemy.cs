@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NavMeshEnemy : Entity
 {
+    Animator animator;
     protected NavMeshAgent agent;
     protected Transform playerTarget;
     int maxHealth = 10;
@@ -20,7 +22,14 @@ public class NavMeshEnemy : Entity
         base.TakeHit(damage);
 
         //TODO: play animations here
-        
+        StartCoroutine(HurtRoutine(0.5f));
+    }
+
+    IEnumerator HurtRoutine(float duration)
+    {
+        GetComponent<Animator>().SetBool("Hurt", true);
+        yield return new WaitForSeconds(duration);
+        GetComponent<Animator>().SetBool("Hurt", false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +52,12 @@ public class NavMeshEnemy : Entity
         {
            agent.SetDestination(playerTarget.position);
         }
+
+        Animator animator = GetComponent<Animator>();
+        Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
+
+        animator.SetFloat("x", agent.velocity.x);
+        animator.SetFloat("z", agent.velocity.y);
     }
 
 }
