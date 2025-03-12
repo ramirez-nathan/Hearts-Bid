@@ -22,7 +22,7 @@ public class MenuNavigation : MonoBehaviour
     }
     public void PlayGame()
     {
-        LoadScene("FullMap");
+        LoadScene("Player Damage Test");
     }
     public void QuitGame()
     {

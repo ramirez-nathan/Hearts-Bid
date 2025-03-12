@@ -188,6 +188,7 @@ public class Player : Entity
             Debug.LogWarning("No card to throw; hand is empty.");
             return;
         }
+        AudioManager.instance.Play("CardThrow");
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         if (throwCardAbility.target == null) { return; }
         throwCardAbility.TryActivate();
