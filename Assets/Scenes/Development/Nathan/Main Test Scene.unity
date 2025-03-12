@@ -611,7 +611,8 @@ Transform:
   m_LocalPosition: {x: -3.42, y: 1.46, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 936861225}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &326216636
@@ -747,7 +748,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   playerHand: {fileID: 0}
   gameOverScreen: {fileID: 1270619050}
-  maxHealth: 100
+  maxHealth: 500
 --- !u!114 &326216639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4423,6 +4424,64 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6042016144369378391, guid: a1731a7f8fa23694a95e20b4dfc1519b, type: 3}
   m_PrefabInstance: {fileID: 901568816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &936861224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936861225}
+  - component: {fileID: 936861227}
+  - component: {fileID: 936861226}
+  m_Layer: 6
+  m_Name: PlayerThrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936861225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936861224}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 326216635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936861226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936861224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306dc0da080a4147b890770cb0324d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwAnimationPrefab: {fileID: 4404695348866792929, guid: 7a31408688faae248990de309d0800bd, type: 3}
+--- !u!114 &936861227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936861224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76bca72d2cac2746ae0119aade6d668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &949854164
 GameObject:
   m_ObjectHideFlags: 0
@@ -75794,6 +75853,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 326216629}
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: _spawnTypes.Array.size
       value: 9

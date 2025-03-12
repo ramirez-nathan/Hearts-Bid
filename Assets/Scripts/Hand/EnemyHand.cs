@@ -18,7 +18,7 @@ namespace Scripts.Hand
         [SerializeField] Canvas canvas;
         [SerializeField] GameObject handNameDisplay;
         [SerializeField] GameObject flushAOEPrefab;
-
+    
         public bool FullCache => cards.Count == handSize;
         public readonly UnityEvent onFullCache = new();
 
@@ -65,7 +65,7 @@ namespace Scripts.Hand
                 // so if cache was played I think this wouldnt get called
             }
             UpdateCardDraw(false, projectile.spriteRenderer);
-            LogHandAndRank();
+            //LogHandAndRank();
         }
            
         private void UpdateCardDraw(bool draw, SpriteRenderer sprite)
@@ -122,6 +122,15 @@ namespace Scripts.Hand
                     FlushAOEAbility flushAOEAbility = Instantiate(flushAOEPrefab, transform.position, Quaternion.identity).GetComponent<FlushAOEAbility>();
                     flushAOEAbility.Initialize(hand);
                     break;
+                /*case "Straight":
+                    foreach (var card in hand.InspectedCards)
+                    {
+                        
+                    }
+                    break;
+                case "StraightFlush":
+
+                    break;*/ 
             }
         }
 

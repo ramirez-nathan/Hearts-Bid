@@ -13,6 +13,7 @@ public abstract class AbstractSpawner : MonoBehaviour
 
     protected abstract GameObject[] spawnTypes { get; }
 
+    [SerializeField] protected GameObject player;
 
 
     //tracks spawnees that are still alive 
@@ -27,7 +28,7 @@ public abstract class AbstractSpawner : MonoBehaviour
 
     protected int round = 0;
 
-    protected Transform[] spawnAreas;
+     protected Transform[] spawnAreas;
 
 
 
@@ -67,6 +68,12 @@ public abstract class AbstractSpawner : MonoBehaviour
 
         if (spawnsAlive.Count == 0 && round != 0 && numSpawned >= maxSpawn)
         {
+            int heal = (int)(player.GetComponent<Player>().maxHealth * 0.25); // please bear with me im tired ik this is bad code
+            if ((player.GetComponent<Entity>().health + heal) > player.GetComponent<Player>().maxHealth)
+            {
+                heal -= (player.GetComponent<Player>().maxHealth - (player.GetComponent<Entity>().health + heal));
+            }
+            player.GetComponent<Entity>().TakeHit(-heal); // heal player 25% of their max health
             round++;
             numSpawned = 0;
             maxSpawn += round * 5;

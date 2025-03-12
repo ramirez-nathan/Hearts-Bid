@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     private bool isCachedOnEnemy = false;
     [SerializeField] private bool returningToPlayer = false;
-
+    
     private void Awake()
     {
         if (spriteRenderer == null)

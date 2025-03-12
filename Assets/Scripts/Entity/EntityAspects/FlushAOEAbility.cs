@@ -49,7 +49,7 @@ public class FlushAOEAbility : MonoBehaviour
                 break;
         }
 
-        AOEcircle.a = 0.25f; // Set alpha value to 90% (0.90)
+        AOEcircle.a = 0.18f; // Set alpha value to 90% (0.90)
         sprite.color = AOEcircle;
         StartCoroutine(AOEAttack());
     }
@@ -75,6 +75,19 @@ public class FlushAOEAbility : MonoBehaviour
         {
             if (!hitEnemies.Contains(collision.gameObject)) // Check if the enemy was already hit
             {
+                Debug.Log("Enemy was hit by Flush AOE!");
+                collision.gameObject.GetComponent<Entity>().TakeHit(damage);
+                hitEnemies.Add(collision.gameObject); // Mark this enemy as hit
+            }
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if (!hitEnemies.Contains(collision.gameObject)) // Check if the enemy was already hit
+            {
+                Debug.Log("Enemy was hit by Flush AOE!");
                 collision.gameObject.GetComponent<Entity>().TakeHit(damage);
                 hitEnemies.Add(collision.gameObject); // Mark this enemy as hit
             }
