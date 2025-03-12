@@ -396,6 +396,7 @@ MonoBehaviour:
   healthBar: {fileID: 9136059353564438736}
   maxHealth: 150
   canvas: {fileID: 6971470040723813978}
+  deathVFXPrefab: {fileID: 4101616482598817925, guid: a485bebca38987f47bb13e9e033c4ca8, type: 3}
 --- !u!114 &-4228562372721340684
 MonoBehaviour:
   m_ObjectHideFlags: 0
