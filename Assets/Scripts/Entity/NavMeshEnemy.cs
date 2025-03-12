@@ -10,6 +10,7 @@ public class NavMeshEnemy : Entity
     protected Transform playerTarget;
     [SerializeField] int maxHealth = 10;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject deathVFXPrefab;
     public override void Die()
     {
         base.Die();
@@ -20,6 +21,7 @@ public class NavMeshEnemy : Entity
         Destroy(canvas, 3);
 
         //TODO: play animations here
+        Instantiate(deathVFXPrefab, this.transform.position, Quaternion.identity);
     }
 
     public override void TakeHit(int damage)
