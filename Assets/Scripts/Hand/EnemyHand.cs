@@ -17,6 +17,7 @@ namespace Scripts.Hand
         [SerializeField] float returnDelay = 0.2f;
         [SerializeField] Canvas canvas;
         [SerializeField] GameObject handNameDisplay;
+        [SerializeField] GameObject flushAOEPrefab;
 
         public bool FullCache => cards.Count == handSize;
         public readonly UnityEvent onFullCache = new();
@@ -98,6 +99,7 @@ namespace Scripts.Hand
                 int damage = baseDamage * totalChips; // Multiply total chips by the hand's base damage value
 
                 string handPlayed = rankedHand.BestHand.ToString();
+                CheckHand(handPlayed, rankedHand);
                 Debug.Log($"You played {handPlayed} on Enemy. Total Chips: {totalChips}, Base Damage: {baseDamage}, Final Damage: {damage}");
 
 
@@ -109,6 +111,17 @@ namespace Scripts.Hand
                 onFullCache.RemoveAllListeners();
                 currentReturnDelay = 0;
                 OnHandChanged.Invoke(this);
+            }
+        }
+
+        private void CheckHand(string handName, HandRankerResult hand)
+        {
+            switch (handName)
+            {
+                case "Flush":
+                    FlushAOEAbility flushAOEAbility = Instantiate(flushAOEPrefab, transform.position, Quaternion.identity).GetComponent<FlushAOEAbility>();
+                    flushAOEAbility.Initialize(hand);
+                    break;
             }
         }
 

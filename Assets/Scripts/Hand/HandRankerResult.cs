@@ -19,6 +19,8 @@ namespace Scripts.Hand
 
         public HandRankerResult(List<Card> cards)
         {
+
+            InspectedCards = cards;
             RankOccurrences = InitializeOccurrences<Rank>();
             SuitOccurrences = InitializeOccurrences<Suit>();
 

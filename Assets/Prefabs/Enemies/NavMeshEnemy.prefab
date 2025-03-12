@@ -430,6 +430,7 @@ MonoBehaviour:
   returnDelay: 0.05
   canvas: {fileID: 528346328477272761}
   handNameDisplay: {fileID: 1181809447530360499, guid: ee3254859c553f74d89025b0aea64d70, type: 3}
+  flushAOEPrefab: {fileID: 8362830530443744019, guid: bf668b082c043b54586816f06514c02d, type: 3}
 --- !u!95 &709193346031340156
 Animator:
   serializedVersion: 7

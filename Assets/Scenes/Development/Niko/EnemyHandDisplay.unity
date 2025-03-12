@@ -7658,7 +7658,7 @@ GameObject:
   - component: {fileID: 326216640}
   - component: {fileID: 326216639}
   - component: {fileID: 326216643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7938,6 +7938,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   moveSpeed: 5
   moveInput: {x: 0, y: 0}
+  animator: {fileID: 0}
   playerHand: {fileID: 0}
   gameOverScreen: {fileID: 0}
   maxHealth: 100
@@ -8017,6 +8018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOnCooldown: 0
   speedMultiplier: 2
+  isDodging: 0
   duration: 0.5
 --- !u!95 &326216643
 Animator:
@@ -13162,6 +13164,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5059402847706443966, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059402847706443966, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059402847706443966, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059402847706443966, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6990983093270694998, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13255,6 +13273,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246402671466650054, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099526214376277805, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099526214376277805, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099526214376277805, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099526214376277805, guid: 9bbd090fabf881a4188f9eeb53ebccf0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
