@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 150939712}
   - component: {fileID: 150939711}
   m_Layer: 5
-  m_Name: The House Always Wins
+  m_Name: HEART'S BID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE HOUSE ALWAYS WINS
+  m_text: 'HEART''S
+
+    BID'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
   m_sharedMaterial: {fileID: -1705721691276376960, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
