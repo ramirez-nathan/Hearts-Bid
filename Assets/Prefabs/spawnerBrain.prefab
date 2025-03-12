@@ -102,4 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnRate: 2.5
   _spawnTypes:
-  - {fileID: 8188287201900868031, guid: af284bce2397b9a41b5df5232569984b, type: 3}
+  - {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
+  - {fileID: 2582796573746491398, guid: 8732be208e38cbd49b83969371b04380, type: 3}
+  - {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
+  - {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
+  - {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
+  - {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}

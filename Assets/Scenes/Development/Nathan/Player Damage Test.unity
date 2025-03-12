@@ -4130,7 +4130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &799010386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75796,24 +75796,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: _spawnTypes.Array.size
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: '_spawnTypes.Array.data[0]'
       value: 
-      objectReference: {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
+      objectReference: {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: '_spawnTypes.Array.data[1]'
       value: 
-      objectReference: {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
+      objectReference: {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: '_spawnTypes.Array.data[2]'
       value: 
-      objectReference: {fileID: 2582796573746491398, guid: 8732be208e38cbd49b83969371b04380, type: 3}
+      objectReference: {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
     - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: '_spawnTypes.Array.data[3]'
       value: 
+      objectReference: {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[4]'
+      value: 
       objectReference: {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2582796573746491398, guid: 8732be208e38cbd49b83969371b04380, type: 3}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[6]'
+      value: 
+      objectReference: {fileID: 3556285966910776043, guid: 023f7536b89955d4b882ed2847cac56c, type: 3}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1825171846502489660, guid: 741c2a3f56e914140b79384e7e003f8c, type: 3}
+    - target: {fileID: 1484569615016148081, guid: df0182d2076af49448396e15c4aa23af, type: 3}
+      propertyPath: '_spawnTypes.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2582796573746491398, guid: 8732be208e38cbd49b83969371b04380, type: 3}
     - target: {fileID: 5240328362834915295, guid: df0182d2076af49448396e15c4aa23af, type: 3}
       propertyPath: m_Name
       value: spawnerBrain
