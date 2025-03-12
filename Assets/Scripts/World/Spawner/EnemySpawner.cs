@@ -16,6 +16,10 @@ public class EnemySpawner : AbstractSpawner
     protected override string spawnerTag => "Spawner";
     protected override string spawneeTag => "Enemy";
 
+    private bool spawnedOne;
+
+
+   
 
 
 
@@ -30,10 +34,22 @@ public class EnemySpawner : AbstractSpawner
         // Pick a random prefab from the list
         GameObject selectedPrefab = spawnTypes[Random.Range(0, spawnTypes.Length)];
 
-        //spawn at the area of the spawner 
-        Transform spawnPoint = spawnAreas[Random.Range(0, spawnAreas.Length)]; //change this to a list of spawn positions 
+        spawnedOne = false;
 
-        var spawn = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity);
+        while (!spawnedOne)
+        {
+            //spawn at the area of the spawner 
+            Transform spawnPoint = spawnAreas[Random.Range(0, spawnAreas.Length)]; //change this to a list of spawn positions 
+
+            if ((spawnPoint.position - player.transform.position).magnitude <= 20)
+            {
+                var spawn = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity);
+                spawnedOne = true;
+            }
+        }
+
+  
+
 
     }
 
