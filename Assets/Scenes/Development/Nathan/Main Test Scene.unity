@@ -771,7 +771,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   playerHand: {fileID: 0}
   gameOverScreen: {fileID: 1270619050}
-  maxHealth: 500
+  maxHealth: 350
 --- !u!114 &326216639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3312,6 +3312,22 @@ PrefabInstance:
     - target: {fileID: 5121189982877850198, guid: 297dc345396fbad468d09036bc681c8d, type: 3}
       propertyPath: m_Name
       value: Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318451366710027273, guid: 297dc345396fbad468d09036bc681c8d, type: 3}
+      propertyPath: m_TagString
+      value: Tilemap
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140843063014917563, guid: 297dc345396fbad468d09036bc681c8d, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140843063014917563, guid: 297dc345396fbad468d09036bc681c8d, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140843063014917563, guid: 297dc345396fbad468d09036bc681c8d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
