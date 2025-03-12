@@ -4,6 +4,7 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 using Scripts.Deck;
+using System.Collections;
 
 public class Player : Entity
 {
@@ -14,6 +15,7 @@ public class Player : Entity
     Rigidbody2D playerRB;
     private PlayerInput playerInput;
     public Vector2 moveInput;
+    Animator animator;
 
 
     //ability classes 
@@ -46,7 +48,6 @@ public class Player : Entity
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && !dodgeAbility.isDodging)
@@ -62,6 +63,18 @@ public class Player : Entity
         }
     }
 
+    public override void TakeHit(int damage)
+    {
+        base.TakeHit(damage);
+
+        StartCoroutine(HurtRoutine(0.5f));
+    }
+    IEnumerator HurtRoutine(float duration)
+    {
+        GetComponent<Animator>().SetBool("Hurt", true);
+        yield return new WaitForSeconds(duration);
+        GetComponent<Animator>().SetBool("Hurt", false);
+    }
 
     private void Awake()
     {
@@ -76,7 +89,7 @@ public class Player : Entity
 
         //get player hand component 
         playerHand = GetComponent<PlayerHand>();
-
+        animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
@@ -122,6 +135,9 @@ public class Player : Entity
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
+        animator.SetFloat("x", playerRB.linearVelocityX);
+        animator.SetFloat("z", playerRB.linearVelocityY);
+        animator.SetBool("Dashing", dodgeAbility.isDodging);
         // --------------- DEBUGGING UTILITY INPUTS ---------------------------- //
         // PRESS "L" KEY TO CHECK CURRENT HAND
         if (Keyboard.current.lKey.wasPressedThisFrame)
