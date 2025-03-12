@@ -4,7 +4,7 @@ public class ChipShooter : MonoBehaviour
 {
     [SerializeField] GameObject chipProjectile;
     [SerializeField] float projectileForce = 100f;
-    [SerializeField] float delayBetweenShots = 2.0f;
+    [SerializeField] float delayBetweenShots = 5f;
 
     float timeElapsed = 0f;
 
