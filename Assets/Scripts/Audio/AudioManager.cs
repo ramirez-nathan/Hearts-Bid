@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 using System.Diagnostics;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -32,7 +33,15 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Theme");
+        StartCoroutine(PlayIntroThenLoop());
+    }
+
+    private IEnumerator PlayIntroThenLoop()
+    {
+        Sound intro = Array.Find(sounds, sound => sound.name == "ThemeIntro");
+        Play("ThemeIntro");
+        yield return new WaitForSeconds(intro.source.clip.length); // Wait for ThemeIntro to finish
+        Play("ThemeLoop"); // Play ThemeLoop immediately after ThemeIntro finishes
     }
 
     public void Play(string name)
