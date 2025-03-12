@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RF-DEATHpng_0: -2257864090472773662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
