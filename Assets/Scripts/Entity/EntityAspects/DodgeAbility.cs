@@ -37,14 +37,13 @@ public class DodgeAbility : Ability
 
         FindFirstObjectByType<AudioManager>().Play("Dodge"); // play dodge sound effect
     }
-
+    
     private IEnumerator ResetSpeedAfterDuration()
     {
-        player.gameObject.GetComponent<Animator>().Play("Dash");
         isDodging = true;
+        
         yield return new WaitForSeconds(duration);
         isDodging = false;
-        player.gameObject.GetComponent<Animator>().Play("WalkDown");
         player.moveSpeed /= speedMultiplier;  // Reset player speed after the dodge duration
         Debug.Log("Dodge ended and speed reset.");
     }

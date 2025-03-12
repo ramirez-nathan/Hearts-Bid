@@ -15,7 +15,7 @@ public class Player : Entity
     Rigidbody2D playerRB;
     private PlayerInput playerInput;
     public Vector2 moveInput;
-    Animator animator;
+    public Animator animator;
 
 
     //ability classes 
