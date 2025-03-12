@@ -55,19 +55,17 @@ public class Player : Entity
         {
             TakeHit(20); // should change depending on enemy's best hand
             healthBar.SetHealth(health);
-
-            if (health <= 0) // the player died
-            {
-                Debug.Log("GAME OVER!");
-                gameOverScreen.Setup();
-            }
         }
     }
 
     public override void TakeHit(int damage)
     {
         base.TakeHit(damage);
-
+        if (health <= 0) // the player died
+        {
+            Debug.Log("GAME OVER!");
+            gameOverScreen.Setup();
+        }
         StartCoroutine(HurtRoutine(0.5f));
     }
     IEnumerator HurtRoutine(float duration)
