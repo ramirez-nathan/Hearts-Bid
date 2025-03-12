@@ -249,22 +249,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4374392035836645043, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1270619049}
-    - target: {fileID: 4374392035836645043, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117377596162853815, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1270619049}
-    - target: {fileID: 6117377596162853815, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     - target: {fileID: 8763102216202356969, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -343,6 +327,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8763102216202356969, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
+    - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1705721691276376960, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
+    - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -51856,17 +51852,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8763102216202356969, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
   m_PrefabInstance: {fileID: 132803520}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1270619049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2316121204677840048, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
-  m_PrefabInstance: {fileID: 132803520}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d44eaa04d9412974a988584f7f9ae948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1270619050 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7280383413584359346, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
