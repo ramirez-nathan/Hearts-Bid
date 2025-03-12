@@ -241,6 +241,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1116561454}
     m_Modifications:
+    - target: {fileID: 1568199674674942319, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a2ace2bae4271524cb1d16803145a9f6, type: 2}
+    - target: {fileID: 1568199674674942319, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8054069567990578468, guid: a2ace2bae4271524cb1d16803145a9f6, type: 2}
+    - target: {fileID: 1568199674674942319, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1613201809001539111, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_Name
       value: Background
@@ -332,11 +344,11 @@ PrefabInstance:
     - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
+      objectReference: {fileID: 11400000, guid: a2ace2bae4271524cb1d16803145a9f6, type: 2}
     - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1705721691276376960, guid: 3a1db871fce8fa547bbc32a95cf199ca, type: 2}
+      objectReference: {fileID: 8054069567990578468, guid: a2ace2bae4271524cb1d16803145a9f6, type: 2}
     - target: {fileID: 9083628366373857721, guid: 2a04660254c509346a8ef62d6db3b8ef, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2746,7 +2758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -732.08887, y: 464.49243}
+  m_AnchoredPosition: {x: -703, y: 464.49}
   m_SizeDelta: {x: 455.832, y: 151.0176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861424111
