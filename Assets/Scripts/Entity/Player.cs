@@ -25,6 +25,7 @@ public class Player : Entity
 
     //for throwing logic 
     [SerializeField] private PlayerHand playerHand;
+    private PlayerThrow playerThrow;
 
     public GameOverScreen gameOverScreen;
 
@@ -90,6 +91,7 @@ public class Player : Entity
         //get player hand component 
         playerHand = GetComponent<PlayerHand>();
         animator = GetComponent<Animator>();
+        playerThrow = GetComponentInChildren<PlayerThrow>();
     }
     private void OnEnable()
     {
@@ -190,6 +192,7 @@ public class Player : Entity
         }
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
         if (throwCardAbility.target == null) { return; }
+        playerThrow.PlayThrowAnimation();
         throwCardAbility.TryActivate();
     }
     private void LockOn(InputAction.CallbackContext context)
