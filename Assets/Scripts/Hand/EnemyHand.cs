@@ -1,15 +1,7 @@
-using Codice.Client.Common.GameUI;
-
 namespace Scripts.Hand
 {
-    using Codice.CM.Common;
-    using Scripts.Card;
-    using Scripts.Deck;
-    using Scripts.Hand;
-    using System;
     using UnityEngine;
     using UnityEngine.Events;
-    using UnityEngine.InputSystem;
     
 
     public class EnemyHand : Hand
