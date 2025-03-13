@@ -1,9 +1,7 @@
 using UnityEngine;
-using Scripts;
 using System.Collections;
 using Scripts.Hand;
 using Scripts.Card;
-using PlasticGui.WorkspaceWindow.Locks;
 using System.Collections.Generic;
 
 public class FlushAOEAbility : MonoBehaviour

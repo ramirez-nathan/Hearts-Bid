@@ -3,6 +3,7 @@ using Scripts.Deck;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class GlobalAbilitySystem
 {
@@ -16,7 +17,7 @@ public static class GlobalAbilitySystem
     };
 
     // A global event that broadcasts which ability was triggered
-    public static event Action<GlobalAbilityType> GlobalAbilityBehavior;
+    public static UnityAction<GlobalAbilityType> GlobalAbilityBehavior;
 
     public static void TriggerAbility(GlobalAbilityType ability)
     {

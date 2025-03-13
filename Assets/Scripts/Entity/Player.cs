@@ -1,8 +1,6 @@
 using Scripts.Hand;
 using UnityEngine;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 using Scripts.Deck;
 using System.Collections;
 
