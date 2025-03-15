@@ -7,7 +7,7 @@ using System.Collections;
 public class Player : Entity
 {
     //playtesting for player speed 
-    [SerializeField] public float moveSpeed = 5.0f;
+    [SerializeField] public float moveSpeed = 8.0f;
 
     //physics and movements
     Rigidbody2D playerRB;

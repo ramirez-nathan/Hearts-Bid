@@ -17,13 +17,9 @@ namespace Scripts.Hand
         float currentReturnDelay = 0f;
         private void OnEnable()
         {
-            GlobalAbilitySystem.GlobalAbilityBehavior += HandleGlobalAbility;
+            GlobalAbilitySystem.GlobalAbilityBehavior.AddListener(HandleGlobalAbility);
         }
 
-        private void OnDisable()
-        {
-            GlobalAbilitySystem.GlobalAbilityBehavior -= HandleGlobalAbility;
-        }
         private void Awake()
         {
             

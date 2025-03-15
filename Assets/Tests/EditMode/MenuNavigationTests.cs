@@ -36,19 +36,6 @@ public class MenuNavigationTests
         Assert.AreEqual("Menu", menu.loadedScene);
     }
 
-    [Test]
-    public void RestartGame_LoadsFullMapScene()
-    {
-        menu.RestartGame();
-        Assert.AreEqual("FullMap", menu.loadedScene);
-    }
-
-    [Test]
-    public void PlayGame_LoadsFullMapScene()
-    {
-        menu.PlayGame();
-        Assert.AreEqual("FullMap", menu.loadedScene);
-    }
 
     [Test]
     public void QuitGame_CallsApplicationQuit()

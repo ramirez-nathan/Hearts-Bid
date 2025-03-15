@@ -16,8 +16,8 @@ public static class GlobalAbilitySystem
         { GlobalAbilityType.CallAllHands, 4f },
     };
 
-    // A global event that broadcasts which ability was triggered
-    public static UnityAction<GlobalAbilityType> GlobalAbilityBehavior;
+    // Unity Event for ability behavior
+    public static UnityEvent<GlobalAbilityType> GlobalAbilityBehavior = new();
 
     public static void TriggerAbility(GlobalAbilityType ability)
     {
