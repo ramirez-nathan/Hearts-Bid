@@ -1,8 +1,8 @@
 # Heart's Bid
 ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white)
 
-
 https://nikohnoo.itch.io/hearts-bid
+
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Mathew Winkles](https://github.com/mathyu03),
             [Michael Carlin](https://github.com/mrcarlin2003),
