@@ -12,9 +12,10 @@ namespace Scripts.Hand
         //readonly Deck deck = new();
         public bool sortByRank = false;
         public bool sortBySuit = false;
-
+        
         private void Awake()
         {
+            handSize = 7;
             deck.Initialize();
         }
 
@@ -43,7 +44,7 @@ namespace Scripts.Hand
 
         private void HandleCardSelection()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 7; i++)
             {
                 if (Keyboard.current[Key.Digit1 + i].wasPressedThisFrame)
                 {
@@ -87,7 +88,7 @@ namespace Scripts.Hand
         }
         public virtual void DrawCardToHand() // draws card from deck into hand
         {
-            if (cards.Count < 5)
+            if (cards.Count < handSize)
             {
                 Card drawnCard = deck.Draw(out bool success);
                 if (success)
@@ -101,7 +102,7 @@ namespace Scripts.Hand
         }
         public virtual void RefillHandSlot(int index)
         {
-            if (cards.Count < 5)
+            if (cards.Count < handSize)
             {
                 Card drawnCard = deck.Draw(out bool success);
                 if (success)
@@ -169,6 +170,8 @@ namespace Scripts.Hand
             }
 
             OnHandChanged.Invoke(this);
+            OnHandChanged.Invoke(this);
+            // I did it twice bc handdisplay is the 1st function in list of invoke
         }
         // Helper function to sort before displaying cards, specifically after refilling a slot
         private void ApplyCurrentSorting() 

@@ -15,9 +15,12 @@ namespace Scripts.Hand
         public List<HandType> ApplicableHands { get; set; } = new();
         public Dictionary<Rank, int> RankOccurrences { get; private set; }
         public Dictionary<Suit, int> SuitOccurrences { get; private set; }
+        public int TotalPlayedChips { get; set; } = 0;
 
         public HandRankerResult(List<Card> cards)
         {
+
+            InspectedCards = cards;
             RankOccurrences = InitializeOccurrences<Rank>();
             SuitOccurrences = InitializeOccurrences<Suit>();
 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Enemy
+  - Spawner
+  - Tilemap
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - AbilityEffect
   - 
   - 
   - 
@@ -42,6 +44,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: EnemyUI
+    uniqueID: 1728152345
     locked: 0
   - name: foreground
     uniqueID: 2696035527

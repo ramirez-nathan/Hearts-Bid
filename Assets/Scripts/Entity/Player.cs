@@ -1,19 +1,19 @@
 using Scripts.Hand;
 using UnityEngine;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 using Scripts.Deck;
+using System.Collections;
 
 public class Player : Entity
 {
     //playtesting for player speed 
-    [SerializeField] public float moveSpeed = 5.0f;
+    [SerializeField] public float moveSpeed = 8.0f;
 
     //physics and movements
     Rigidbody2D playerRB;
     private PlayerInput playerInput;
     public Vector2 moveInput;
+    public Animator animator;
 
 
     //ability classes 
@@ -23,6 +23,7 @@ public class Player : Entity
 
     //for throwing logic 
     [SerializeField] private PlayerHand playerHand;
+    private PlayerThrow playerThrow;
 
     public GameOverScreen gameOverScreen;
 
@@ -30,7 +31,7 @@ public class Player : Entity
     {
         public InputAction move; // WASD
         public InputAction throwCard; // left click
-        public InputAction playAllHands; // right click
+        public InputAction callAllHands; // right click
         public InputAction unloadHand; // E
         public InputAction dodge; // space
         public InputAction lockOn; // shift 
@@ -46,22 +47,31 @@ public class Player : Entity
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && !dodgeAbility.isDodging)
         {
             TakeHit(20); // should change depending on enemy's best hand
             healthBar.SetHealth(health);
-
-            if (health <= 0) // the player died
-            {
-                Debug.Log("GAME OVER!!!");
-                gameOverScreen.Setup();
-            }
         }
     }
 
+    public override void TakeHit(int damage)
+    {
+        base.TakeHit(damage);
+        if (health <= 0) // the player died
+        {
+            Debug.Log("GAME OVER!");
+            gameOverScreen.Setup();
+        }
+        StartCoroutine(HurtRoutine(0.5f));
+    }
+    IEnumerator HurtRoutine(float duration)
+    {
+        GetComponent<Animator>().SetBool("Hurt", true);
+        yield return new WaitForSeconds(duration);
+        GetComponent<Animator>().SetBool("Hurt", false);
+    }
 
     private void Awake()
     {
@@ -76,13 +86,14 @@ public class Player : Entity
 
         //get player hand component 
         playerHand = GetComponent<PlayerHand>();
-
+        animator = GetComponent<Animator>();
+        playerThrow = GetComponentInChildren<PlayerThrow>();
     }
     private void OnEnable()
     {
         playerControls.move = playerInput.actions["Move"];
         playerControls.throwCard = playerInput.actions["ThrowCard"];
-        playerControls.playAllHands = playerInput.actions["PlayAllHands"];
+        playerControls.callAllHands = playerInput.actions["CallAllHands"];
         playerControls.unloadHand = playerInput.actions["UnloadHand"];
         playerControls.dodge = playerInput.actions["Dodge"];
         playerControls.lockOn = playerInput.actions["LockOn"];
@@ -92,10 +103,9 @@ public class Player : Entity
         playerControls.dodge.started += Dodge;
         playerControls.throwCard.started += ThrowCard;
         playerControls.sortByRank.started += playerHand.ToggleSortByRank;
-        playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;   
-        //enemyTrackingAbility.TryActivate();
+        playerControls.sortBySuit.started += playerHand.ToggleSortBySuit;
 
-
+        playerControls.callAllHands.started += CallAllHands;
         //new lock on 
         playerControls.lockOn.started += LockOn; 
 
@@ -112,7 +122,7 @@ public class Player : Entity
         //new lock on 
         playerControls.lockOn.started -= LockOn;
 
-
+        playerControls.callAllHands.started -= CallAllHands;
 
     }
 
@@ -123,6 +133,9 @@ public class Player : Entity
         //added to handle the diagnol speedup problem 
         Vector2 normalizedInput = moveInput.normalized;
         moveInput = playerControls.move.ReadValue<Vector2>();
+        animator.SetFloat("x", playerRB.linearVelocityX);
+        animator.SetFloat("z", playerRB.linearVelocityY);
+        animator.SetBool("Dashing", dodgeAbility.isDodging);
         // --------------- DEBUGGING UTILITY INPUTS ---------------------------- //
         // PRESS "L" KEY TO CHECK CURRENT HAND
         if (Keyboard.current.lKey.wasPressedThisFrame)
@@ -134,8 +147,10 @@ public class Player : Entity
             Debug.Log($"Deck size is {FindAnyObjectByType<Deck>().cardsInDeck.Count}");
         }
 
+    }
+    private void LateUpdate()
+    {
         enemyTrackingAbility.Activate();
-
     }
 
     void FixedUpdate()
@@ -171,13 +186,22 @@ public class Player : Entity
             Debug.LogWarning("No card to throw; hand is empty.");
             return;
         }
+        AudioManager.instance.Play("CardThrow");
         throwCardAbility.target = enemyTrackingAbility.closestEnemy;
+        if (throwCardAbility.target == null) { return; }
+        playerThrow.PlayThrowAnimation();
         throwCardAbility.TryActivate();
     }
     private void LockOn(InputAction.CallbackContext context)
     {
         enemyTrackingAbility.switchLock();
 
+    }
+
+    private void CallAllHands(InputAction.CallbackContext context)
+    {
+        // Trigger the ability event, notifying all subscribers.
+        GlobalAbilitySystem.TriggerAbility(GlobalAbilityType.CallAllHands);
     }
 }
     

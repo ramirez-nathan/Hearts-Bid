@@ -4,14 +4,14 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // Attributes
-    [SerializeField] protected int health;            // Representing the health attribute.
+    [SerializeField] public int health;            // Representing the health attribute.
     
     protected Rigidbody2D entityRb;  // Shared rigidbody across entities
     public HealthBar healthBar;
 
     //public GameOverScreen gameOverScreen;
 
-    private void Awake()
+    protected void Awake()
     {
         entityRb = GetComponent<Rigidbody2D>();
     }

@@ -20,8 +20,8 @@ public class Projectile : MonoBehaviour
     private Vector3 projectileMoveDirection;
     public SpriteRenderer spriteRenderer;
     private bool isCachedOnEnemy = false;
-    private bool returningToPlayer = false;
-
+    [SerializeField] private bool returningToPlayer = false;
+    
     private void Awake()
     {
         if (spriteRenderer == null)
@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
             spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
         }
         spriteRenderer.sprite = cardData.Sprite; 
-        Debug.Log($"Projectile launched with {cardData.name}");
+        //Debug.Log($"Projectile launched with {cardData.name}");
 
         FindFirstObjectByType<AudioManager>().Play("Throw"); // play throw sound effect
 
@@ -73,7 +73,7 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        currentBehavoir?.Invoke();
+        currentBehavoir?.Invoke(); // if currbehavior exists, update
     }
 
     public void BeginReturnToPlayer(float delay)
@@ -83,9 +83,9 @@ public class Projectile : MonoBehaviour
 
     IEnumerator ReturnToPlayer(float delay)
     {
-        target = returnPlayer.transform;
-        spriteRenderer.enabled = true;
-        returningToPlayer = true;
+        target = returnPlayer.transform; // tracks player
+        spriteRenderer.enabled = true; // re-draws card
+        returningToPlayer = true; // to track current behavior for collisions
         yield return new WaitForSeconds(delay);
         currentBehavoir = ReturnToPlayer;
     }
@@ -97,9 +97,26 @@ public class Projectile : MonoBehaviour
 
     private void MoveToTarget(float speed)
     {
-        Vector3 moveDirNormalized = (target.position - transform.position).normalized;
-        projectileMoveDirection = moveDirNormalized * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
+        if (target != null) 
+        {
+            Vector3 moveDirNormalized = (target.position - transform.position).normalized;
+            projectileMoveDirection = moveDirNormalized * speed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + (Vector2)projectileMoveDirection);
+        }
+        else
+        {
+            if (returnPlayer.transform)
+            {
+                target = returnPlayer.transform;
+                returningToPlayer = true;
+                currentBehavoir = ReturnToPlayer;
+            }
+            else
+            {
+                ReturnCachedCards();
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     public void ReturnToPlayer()
@@ -110,9 +127,6 @@ public class Projectile : MonoBehaviour
     public void ReturnCachedCards()
     { 
         returnDeck.ReturnToDeck(cardData);
-        // do something here that calls a method to
-        // make the cards fly back to player 
-        // for now we will just delete
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -121,19 +135,27 @@ public class Projectile : MonoBehaviour
             collision.gameObject == target.gameObject) // if its an enemy object
         {
             if (isCachedOnEnemy) return;
-            Debug.Log("Destroyed Card");
-            collision.gameObject.GetComponent<EnemyHand>().AddCardToCache(this);
+            int chipDmg = HandRanker.RankToChips[cardData.Rank];
+            collision.gameObject.GetComponent<Entity>().TakeHit(chipDmg); // chip dmg for value of card
+            collision.gameObject.GetComponent<EnemyHand>().AddCardToCache(this); // cache card to enemy hand
 
 
             FindFirstObjectByType<AudioManager>().Play("Enemy Damaged");
             isCachedOnEnemy = true;
-            //Destroy(this.gameObject); // destroy card
+            
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Player") &&
                  returningToPlayer)
         {
             isCachedOnEnemy = false;
-            Debug.Log("Card hit player");
+            ReturnCachedCards();
+            Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && returningToPlayer)
+        {
             ReturnCachedCards();
             Destroy(this.gameObject);
         }

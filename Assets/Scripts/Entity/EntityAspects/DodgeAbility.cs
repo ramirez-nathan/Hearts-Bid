@@ -4,8 +4,9 @@ using System.Collections;
 public class DodgeAbility : Ability
 {
     private Player player;  // Reference to the Player
-    public float speedMultiplier = 15.0f;
-    public float duration = 10f;
+    public float speedMultiplier;
+    public bool isDodging = false;
+    public float duration;
 
     // Override the abstract Cooldown property
     [SerializeField] protected override float Cooldown => 1.5f; // Set the cooldown for the dodge ability
@@ -34,12 +35,15 @@ public class DodgeAbility : Ability
         // Set a timer to reset the speed after 'duration' seconds
         player.StartCoroutine(ResetSpeedAfterDuration());
 
-        FindObjectOfType<AudioManager>().Play("Dodge"); // play dodge sound effect
+        FindFirstObjectByType<AudioManager>().Play("Dodge"); // play dodge sound effect
     }
-
+    
     private IEnumerator ResetSpeedAfterDuration()
     {
+        isDodging = true;
+        
         yield return new WaitForSeconds(duration);
+        isDodging = false;
         player.moveSpeed /= speedMultiplier;  // Reset player speed after the dodge duration
         Debug.Log("Dodge ended and speed reset.");
     }

@@ -13,13 +13,20 @@ public class EnemyTrackingAbility : MonoBehaviour
 
     public Transform closestEnemy = null;
     private bool lockedOn = false;
-    
+    private bool started = false;
 
 
     public void Activate()
     {
-        if (!lockedOn)
+
+
+        if (!lockedOn || (lockedOn && closestEnemy == null))
         {
+            if (lockedOn)
+            {
+                lockedOn = false;
+            }
+
             // Convert mouse position to world space
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f; // Set the z to 0 to avoid affecting the comparison
@@ -28,20 +35,23 @@ public class EnemyTrackingAbility : MonoBehaviour
             Transform newClosestEnemy = null;
             float minDistance = Mathf.Infinity; //this can be edited 
 
-            foreach (GameObject enemy in enemies)
+            if (enemies.Length > 0)
             {
-                float distance = Vector3.Distance(mousePosition, enemy.transform.position);
-                if (distance < minDistance)
+                foreach (GameObject enemy in enemies)
                 {
-                    minDistance = distance;
-                    newClosestEnemy = enemy.transform;
+                    float distance = Vector3.Distance(mousePosition, enemy.transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        newClosestEnemy = enemy.transform;
+                    }
                 }
-            }
 
-            if (newClosestEnemy != closestEnemy)
-            {
-                closestEnemy = newClosestEnemy;
-                closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
+                if (newClosestEnemy != closestEnemy && newClosestEnemy != null)
+                {
+                    closestEnemy = newClosestEnemy;
+                    //closestEnemy.gameObject.GetComponent<EnemyHand>().LogHandAndRank();
+                }
             }
         }
     }

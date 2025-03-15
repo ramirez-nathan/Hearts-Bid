@@ -1,31 +1,40 @@
-using Codice.Client.Common.GameUI;
-
 namespace Scripts.Hand
 {
-    using Codice.CM.Common;
-    using Scripts.Card;
-    using Scripts.Deck;
-    using Scripts.Hand;
-    using System;
     using UnityEngine;
     using UnityEngine.Events;
-    using UnityEngine.InputSystem;
     
 
     public class EnemyHand : Hand
     {
         [SerializeField] float returnDelay = 0.2f;
-
+        [SerializeField] Canvas canvas;
+        [SerializeField] GameObject handNameDisplay;
+        [SerializeField] GameObject flushAOEPrefab;
+    
         public bool FullCache => cards.Count == handSize;
         public readonly UnityEvent onFullCache = new();
 
         float currentReturnDelay = 0f;
-        
+        private void OnEnable()
+        {
+            GlobalAbilitySystem.GlobalAbilityBehavior.AddListener(HandleGlobalAbility);
+        }
+
         private void Awake()
         {
             
         }
-        public void AddCardToCache(Projectile projectile)
+
+        private void HandleGlobalAbility(GlobalAbilityType ability)
+        {
+            // Check if the triggered ability is the one this enemy should respond to.
+            if (ability == GlobalAbilityType.CallAllHands)
+            {
+                PlayHandOnEnemy();
+                //GlobalAbility.GlobalAbilityBehavior -= HandleGlobalAbility;
+            }
+        }
+        public void AddCardToCache(Projectile projectile) //called on card collision with enemy
         {
             Debug.Log("Adding card to cache");
             // if somehow this is full
@@ -44,7 +53,7 @@ namespace Scripts.Hand
                 // so if cache was played I think this wouldnt get called
             }
             UpdateCardDraw(false, projectile.spriteRenderer);
-            LogHandAndRank();
+            //LogHandAndRank();
         }
            
         private void UpdateCardDraw(bool draw, SpriteRenderer sprite)
@@ -65,6 +74,26 @@ namespace Scripts.Hand
             if (FullCache)
             {
                 PlayHandOnEnemy();
+            }
+        }
+
+        public void PlayHandOnEnemy()
+        {
+            if (cards.Count > 0)
+            {
+                HandRankerResult rankedHand = HandRanker.RankHand(cards);
+                int baseDamage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
+                int totalChips = rankedHand.TotalPlayedChips;
+                int damage = baseDamage * totalChips; // Multiply total chips by the hand's base damage value
+
+                string handPlayed = rankedHand.BestHand.ToString();
+                CheckHand(handPlayed, rankedHand);
+                Debug.Log($"You played {handPlayed} on Enemy. Total Chips: {totalChips}, Base Damage: {baseDamage}, Final Damage: {damage}");
+
+
+                DisplayHandString(rankedHand.BestHand);
+                cards.Clear();
+                gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
 
                 onFullCache.Invoke();
                 onFullCache.RemoveAllListeners();
@@ -72,17 +101,33 @@ namespace Scripts.Hand
                 OnHandChanged.Invoke(this);
             }
         }
-        public void PlayHandOnEnemy()
+
+        private void CheckHand(string handName, HandRankerResult hand)
         {
-            HandRankerResult rankedHand = HandRanker.RankHand(cards);
-            int damage = HandRanker.HandTypeToDamage[rankedHand.BestHand];
-            string handPlayed = HandRanker.RankHand(cards).BestHand.ToString();
-            Debug.Log($"You played {handPlayed} on Enemy");
-            cards.Clear();
-            gameObject.GetComponent<NavMeshEnemy>().TakeHit(damage);
+            switch (handName)
+            {
+                case "Flush":
+                    FlushAOEAbility flushAOEAbility = Instantiate(flushAOEPrefab, transform.position, Quaternion.identity).GetComponent<FlushAOEAbility>();
+                    flushAOEAbility.Initialize(hand);
+                    break;
+                /*case "Straight":
+                    foreach (var card in hand.InspectedCards)
+                    {
+                        
+                    }
+                    break;
+                case "StraightFlush":
+
+                    break;*/ 
+            }
         }
 
-        
+        private void DisplayHandString(HandType hand)
+        {
+            HandNameDisplay display = Instantiate(handNameDisplay, canvas.transform).GetComponent<HandNameDisplay>();
+            display.DisplayHand(hand);
+        }
+
         public void LogHandAndRank()
         {
             string handContents = "Current Enemy Cache: ";

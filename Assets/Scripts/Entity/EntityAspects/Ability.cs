@@ -1,5 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
+
+public enum GlobalAbilityType
+{
+    CallAllHands,
+}
 
 public abstract class Ability : MonoBehaviour
 {
@@ -21,7 +27,8 @@ public abstract class Ability : MonoBehaviour
             Debug.Log($"{GetType().Name} is on cooldown!");
         }
     }
-
+    
+    
     // Abstract method to be implemented by derived classes (i.e., actual ability logic)
     protected abstract void Activate();
 

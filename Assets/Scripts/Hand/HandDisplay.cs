@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Scripts.Hand
 {
     using Scripts.Card;
-    using UnityEditor.Experimental.GraphView;
 
     public class HandDisplay : MonoBehaviour
     {
@@ -14,7 +13,7 @@ namespace Scripts.Hand
 
         protected virtual void Start()
         {
-            hand.OnHandChanged.AddListener(DisplayHand);
+            hand?.OnHandChanged.AddListener(DisplayHand);
             DisplayHand(hand);
         }
 
@@ -23,7 +22,7 @@ namespace Scripts.Hand
         {
             for (int i = 0; i < cardDisplays.Count; i++)
             {
-                if (GetCardOrNull(i) != null)
+                if (GetCardOrNull(hand, i) != null)
                 {
                     cardDisplays[i].DisplayCard(hand.cards[i]);
                 }
@@ -34,8 +33,10 @@ namespace Scripts.Hand
             }
         }
 
-        protected Card GetCardOrNull(int index)
+        protected Card GetCardOrNull(Hand hand, int index)
         {
+            if (hand == null) return null;
+
             if (index < hand.cards.Count)
             {
                 return hand.cards[index];
