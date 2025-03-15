@@ -1,4 +1,4 @@
-# CS180-Group-Project
+# Heart's Bid
 ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white)
 
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
