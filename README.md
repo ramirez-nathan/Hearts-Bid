@@ -13,7 +13,7 @@ https://nikohnoo.itch.io/hearts-bid
 ![linkedingiffy](https://github.com/user-attachments/assets/cf7659b9-a4af-4440-a633-bc6963ff0707)
 
 
-## UML Design Diagrams!
+## UML Design Diagrams
 
 ![royalFlushersUML drawio (1)](https://github.com/user-attachments/assets/618c4c98-1135-4f75-922c-5c01b0e01db3)
 -------------------------------------------------------------------------------------------------------------------
