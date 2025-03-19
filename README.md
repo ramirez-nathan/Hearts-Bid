@@ -1,16 +1,14 @@
 # Heart's Bid
 ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white)
 
-## Play the Game in Browser!
-https://nikohnoo.itch.io/hearts-bid
-
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Mathew Winkles](https://github.com/mathyu03),
             [Michael Carlin](https://github.com/mrcarlin2003),
             [Devin Shaw](https://github.com/devinrshaw),
             [Niko Udria](https://github.com/nikohno)
 
-
+## Play the Game in Browser!
+https://nikohnoo.itch.io/hearts-bid
 
 ## UML Design Diagrams!
 
