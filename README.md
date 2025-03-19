@@ -10,6 +10,10 @@ Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
             [Devin Shaw](https://github.com/devinrshaw),
             [Niko Udria](https://github.com/nikohno)
 
+
+
+## UML Design Diagrams!
+
 ![royalFlushersUML drawio (1)](https://github.com/user-attachments/assets/618c4c98-1135-4f75-922c-5c01b0e01db3)
 -------------------------------------------------------------------------------------------------------------------
 ![AbilityDiagram drawio](https://github.com/user-attachments/assets/d3a9db1b-e3df-46ca-9d62-0ed7991d7015)
