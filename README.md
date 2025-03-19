@@ -9,6 +9,7 @@ Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
 
 ## Play the Game in Browser!
 https://nikohnoo.itch.io/hearts-bid
+![Uploading linkedingiffy.gif…]()
 
 ## UML Design Diagrams!
 
