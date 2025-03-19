@@ -1,7 +1,7 @@
 # Heart's Bid
 ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white)
 
-##Play the Game!
+## Play the Game in Browser!
 https://nikohnoo.itch.io/hearts-bid
 
 Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
