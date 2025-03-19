@@ -9,6 +9,7 @@ Developers: [Nathan Ramirez](https://github.com/ramirez-nathan),
 
 ## Play the Game in Browser!
 https://nikohnoo.itch.io/hearts-bid
+### Gameplay Demo
 ![linkedingiffy](https://github.com/user-attachments/assets/cf7659b9-a4af-4440-a633-bc6963ff0707)
 
 
