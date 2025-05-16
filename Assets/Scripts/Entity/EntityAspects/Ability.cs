@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GlobalAbilityType
 {
-    CallAllHands,
+    FlushAOE,
 }
 
 public abstract class Ability : MonoBehaviour

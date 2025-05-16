@@ -9,7 +9,7 @@ public class FlushAOEAbility : MonoBehaviour
     protected HandRankerResult hand;
     protected int damage = 0;
     SpriteRenderer sprite;
-    private HashSet<GameObject> hitEnemies = new HashSet<GameObject>(); // Track hit enemies
+    private HashSet<GameObject> hitEnemies = new(); // Track hit enemies
 
     private void Awake()
     {
@@ -67,28 +67,49 @@ public class FlushAOEAbility : MonoBehaviour
         return Color.white; // Return white if conversion fails
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        HandleEnemyHit(collision.gameObject);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        HandleEnemyHit(collision.gameObject);
+    }
+
+    private void HandleEnemyHit(GameObject enemyObject)
+    {
+        if (enemyObject == null) return;
+
+        if (enemyObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (!hitEnemies.Contains(collision.gameObject)) // Check if the enemy was already hit
+            if (!hitEnemies.Contains(enemyObject)) // Check if the enemy was already hit
             {
                 Debug.Log("Enemy was hit by Flush AOE!");
-                collision.gameObject.GetComponent<Entity>().TakeHit(damage);
-                hitEnemies.Add(collision.gameObject); // Mark this enemy as hit
+
+                // Get the enemy entity component
+                Entity enemyEntity = enemyObject.GetComponent<Entity>();
+                if (enemyEntity != null)
+                {
+                    // Check if this damage will kill the enemy
+                    bool willDie = (enemyEntity.health <= damage);
+
+                    // If enemy will die, force return of all cached cards first
+                    if (willDie)
+                    {
+                        EnemyHand enemyHand = enemyObject.GetComponent<EnemyHand>();
+                        if (enemyHand != null && enemyHand.cards != null && enemyHand.cards.Count > 0)
+                        {
+                            // Return all cached cards to player before applying fatal damage
+                            enemyHand.PlayHandOnEnemy();
+                        }
+                    }
+
+                    // Now apply damage which might destroy the enemy
+                    enemyEntity.TakeHit(damage);
+                    hitEnemies.Add(enemyObject); // Mark this enemy as hit
+                }
             }
         }
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            if (!hitEnemies.Contains(collision.gameObject)) // Check if the enemy was already hit
-            {
-                Debug.Log("Enemy was hit by Flush AOE!");
-                collision.gameObject.GetComponent<Entity>().TakeHit(damage);
-                hitEnemies.Add(collision.gameObject); // Mark this enemy as hit
-            }
-        }
-    }
+
 }

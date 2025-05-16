@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuNavigationTests
 {

@@ -201,7 +201,7 @@ public class Player : Entity
     private void CallAllHands(InputAction.CallbackContext context)
     {
         // Trigger the ability event, notifying all subscribers.
-        GlobalAbilitySystem.TriggerAbility(GlobalAbilityType.CallAllHands);
+        GlobalAbilitySystem.TriggerAbility(GlobalAbilityType.FlushAOE);
     }
 }
     

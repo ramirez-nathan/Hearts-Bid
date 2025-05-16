@@ -13,7 +13,7 @@ public static class GlobalAbilitySystem
     // The base cooldown for each ability type
     private static Dictionary<GlobalAbilityType, float> cooldowns = new()
     {
-        { GlobalAbilityType.CallAllHands, 4f },
+        { GlobalAbilityType.FlushAOE, 4f },
     };
 
     // Unity Event for ability behavior

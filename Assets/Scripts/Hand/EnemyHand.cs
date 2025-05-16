@@ -28,7 +28,7 @@ namespace Scripts.Hand
         private void HandleGlobalAbility(GlobalAbilityType ability)
         {
             // Check if the triggered ability is the one this enemy should respond to.
-            if (ability == GlobalAbilityType.CallAllHands)
+            if (ability == GlobalAbilityType.FlushAOE)
             {
                 PlayHandOnEnemy();
                 //GlobalAbility.GlobalAbilityBehavior -= HandleGlobalAbility;
